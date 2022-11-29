@@ -22,7 +22,15 @@ void turnLeft90(DC_motor *mL, DC_motor *mR);
 void turnRight90(DC_motor *mL, DC_motor *mR);
 void turnLeft135(DC_motor *mL, DC_motor *mR);
 void turnRight135(DC_motor *mL, DC_motor *mR);
-void fullSpeedAhead(DC_motor *mL, DC_motor *mR);
+void fullSpeedAhead(DC_motor *mL, DC_motor *mR, dir);
 void reversesquare(DC_motor *mL, DC_motor *mR);
+void savepath(char *path, char instruction);
+int savetime(char path, int timercount);
+void returnhome(char path, motorL, motorR);
+void returnstep(char instruction, motorL, motorR);
+
+signed char timeposition=0;
+signed char pathposition=0;
+
 
 #endif

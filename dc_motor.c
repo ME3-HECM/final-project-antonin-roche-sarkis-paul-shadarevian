@@ -179,11 +179,10 @@ void turnLeft135(DC_motor *mL, DC_motor *mR)
         setMotorPWM(mL);    
         setMotorPWM(mR);  
     }
- 
+    
     setMotorPWM(mL);    
     setMotorPWM(mR);  
-   
-    
+
 }
 
 //function to make the robot turn right 
@@ -232,13 +231,14 @@ void turn180(DC_motor *mL, DC_motor *mR)
 
 
 //function to make the robot go straight
-void fullSpeedAhead(DC_motor *mL, DC_motor *mR)
+void fullSpeedAhead(DC_motor *mL, DC_motor *mR, char dir) // dir = 1 is for forward, 0 is for backward
 {
-    mL->brakemode=1; //fast decay
-    mR->brakemode=1; //fast decay
-    mL->direction = 1;
-    mR->direction = 1;
+    mL->brakemode=1; //slow decay
+    mR->brakemode=1; //slow decay
+    mL->direction = dir;
+    mR->direction = dir;
     
+    if (dir == 1) {T0CON0bits.T0EN=1;} //if robot is not on return, start timer0 to count the time the robot is going straight
     
     int setpower = 50;
     
@@ -247,10 +247,7 @@ void fullSpeedAhead(DC_motor *mL, DC_motor *mR)
         mL->power++;
         mR->power++;    
         setMotorPWM(mL);    
-        setMotorPWM(mR);  
-
-    setMotorPWM(mL);    
-    setMotorPWM(mR);    
+        setMotorPWM(mR);    
     }
 }
 
@@ -274,4 +271,46 @@ void reversesquare(DC_motor *mL, DC_motor *mR)
     setMotorPWM(mL);    
     setMotorPWM(mR);    
     }
+}
+
+/************************************
+ * In order to store the path and allow us to return, we have assigned a value from 1-6 for each of the instructions the list path
+1 - FullSpeedAhead            -->the direction will be reversed for the return journey)
+2 - TurnRight90 (Red, part of orange)      --> TurnLeft90 is called in the return journey
+3 - TurnLeft90 (Green, part of pink)     --> TurnRight90 is called in the return journey
+4 - Turn180 (Blue)         --> Turn180 called in return journey
+5 - TurnRight135 (Orange)       --> TurnLeft135 called in return journey
+6 - TurnLeft135 (Light Blue)       --> TurnLeft135 called in return journey
+
+*We have optimised the return path by removing the reverse square (which is not necessary in the return journey) 
+**************************************/
+
+void savepath(char path, char instruction)
+{
+    path[pathposition] = instruction;
+    pathposition++;
+}
+
+int savetime(char timearray, int timercount)
+{   
+    T0CON0bits.T0EN=0; //turn timer off preventing counter from incrementing further 
+    timearray[timeposition]=timercount; //store time robot was going straight in the time array
+    timeposition++;
+    timercount = 0; //reset the timer count
+    return timercount;
+}
+
+void returnhome(char path, motorL, motorR)
+{
+    while (pathposition >= 0) {returnstep(path[pathposition--], motorL, motorR)}
+}
+
+void returnstep(char instruction, motorL, motorR)
+{
+    if (instruction == 1) {}
+    if (instruction == 2) {turnLeft90(&motorL,&motorR);}
+    if (instruction == 3) {turnRight90(&motorL,&motorR);}
+    if (instruction == 4) {turn180(&motorL,&motorR);}
+    if (instruction == 5) {turnLeft135(&motorL,&motorR);}
+    if (instruction == 6) {turnRight135(&motorL,&motorR);}           
 }

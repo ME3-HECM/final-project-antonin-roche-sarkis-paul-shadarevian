@@ -10,13 +10,21 @@
 #include "dc_motor.h"
 #include "color.h"
 #include "i2c.h"
+#include "timer0.h"
 
 #define _XTAL_FREQ 64000000 //note intrinsic _delay function is 62.5ns at 64,000,000Hz  
+
+void __interrupt(high_priority) HighISR();
+
 
 void main(void){    
     
     signed int degree = -90;
 
+    
+    Timer0_init(); 
+    int timercount;
+    Interrupts_init();
     initDCmotorsPWM(199);
     color_click_init();
     unsigned int PWMcycle;
@@ -51,44 +59,90 @@ void main(void){
     motorR.posDutyHighByte=(unsigned char *)(&CCPR3H);  //store address of CCP3 duty high byte
     motorR.negDutyHighByte=(unsigned char *)(&CCPR4H);  //store address of CCP4 duty high byte 
     
+    char path[50];
+    char timearray[50];    
+    
+    //16-bit integer counter value for the number of timer overflows (16-bit integer because the counter value could be high based on the maze)
+    
     while(1){
     
-    LATHbits.LATH1=1; //turns on front white and back red LEDs
-    LATDbits.LATD3=1; //high brightness of front white LEDs
-    LATDbits.LATD4=1; //high brightness of back red LEDs
-        
+    //LATHbits.LATH1=1; //turns on front white and back red LEDs
+    //LATDbits.LATD3=1; //high brightness of front white LEDs
+    //LATDbits.LATD4=1; //high brightness of back red LEDs
     
-    if (){turnRight90(&motorL,&motorR);}  //red
-    else if ( && reverse==1 ) {}  //red while going back
+    fullSpeedAhead(&motorL,&motorR);
+    savepath(path, 1) //store in path so that it can be recalled in the return
     
-    if (){turnLeft90(&motorL,&motorR);}  //green
+    if (1){ //red
+    timercount = savetime(timearray, timercount); //store the value of timer indicating for how long robot went fullSpeedAhead & reset timer value
+    turnRight90(&motorL,&motorR);}  
+    savepath(path, 2);
     
-    if (){turn180(&motorL,&motorR);}  //blue
+    if (1){  //green
+    timercount = savetime(timearray, timercount); 
+    turnLeft90(&motorL,&motorR);}
+    savepath(path, 3);
     
-    if (){ //yellow
-        reversesquare(&motorL,&motorR);
-        turnRight90(&motorL,&motorR);} 
     
-    if (){ //pink   
-        reversesquare(&motorL,&motorR);
-        turnLeft90(&motorL,&motorR);} 
+    if (1){  //blue
+    timercount = savetime(timearray, timercount); 
+    turn180(&motorL,&motorR);}
+    savepath(path, 4);
     
-    if (){turnRight135(&motorL,&motorR);}  //orange
+    if (1){ //yellow ////NOTE: NEED TO THINK ABOUT THIS ONE &Pink - how will we set the timer value to be exact to the time of return?  
+    timercount = savetime(timearray, timercount);
+    reversesquare(&motorL,&motorR);
+    turnRight90(&motorL,&motorR);
+    savepath(path, );  //NEED TO FIX
+    }
+  
+    if (1){ //pink   
+    timercount = savetime(timearray, timercount);
+    reversesquare(&motorL,&motorR);
+    turnLeft90(&motorL,&motorR);    
+    } 
     
-    if (){turnLeft135(&motorL,&motorR);}  //light blue
+    if (1){  //orange
+    timercount = savetime(timearray, timercount);
+    turnRight135(&motorL,&motorR);
+    savepath(path, 5); 
+    }
     
-    if (){ //white
+    if (1){  //light blue
+    timercount = savetime(timearray, timercount);
+    turnLeft135(&motorL,&motorR);
+    savepath(path, 6); 
+    }
     
-    }  
-    
-    if (){ //black maze wall
+
+    if (1){ //black maze wall
     
     }      
     
-    //fullSpeedAhead(&motorL,&motorR);
+    if (1) { //White Light - return home
+        timercount = savetime(timearray, timercount);
+        returnhome(path, motorL, motorR);
+    
+    }
+    
+
     //__delay_ms(1000);
     }
     
-    
-    
 }
+
+
+
+
+/************************************
+ * High priority interrupt service routine for Timer0
+************************************/
+void __interrupt(high_priority) HighISR()
+{
+    if (PIR0bits.TMR0IF)
+    {
+        timercount++; //increment counter at every overflow
+    }
+    PIR0bits.TMR0IF=0; 
+}
+
