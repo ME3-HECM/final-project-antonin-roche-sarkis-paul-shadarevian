@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.hex">
+    <memory name="program">
+      <units>bytes</units>
+      <length>131072</length>
+      <used>458</used>
+      <free>130614</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>3562</length>
+      <used>23</used>
+      <free>3539</free>
+    </memory>
+  </executable>
+</project>
