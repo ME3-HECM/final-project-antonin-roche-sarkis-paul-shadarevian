@@ -1,3 +1,6 @@
+#ifndef _timers_H
+#define _timers_H
+
 #include <xc.h>
 
 #define _XTAL_FREQ 64000000
@@ -9,6 +12,7 @@ void Interrupts_init(void);
 void __interrupt(high_priority) HighISR();
 
 void Timer0_init(void);
+void starttimer0(void);
 void write16bitTMR0val(unsigned int);
 unsigned int get16bitTMR0val(void);
 

@@ -14,8 +14,9 @@
 
 #define _XTAL_FREQ 64000000 //note intrinsic _delay function is 62.5ns at 64,000,000Hz  
 
-void __interrupt(high_priority) HighISR();
 
+int timercount=0; //each timer count represents 4ms based on the prescaler of timer0
+void __interrupt(high_priority) HighISR();
 
 void main(void){    
     
@@ -23,12 +24,12 @@ void main(void){
 
     
     Timer0_init(); 
-    int timercount;
     Interrupts_init();
     initDCmotorsPWM(199);
     color_click_init();
     unsigned int PWMcycle;
     PWMcycle = 199;
+    
     
     //Pin RA4 on microcontroller is BAT-VSEBSE
     
@@ -59,8 +60,8 @@ void main(void){
     motorR.posDutyHighByte=(unsigned char *)(&CCPR3H);  //store address of CCP3 duty high byte
     motorR.negDutyHighByte=(unsigned char *)(&CCPR4H);  //store address of CCP4 duty high byte 
     
-    char path[50];
-    char timearray[50];    
+    char path[100];
+    char timearray[100];    
     
     //16-bit integer counter value for the number of timer overflows (16-bit integer because the counter value could be high based on the maze)
     
@@ -69,9 +70,10 @@ void main(void){
     //LATHbits.LATH1=1; //turns on front white and back red LEDs
     //LATDbits.LATD3=1; //high brightness of front white LEDs
     //LATDbits.LATD4=1; //high brightness of back red LEDs
-    
-    fullSpeedAhead(&motorL,&motorR);
-    savepath(path, 1) //store in path so that it can be recalled in the return
+        
+    starttimer0(); //initialising the timer  
+    fullSpeedAhead(&motorL,&motorR, 1);
+    savepath(path, 1); //store in path so that it can be recalled in the return
     
     if (1){ //red
     timercount = savetime(timearray, timercount); //store the value of timer indicating for how long robot went fullSpeedAhead & reset timer value
@@ -93,13 +95,14 @@ void main(void){
     timercount = savetime(timearray, timercount);
     reversesquare(&motorL,&motorR);
     turnRight90(&motorL,&motorR);
-    savepath(path, );  //NEED TO FIX
+    savepath(path, 2);  //NEED TO FIX
     }
   
     if (1){ //pink   
     timercount = savetime(timearray, timercount);
     reversesquare(&motorL,&motorR);
     turnLeft90(&motorL,&motorR);    
+    savepath(path, 3);  //NEED TO FIX
     } 
     
     if (1){  //orange

@@ -1,5 +1,6 @@
 #include <xc.h>
 #include "dc_motor.h"
+#include "timer0.h"
 
 // function initialise T2 and CCP for DC motor control
 void initDCmotorsPWM(unsigned int PWMperiod){
@@ -238,7 +239,7 @@ void fullSpeedAhead(DC_motor *mL, DC_motor *mR, char dir) // dir = 1 is for forw
     mL->direction = dir;
     mR->direction = dir;
     
-    if (dir == 1) {T0CON0bits.T0EN=1;} //if robot is not on return, start timer0 to count the time the robot is going straight
+    if (dir == 1) {starttimer0;} //if robot is not on return, start timer0 to count the time the robot is going straight
     
     int setpower = 50;
     
@@ -285,13 +286,13 @@ void reversesquare(DC_motor *mL, DC_motor *mR)
 *We have optimised the return path by removing the reverse square (which is not necessary in the return journey) 
 **************************************/
 
-void savepath(char path, char instruction)
+void savepath(char path[mazesteps], char instruction) //a pointer cannot be used within the function as this would cause the pointer position to be reset to 0 every time the function is called (not wanted)
 {
     path[pathposition] = instruction;
     pathposition++;
 }
 
-int savetime(char timearray, int timercount)
+int savetime(char timearray[mazesteps], int timercount)
 {   
     T0CON0bits.T0EN=0; //turn timer off preventing counter from incrementing further 
     timearray[timeposition]=timercount; //store time robot was going straight in the time array
@@ -300,12 +301,12 @@ int savetime(char timearray, int timercount)
     return timercount;
 }
 
-void returnhome(char path, motorL, motorR)
+void returnhome(char path[mazesteps], DC_motor motorL, DC_motor motorR)
 {
-    while (pathposition >= 0) {returnstep(path[pathposition--], motorL, motorR)}
+    while (pathposition >= 0) {returnstep(path[pathposition--], motorL, motorR);}
 }
 
-void returnstep(char instruction, motorL, motorR)
+void returnstep(char instruction, DC_motor motorL, DC_motor motorR)
 {
     if (instruction == 1) {}
     if (instruction == 2) {turnLeft90(&motorL,&motorR);}

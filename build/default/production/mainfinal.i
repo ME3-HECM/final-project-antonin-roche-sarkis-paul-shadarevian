@@ -24241,13 +24241,7 @@ unsigned char __t3rd16on(void);
 # 9 "mainfinal.c" 2
 
 # 1 "./dc_motor.h" 1
-
-
-
-
-
-
-
+# 11 "./dc_motor.h"
 typedef struct DC_motor {
     char power;
     char direction;
@@ -24265,7 +24259,16 @@ void turnLeft90(DC_motor *mL, DC_motor *mR);
 void turnRight90(DC_motor *mL, DC_motor *mR);
 void turnLeft135(DC_motor *mL, DC_motor *mR);
 void turnRight135(DC_motor *mL, DC_motor *mR);
-void fullSpeedAhead(DC_motor *mL, DC_motor *mR);
+void turn180(DC_motor *mL, DC_motor *mR);
+void fullSpeedAhead(DC_motor *mL, DC_motor *mR, char dir);
+void reversesquare(DC_motor *mL, DC_motor *mR);
+void savepath(char path[100], char instruction);
+int savetime(char timearray[100], int timercount);
+void returnhome(char path[100], DC_motor motorL, DC_motor motorR);
+void returnstep(char instruction, DC_motor motorL, DC_motor motorR);
+
+signed char timeposition=0;
+signed char pathposition=0;
 # 10 "mainfinal.c" 2
 
 # 1 "./color.h" 1
@@ -24321,17 +24324,45 @@ void I2C_2_Master_Write(unsigned char data_byte);
 unsigned char I2C_2_Master_Read(unsigned char ack);
 # 12 "mainfinal.c" 2
 
+# 1 "./timer0.h" 1
 
 
+
+
+
+
+
+
+unsigned int on_period,off_period;
+
+void Interrupts_init(void);
+void __attribute__((picinterrupt(("high_priority")))) HighISR();
+
+void Timer0_init(void);
+void starttimer0(void);
+void write16bitTMR0val(unsigned int);
+unsigned int get16bitTMR0val(void);
+# 13 "mainfinal.c" 2
+
+
+
+
+
+int timercount=0;
+void __attribute__((picinterrupt(("high_priority")))) HighISR();
 
 void main(void){
 
     signed int degree = -90;
 
+
+    Timer0_init();
+    Interrupts_init();
     initDCmotorsPWM(199);
     color_click_init();
     unsigned int PWMcycle;
     PWMcycle = 199;
+
 
 
 
@@ -24350,7 +24381,6 @@ void main(void){
 
     struct DC_motor motorL, motorR;
 
-
     motorR.power = 0;
     motorL.direction = 1;
     motorL.posDutyHighByte=(unsigned char *)(&CCPR1H);
@@ -24363,16 +24393,91 @@ void main(void){
     motorR.posDutyHighByte=(unsigned char *)(&CCPR3H);
     motorR.negDutyHighByte=(unsigned char *)(&CCPR4H);
 
+    char path[100];
+    char timearray[100];
+
+
+
     while(1){
-    LATHbits.LATH1=1;
-    LATDbits.LATD3=1;
-    LATDbits.LATD4=1;
 
 
 
+
+
+    starttimer0();
+    fullSpeedAhead(&motorL,&motorR, 1);
+    savepath(path, 1);
+
+    if (1){
+    timercount = savetime(timearray, timercount);
+    turnRight90(&motorL,&motorR);}
+    savepath(path, 2);
+
+    if (1){
+    timercount = savetime(timearray, timercount);
+    turnLeft90(&motorL,&motorR);}
+    savepath(path, 3);
+
+
+    if (1){
+    timercount = savetime(timearray, timercount);
+    turn180(&motorL,&motorR);}
+    savepath(path, 4);
+
+    if (1){
+    timercount = savetime(timearray, timercount);
+    reversesquare(&motorL,&motorR);
+    turnRight90(&motorL,&motorR);
+    savepath(path, 2);
+    }
+
+    if (1){
+    timercount = savetime(timearray, timercount);
+    reversesquare(&motorL,&motorR);
+    turnLeft90(&motorL,&motorR);
+    savepath(path, 3);
+    }
+
+    if (1){
+    timercount = savetime(timearray, timercount);
+    turnRight135(&motorL,&motorR);
+    savepath(path, 5);
+    }
+
+    if (1){
+    timercount = savetime(timearray, timercount);
+    turnLeft135(&motorL,&motorR);
+    savepath(path, 6);
+    }
+
+
+    if (1){
+
+    }
+
+    if (1) {
+        timercount = savetime(timearray, timercount);
+        returnhome(path, motorL, motorR);
 
     }
 
 
 
+    }
+
+}
+
+
+
+
+
+
+
+void __attribute__((picinterrupt(("high_priority")))) HighISR()
+{
+    if (PIR0bits.TMR0IF)
+    {
+        timercount++;
+    }
+    PIR0bits.TMR0IF=0;
 }

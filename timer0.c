@@ -13,30 +13,37 @@ void Interrupts_init(void)
     INTCONbits.GIE=1;   //global interrupt enabled
 }
 
+
 /************************************
  * Function to set up timer 0
 ************************************/
 void Timer0_init(void)
 {
 /************************************
-Aim: To calculate a suitable prescaler such that the timer overflows in approx. 50ms
+Aim: To calculate a suitable prescaler such that the timer overflows in approx. as small of a value as possible
 
- * Closest prescaler for 100ms is 1:16, taking 65.535ms for overflow
- * Time interval between counts is 0.001ms
- * Initial value must therefore be 15535 such that time passed until overflow is 50ms
- 
+ * Closest prescaler for 100ms is 1:1, taking 4.0959375ms for overflow
+ * Time interval between counts is 6.25e-8 sec
+ * Initial value must therefore be 1535 such that time passed until overflow is 4ms
+ * 
+ ==> The reason why a 16 bit timer is used than an 8 bit one, despite having a larger minimum overflow time, an accurate initial value can be found 
+ * such that the timer overflow at an integer number of ms (which will help keep an accurate integer count of time) 
 ************************************/
     
     T0CON1bits.T0CS=0b010; // Fosc/4
     T0CON1bits.T0ASYNC=1; //
-    T0CON1bits.T0CKPS=0b0100; // 1:16 prescaler
-    T0CON0bits.T016BIT=1;	//16bit mode to allow a better accuracy of 100ms per (accuracy of 10?s)
-	
-    //initialising the timer 
-    TMR0H=15535>>8;      //initial value will allow for overflow to occur at exactly 131ms      
-    TMR0L=15535; 
-    T0CON0bits.T0EN=0;	//keep timer off for now, timer will only be started every time the robot goes fullspeedahead to save battery
+    T0CON1bits.T0CKPS=0b0000; // 1:1 prescaler
+    T0CON0bits.T016BIT=1;	//16bit mode to allow a better accuracy (see reason stated in comments above)
 }
+
+
+void starttimer0(void){
+    TMR0H=1535>>8;      //initial value will allow for overflow to occur at exactly 131ms      
+    TMR0L=1535; 
+    T0CON0bits.T0EN=1; //turn timer on (only on every time the robot goes fullspeedahead to save battery)
+
+}
+
 
 /************************************
  * Function to write a full 16bit timer value
