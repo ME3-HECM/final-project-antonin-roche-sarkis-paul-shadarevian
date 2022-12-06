@@ -95,10 +95,8 @@ void setMotorPWM(DC_motor *m)
 //function to stop the robot gradually 
 void stop(DC_motor *mL, DC_motor *mR)
 {
-    mL->brakemode=1; //slow decay
-    mR->brakemode=1; //slow decay
     
-    while (mL->power != 0 && mR->power != 0) {
+    while (mL->power > 0 && mR->power > 0) {
     mL->power--;
     mR->power--;
     __delay_ms(1);
@@ -112,49 +110,46 @@ void stop(DC_motor *mL, DC_motor *mR)
 void turnLeft90(DC_motor *mL, DC_motor *mR)
 {   stop(mL, mR);
     
-    mL->brakemode=1; //slow decay
-    mR->brakemode=1; //fast decay (cast)   
     mL->direction = 0;
     mR->direction = 1;
     
-    int setpower = 50;
     mL->power = 20;
     mR->power = 20;
     
     while (mL->power != setpower || mR->power != setpower ) {
-        __delay_ms(100);
+        __delay_ms(5);
         mL->power++;
         mR->power++;    
         setMotorPWM(mL);    
         setMotorPWM(mR);  
     }
-    setMotorPWM(mL);    
-    setMotorPWM(mR);  
+    
+    __delay_ms(50);
+    
+    stop(mL, mR);
 }
 
 //function to make the robot turn right 
 void turnRight90(DC_motor *mL, DC_motor *mR)
 {   stop(mL, mR);
     
-    mL->brakemode=1; //slow decay
-    mR->brakemode=1; //fast decay (cast)    
     mL->direction = 1;
     mR->direction = 0;
-    
-    int setpower = 50;
     
     mL->power = 20;
     mR->power = 20;
     
-    while (mL->power != setpower || mR->power != setpower ) {
-        __delay_ms(100);
+    while (mL->power < setpower && mR->power < setpower ) {
+        __delay_ms(5);
         mL->power++;
         mR->power++;    
         setMotorPWM(mL);    
         setMotorPWM(mR);  
-    
     }    
     
+    __delay_ms(50);
+    
+    stop(mL, mR);
 }
 
 //function to make the robot turn left 
@@ -162,27 +157,23 @@ void turnLeft135(DC_motor *mL, DC_motor *mR)
 {
     stop(mL, mR);
     
-    mL->brakemode=1; //slow decay
-    mR->brakemode=1; //fast decay (cast)
     
     mL->direction = 0;
     mR->direction = 1;
-    
-    int setpower = 50;
     
     mL->power = 20;
     mR->power = 20;
     
     while (mL->power != setpower || mR->power != setpower ) {
-        __delay_ms(100);
+        __delay_ms(10);
         mL->power++;
         mR->power++;    
         setMotorPWM(mL);    
         setMotorPWM(mR);  
     }
     
-    setMotorPWM(mL);    
-    setMotorPWM(mR);  
+    __delay_ms(500);
+    stop(mL, mR);
 
 }
 
@@ -191,43 +182,42 @@ void turnRight135(DC_motor *mL, DC_motor *mR)
 { 
     stop(mL, mR);
     
-    mL->brakemode=1; //slow decay
-    mR->brakemode=1; //fast decay (cast)  
     mL->direction = 1;
     mR->direction = 0;
-    
-    int setpower = 50;
+   
     mL->power = 20;
     mR->power = 20;
     
     while (mL->power != setpower || mR->power != setpower ) {
-        __delay_ms(100);
+        __delay_ms(10);
         mL->power++;
         mR->power++;    
         setMotorPWM(mL);    
         setMotorPWM(mR);  
-    }    
+    }
+
+    __delay_ms(500);
+    stop(mL, mR);
 }
 
 void turn180(DC_motor *mL, DC_motor *mR)
 { 
-    stop(mL, mR);
-    mL->brakemode=1; //slow decay
-    mR->brakemode=1; //fast decay (cast)  
+    stop(mL, mR); 
     mL->direction = 1;
     mR->direction = 0;
     
-    int setpower = 50;
     mL->power = 20;
     mR->power = 20;
     
     while (mL->power != setpower || mR->power != setpower ) {
-        __delay_ms(100);
+        __delay_ms(10);
         mL->power++;
         mR->power++;    
         setMotorPWM(mL);    
         setMotorPWM(mR);  
-    }    
+    }   
+    __delay_ms(600);
+    stop(mL, mR);
 }
 
 
@@ -239,28 +229,25 @@ void fullSpeedAhead(DC_motor *mL, DC_motor *mR, char dir) // dir = 1 is for forw
     mL->direction = dir;
     mR->direction = dir;
     
-    if (dir == 1) {starttimer0;} //if robot is not on return, start timer0 to count the time the robot is going straight
-    
-    int setpower = 50;
-    
-    while (mL->power != setpower || mR->power != setpower ) {
+    //stop(mL, mR); 
+    //mL->power = mR->power;
+    while (mL->power <= setpower && mR->power <= setpower ) {
         __delay_ms(10);
         mL->power++;
         mR->power++;    
         setMotorPWM(mL);    
         setMotorPWM(mR);    
     }
+    
+    if (dir == 1) {starttimer0;} //if robot is not on return, start timer0 to count the time the robot is going straight (after it has reached a targeted setpower above)
+    
 }
 
-//function to make the robot go in reverse
-void reversesquare(DC_motor *mL, DC_motor *mR)
+//function to make the robot go forward or in reverse by approx. a square
+void square(DC_motor *mL, DC_motor *mR, char dir)
 {
-    mL->brakemode=1; //fast decay
-    mR->brakemode=1; //fast decay
-    mL->direction = 0;
-    mR->direction = 0;
-    
-    int setpower = 50;
+    mL->direction = dir;
+    mR->direction = dir;
     
     while (mL->power != setpower || mR->power != setpower ) {
         __delay_ms(10);
@@ -272,6 +259,8 @@ void reversesquare(DC_motor *mL, DC_motor *mR)
     setMotorPWM(mL);    
     setMotorPWM(mR);    
     }
+    
+    stop(mL, mR);
 }
 
 /************************************
@@ -301,14 +290,32 @@ int savetime(char timearray[mazesteps], int timercount)
     return timercount;
 }
 
-void returnhome(char path[mazesteps], DC_motor motorL, DC_motor motorR)
+void returnhome(char path[mazesteps], DC_motor motorL, DC_motor motorR, char timearray[mazesteps])
 {
-    while (pathposition >= 0) {returnstep(path[pathposition--], motorL, motorR);}
+    while (pathposition >= 0) {
+    
+    //case if instruction is fullspeedahead()
+    if (path[pathposition--] == 1) {
+    
+    fullSpeedAhead(&motorL, &motorR, 0);
+        
+    int y;
+    for(y=0; y<timearray[timeposition--]; y++) {__delay_ms(4);} //continue straight the time that had been saved in timearray 
+
+// This is method with timer    
+//    starttimer0; //timer instead of delay is a more efficient option
+//    while(timercount < timearray[timeposition--]); //continue straight until timer reaches the timercount 
+//    T0CON0bits.T0EN=0; //turn timer off
+    }       
+    
+    //case if instruction is anything else
+    else if (path[pathposition] != 1) {
+    returnstep(path[pathposition], motorL, motorR);
+    square(&motorL, &motorR, 1);} //this will allow it to go back, collide with the wall and reallign itself with the wall     
+    }
 }
 
-void returnstep(char instruction, DC_motor motorL, DC_motor motorR)
-{
-    if (instruction == 1) {}
+void returnstep(char instruction, DC_motor motorL, DC_motor motorR) {
     if (instruction == 2) {turnLeft90(&motorL,&motorR);}
     if (instruction == 3) {turnRight90(&motorL,&motorR);}
     if (instruction == 4) {turn180(&motorL,&motorR);}

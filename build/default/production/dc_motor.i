@@ -24252,13 +24252,14 @@ void turnLeft135(DC_motor *mL, DC_motor *mR);
 void turnRight135(DC_motor *mL, DC_motor *mR);
 void turn180(DC_motor *mL, DC_motor *mR);
 void fullSpeedAhead(DC_motor *mL, DC_motor *mR, char dir);
-void reversesquare(DC_motor *mL, DC_motor *mR);
+void square(DC_motor *mL, DC_motor *mR, char dir);
 void savepath(char path[100], char instruction);
 int savetime(char timearray[100], int timercount);
-void returnhome(char path[100], DC_motor motorL, DC_motor motorR);
+void returnhome(char path[100], DC_motor motorL, DC_motor motorR, char timearray[100]);
 void returnstep(char instruction, DC_motor motorL, DC_motor motorR);
 
 signed char timeposition=0;
+
 signed char pathposition=0;
 # 2 "dc_motor.c" 2
 
@@ -24278,8 +24279,6 @@ void __attribute__((picinterrupt(("high_priority")))) HighISR();
 
 void Timer0_init(void);
 void starttimer0(void);
-void write16bitTMR0val(unsigned int);
-unsigned int get16bitTMR0val(void);
 # 3 "dc_motor.c" 2
 
 
@@ -24369,10 +24368,8 @@ void setMotorPWM(DC_motor *m)
 
 void stop(DC_motor *mL, DC_motor *mR)
 {
-    mL->brakemode=1;
-    mR->brakemode=1;
 
-    while (mL->power != 0 && mR->power != 0) {
+    while (mL->power > 0 && mR->power > 0) {
     mL->power--;
     mR->power--;
     _delay((unsigned long)((1)*(64000000/4000.0)));
@@ -24386,17 +24383,14 @@ void stop(DC_motor *mL, DC_motor *mR)
 void turnLeft90(DC_motor *mL, DC_motor *mR)
 { stop(mL, mR);
 
-    mL->brakemode=1;
-    mR->brakemode=1;
     mL->direction = 0;
     mR->direction = 1;
 
-    int setpower = 50;
     mL->power = 20;
     mR->power = 20;
 
-    while (mL->power != setpower || mR->power != setpower ) {
-        _delay((unsigned long)((100)*(64000000/4000.0)));
+    while (mL->power != 50 || mR->power != 50 ) {
+        _delay((unsigned long)((5)*(64000000/4000.0)));
         mL->power++;
         mR->power++;
         setMotorPWM(mL);
@@ -24404,24 +24398,21 @@ void turnLeft90(DC_motor *mL, DC_motor *mR)
     }
     setMotorPWM(mL);
     setMotorPWM(mR);
+    stop(mL, mR);
 }
 
 
 void turnRight90(DC_motor *mL, DC_motor *mR)
 { stop(mL, mR);
 
-    mL->brakemode=1;
-    mR->brakemode=1;
     mL->direction = 1;
     mR->direction = 0;
-
-    int setpower = 50;
 
     mL->power = 20;
     mR->power = 20;
 
-    while (mL->power != setpower || mR->power != setpower ) {
-        _delay((unsigned long)((100)*(64000000/4000.0)));
+    while (mL->power < 50 && mR->power < 50 ) {
+        _delay((unsigned long)((5)*(64000000/4000.0)));
         mL->power++;
         mR->power++;
         setMotorPWM(mL);
@@ -24429,6 +24420,7 @@ void turnRight90(DC_motor *mL, DC_motor *mR)
 
     }
 
+    stop(mL, mR);
 }
 
 
@@ -24436,19 +24428,15 @@ void turnLeft135(DC_motor *mL, DC_motor *mR)
 {
     stop(mL, mR);
 
-    mL->brakemode=1;
-    mR->brakemode=1;
 
     mL->direction = 0;
     mR->direction = 1;
 
-    int setpower = 50;
-
     mL->power = 20;
     mR->power = 20;
 
-    while (mL->power != setpower || mR->power != setpower ) {
-        _delay((unsigned long)((100)*(64000000/4000.0)));
+    while (mL->power != 50 || mR->power != 50 ) {
+        _delay((unsigned long)((10)*(64000000/4000.0)));
         mL->power++;
         mR->power++;
         setMotorPWM(mL);
@@ -24457,6 +24445,8 @@ void turnLeft135(DC_motor *mL, DC_motor *mR)
 
     setMotorPWM(mL);
     setMotorPWM(mR);
+
+    stop(mL, mR);
 
 }
 
@@ -24465,43 +24455,40 @@ void turnRight135(DC_motor *mL, DC_motor *mR)
 {
     stop(mL, mR);
 
-    mL->brakemode=1;
-    mR->brakemode=1;
     mL->direction = 1;
     mR->direction = 0;
 
-    int setpower = 50;
     mL->power = 20;
     mR->power = 20;
 
-    while (mL->power != setpower || mR->power != setpower ) {
-        _delay((unsigned long)((100)*(64000000/4000.0)));
+    while (mL->power != 50 || mR->power != 50 ) {
+        _delay((unsigned long)((10)*(64000000/4000.0)));
         mL->power++;
         mR->power++;
         setMotorPWM(mL);
         setMotorPWM(mR);
     }
+    stop(mL, mR);
 }
 
 void turn180(DC_motor *mL, DC_motor *mR)
 {
     stop(mL, mR);
-    mL->brakemode=1;
-    mR->brakemode=1;
     mL->direction = 1;
     mR->direction = 0;
 
-    int setpower = 50;
     mL->power = 20;
     mR->power = 20;
 
-    while (mL->power != setpower || mR->power != setpower ) {
-        _delay((unsigned long)((100)*(64000000/4000.0)));
+    while (mL->power != 50 || mR->power != 50 ) {
+        _delay((unsigned long)((10)*(64000000/4000.0)));
         mL->power++;
         mR->power++;
         setMotorPWM(mL);
         setMotorPWM(mR);
     }
+    _delay((unsigned long)((600)*(64000000/4000.0)));
+    stop(mL, mR);
 }
 
 
@@ -24513,30 +24500,27 @@ void fullSpeedAhead(DC_motor *mL, DC_motor *mR, char dir)
     mL->direction = dir;
     mR->direction = dir;
 
-    if (dir == 1) {starttimer0;}
 
-    int setpower = 50;
 
-    while (mL->power != setpower || mR->power != setpower ) {
+    while (mL->power <= 50 && mR->power <= 50 ) {
         _delay((unsigned long)((10)*(64000000/4000.0)));
         mL->power++;
         mR->power++;
         setMotorPWM(mL);
         setMotorPWM(mR);
     }
+
+    if (dir == 1) {starttimer0;}
+
 }
 
 
-void reversesquare(DC_motor *mL, DC_motor *mR)
+void square(DC_motor *mL, DC_motor *mR, char dir)
 {
-    mL->brakemode=1;
-    mR->brakemode=1;
-    mL->direction = 0;
-    mR->direction = 0;
+    mL->direction = dir;
+    mR->direction = dir;
 
-    int setpower = 50;
-
-    while (mL->power != setpower || mR->power != setpower ) {
+    while (mL->power != 50 || mR->power != 50 ) {
         _delay((unsigned long)((10)*(64000000/4000.0)));
         mL->power++;
         mR->power++;
@@ -24546,8 +24530,10 @@ void reversesquare(DC_motor *mL, DC_motor *mR)
     setMotorPWM(mL);
     setMotorPWM(mR);
     }
+
+    stop(mL, mR);
 }
-# 289 "dc_motor.c"
+# 276 "dc_motor.c"
 void savepath(char path[100], char instruction)
 {
     path[pathposition] = instruction;
@@ -24563,14 +24549,32 @@ int savetime(char timearray[100], int timercount)
     return timercount;
 }
 
-void returnhome(char path[100], DC_motor motorL, DC_motor motorR)
+void returnhome(char path[100], DC_motor motorL, DC_motor motorR, char timearray[100])
 {
-    while (pathposition >= 0) {returnstep(path[pathposition--], motorL, motorR);}
+    while (pathposition >= 0) {
+
+
+    if (path[pathposition--] == 1) {
+
+    fullSpeedAhead(&motorL, &motorR, 0);
+
+    int y;
+    for(y=0; y<timearray[timeposition--]; y++) {_delay((unsigned long)((4)*(64000000/4000.0)));}
+
+
+
+
+
+    }
+
+
+    else if (path[pathposition] != 1) {
+    returnstep(path[pathposition], motorL, motorR);
+    square(&motorL, &motorR, 1);}
+    }
 }
 
-void returnstep(char instruction, DC_motor motorL, DC_motor motorR)
-{
-    if (instruction == 1) {}
+void returnstep(char instruction, DC_motor motorL, DC_motor motorR) {
     if (instruction == 2) {turnLeft90(&motorL,&motorR);}
     if (instruction == 3) {turnRight90(&motorL,&motorR);}
     if (instruction == 4) {turn180(&motorL,&motorR);}

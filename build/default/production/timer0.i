@@ -24247,8 +24247,6 @@ void __attribute__((picinterrupt(("high_priority")))) HighISR();
 
 void Timer0_init(void);
 void starttimer0(void);
-void write16bitTMR0val(unsigned int);
-unsigned int get16bitTMR0val(void);
 # 2 "timer0.c" 2
 
 
@@ -24278,6 +24276,10 @@ void Timer0_init(void)
 }
 
 
+
+
+
+
 void starttimer0(void){
     TMR0H=1535>>8;
     TMR0L=1535;
@@ -24286,16 +24288,6 @@ void starttimer0(void){
 }
 
 
-
-
-
-
-
-void write16bitTMR0val(unsigned int tmp)
-{
-    TMR0H=tmp>>8;
-    TMR0L=tmp;
-}
 
 unsigned int get16bitTMR0val(void)
 {

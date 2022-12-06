@@ -5,7 +5,7 @@
             <url>dc_motor.c</url>
             <bookmark id="1">
                 <name/>
-                <line>281</line>
+                <line>270</line>
                 <key/>
             </bookmark>
         </file>
@@ -16,10 +16,7 @@
             <file>file:/C:/Users/sps220/OneDrive%20-%20Imperial%20College%20London/ME3/ECM/github/final-project-antonin-roche-sarkis-paul-shadarevian.X/mainfinal.c</file>
             <file>file:/C:/Users/sps220/OneDrive%20-%20Imperial%20College%20London/ME3/ECM/github/final-project-antonin-roche-sarkis-paul-shadarevian.X/dc_motor.c</file>
             <file>file:/C:/Users/sps220/OneDrive%20-%20Imperial%20College%20London/ME3/ECM/github/final-project-antonin-roche-sarkis-paul-shadarevian.X/color.c</file>
-            <file>file:/C:/Users/sps220/OneDrive%20-%20Imperial%20College%20London/ME3/ECM/github/final-project-antonin-roche-sarkis-paul-shadarevian.X/i2c.c</file>
             <file>file:/C:/Users/sps220/OneDrive%20-%20Imperial%20College%20London/ME3/ECM/github/final-project-antonin-roche-sarkis-paul-shadarevian.X/timer0.h</file>
-            <file>file:/C:/Users/sps220/OneDrive%20-%20Imperial%20College%20London/ME3/ECM/github/final-project-antonin-roche-sarkis-paul-shadarevian.X/i2c.h</file>
-            <file>file:/C:/Users/sps220/OneDrive%20-%20Imperial%20College%20London/ME3/ECM/github/final-project-antonin-roche-sarkis-paul-shadarevian.X/timer0.c</file>
         </group>
     </open-files>
 </project-private>

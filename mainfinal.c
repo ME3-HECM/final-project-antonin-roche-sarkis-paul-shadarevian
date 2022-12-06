@@ -20,15 +20,14 @@ void __interrupt(high_priority) HighISR();
 
 void main(void){    
     
-    signed int degree = -90;
+    int a = 4;
 
     
     Timer0_init(); 
     Interrupts_init();
     initDCmotorsPWM(199);
     color_click_init();
-    unsigned int PWMcycle;
-    PWMcycle = 199;
+    unsigned int PWMcycle = 199;
     
     
     //Pin RA4 on microcontroller is BAT-VSEBSE
@@ -71,71 +70,68 @@ void main(void){
     //LATDbits.LATD3=1; //high brightness of front white LEDs
     //LATDbits.LATD4=1; //high brightness of back red LEDs
         
-    starttimer0(); //initialising the timer  
-    fullSpeedAhead(&motorL,&motorR, 1);
-    savepath(path, 1); //store in path so that it can be recalled in the return
+  
+    fullSpeedAhead(&motorL,&motorR, 1); //timer is started at the very end of this function  
+    //savepath(path, 1); //store in path so that it can be recalled in the return
     
-    if (1){ //red
-    timercount = savetime(timearray, timercount); //store the value of timer indicating for how long robot went fullSpeedAhead & reset timer value
+    __delay_ms(100);
+    
+    if (a == 1){ //clear 
+    timercount = savetime(timearray, timercount); //store the value of timer indicating for how long robot went fullSpeedAhead & reset timer value    
+    square(&motorL,&motorR, 1); //collide to the wall and correct itself
+    square(&motorL,&motorR, 0); //go back and reread the colour       
+    }       
+        
+    if (a == 2){ //red
     turnRight90(&motorL,&motorR);}  
     savepath(path, 2);
     
-    if (1){  //green
-    timercount = savetime(timearray, timercount); 
-    turnLeft90(&motorL,&motorR);}
-    savepath(path, 3);
+    if (a == 3){  //green
+    turnLeft90(&motorL,&motorR);
+    savepath(path, 3);}
     
     
-    if (1){  //blue
-    timercount = savetime(timearray, timercount); 
-    turn180(&motorL,&motorR);}
-    savepath(path, 4);
+    if (a == 4){  //blue
+    turn180(&motorL,&motorR);
+    savepath(path, 4);}
     
-    if (1){ //yellow ////NOTE: NEED TO THINK ABOUT THIS ONE &Pink - how will we set the timer value to be exact to the time of return?  
-    timercount = savetime(timearray, timercount);
-    reversesquare(&motorL,&motorR);
+    if (a == 5){ //yellow ////NOTE: NEED TO THINK ABOUT THIS ONE &Pink - how will we set the timer value to be exact to the time of return?  
+    square(&motorL,&motorR, 0); // reverse 1 square
     turnRight90(&motorL,&motorR);
     savepath(path, 2);  //NEED TO FIX
     }
   
-    if (1){ //pink   
-    timercount = savetime(timearray, timercount);
-    reversesquare(&motorL,&motorR);
+    if (a == 6){ //pink   
+    square(&motorL,&motorR, 0);
     turnLeft90(&motorL,&motorR);    
     savepath(path, 3);  //NEED TO FIX
     } 
     
-    if (1){  //orange
-    timercount = savetime(timearray, timercount);
+    if (a == 7){  //orange
     turnRight135(&motorL,&motorR);
     savepath(path, 5); 
     }
     
-    if (1){  //light blue
-    timercount = savetime(timearray, timercount);
+    if (a == 8){  //light blue
     turnLeft135(&motorL,&motorR);
     savepath(path, 6); 
     }
     
 
-    if (1){ //black maze wall
-    
+    if (a == 9){ //black maze wall 
     }      
     
-    if (1) { //White Light - return home
+    if (a == 10) { //White Light - return home
         timercount = savetime(timearray, timercount);
-        returnhome(path, motorL, motorR);
-    
+        //returnhome(path, motorL, motorR, timearray);
     }
     
 
-    //__delay_ms(1000);
-    }
+    //if (a>0) {a--;}
     
 }
-
-
-
+    
+}
 
 /************************************
  * High priority interrupt service routine for Timer0
@@ -145,6 +141,7 @@ void __interrupt(high_priority) HighISR()
     if (PIR0bits.TMR0IF)
     {
         timercount++; //increment counter at every overflow
+
     }
     PIR0bits.TMR0IF=0; 
 }

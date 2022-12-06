@@ -2099,70 +2099,47 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;timer0.c: 37: }
 [e :UE 2016 ]
 }
-"40
-[; ;timer0.c: 40: void starttimer0(void){
+"44
+[; ;timer0.c: 44: void starttimer0(void){
 [v _starttimer0 `(v ~T0 @X0 1 ef ]
 {
 [e :U _starttimer0 ]
 [f ]
-"41
-[; ;timer0.c: 41:     TMR0H=1535>>8;
-[e = _TMR0H -> >> -> 1535 `i -> 8 `i `uc ]
-"42
-[; ;timer0.c: 42:     TMR0L=1535;
-[e = _TMR0L -> -> 1535 `i `uc ]
-"43
-[; ;timer0.c: 43:     T0CON0bits.T0EN=1;
-[e = . . _T0CON0bits 0 4 -> -> 1 `i `uc ]
 "45
-[; ;timer0.c: 45: }
+[; ;timer0.c: 45:     TMR0H=1535>>8;
+[e = _TMR0H -> >> -> 1535 `i -> 8 `i `uc ]
+"46
+[; ;timer0.c: 46:     TMR0L=1535;
+[e = _TMR0L -> -> 1535 `i `uc ]
+"47
+[; ;timer0.c: 47:     T0CON0bits.T0EN=1;
+[e = . . _T0CON0bits 0 4 -> -> 1 `i `uc ]
+"49
+[; ;timer0.c: 49: }
 [e :UE 2017 ]
 }
 "53
-[; ;timer0.c: 53: void write16bitTMR0val(unsigned int tmp)
-[v _write16bitTMR0val `(v ~T0 @X0 1 ef1`ui ]
-"54
-[; ;timer0.c: 54: {
-{
-[e :U _write16bitTMR0val ]
-"53
-[; ;timer0.c: 53: void write16bitTMR0val(unsigned int tmp)
-[v _tmp `ui ~T0 @X0 1 r1 ]
-"54
-[; ;timer0.c: 54: {
-[f ]
-"55
-[; ;timer0.c: 55:     TMR0H=tmp>>8;
-[e = _TMR0H -> >> _tmp -> 8 `i `uc ]
-"56
-[; ;timer0.c: 56:     TMR0L=tmp;
-[e = _TMR0L -> _tmp `uc ]
-"57
-[; ;timer0.c: 57: }
-[e :UE 2018 ]
-}
-"59
-[; ;timer0.c: 59: unsigned int get16bitTMR0val(void)
+[; ;timer0.c: 53: unsigned int get16bitTMR0val(void)
 [v _get16bitTMR0val `(ui ~T0 @X0 1 ef ]
-"60
-[; ;timer0.c: 60: {
+"54
+[; ;timer0.c: 54: {
 {
 [e :U _get16bitTMR0val ]
 [f ]
-"62
-[; ;timer0.c: 62:    unsigned int a;
+"56
+[; ;timer0.c: 56:    unsigned int a;
 [v _a `ui ~T0 @X0 1 a ]
-"65
-[; ;timer0.c: 65:     a = TMR0L;
+"59
+[; ;timer0.c: 59:     a = TMR0L;
 [e = _a -> _TMR0L `ui ]
-"66
-[; ;timer0.c: 66:     a = a|(TMR0H<<8);
+"60
+[; ;timer0.c: 60:     a = a|(TMR0H<<8);
 [e = _a | _a -> << -> _TMR0H `i -> 8 `i `ui ]
-"68
-[; ;timer0.c: 68:     return a;
+"62
+[; ;timer0.c: 62:     return a;
 [e ) _a ]
-[e $UE 2019  ]
-"69
-[; ;timer0.c: 69: }
-[e :UE 2019 ]
+[e $UE 2018  ]
+"63
+[; ;timer0.c: 63: }
+[e :UE 2018 ]
 }

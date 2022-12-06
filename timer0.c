@@ -24,7 +24,7 @@ Aim: To calculate a suitable prescaler such that the timer overflows in approx. 
 
  * Closest prescaler for 100ms is 1:1, taking 4.0959375ms for overflow
  * Time interval between counts is 6.25e-8 sec
- * Initial value must therefore be 1535 such that time passed until overflow is 4ms
+ * Initial value must therefore be 1535 such that time passed until overflow is exactly 4ms
  * 
  ==> The reason why a 16 bit timer is used than an 8 bit one, despite having a larger minimum overflow time, an accurate initial value can be found 
  * such that the timer overflow at an integer number of ms (which will help keep an accurate integer count of time) 
@@ -36,25 +36,19 @@ Aim: To calculate a suitable prescaler such that the timer overflows in approx. 
     T0CON0bits.T016BIT=1;	//16bit mode to allow a better accuracy (see reason stated in comments above)
 }
 
-
-void starttimer0(void){
-    TMR0H=1535>>8;      //initial value will allow for overflow to occur at exactly 131ms      
-    TMR0L=1535; 
-    T0CON0bits.T0EN=1; //turn timer on (only on every time the robot goes fullspeedahead to save battery)
-
-}
-
-
 /************************************
  * Function to write a full 16bit timer value
  * Note TMR0L and TMR0H must be written in the correct order, or TMR0H will not contain the correct value
 ************************************/
 
-void write16bitTMR0val(unsigned int tmp)
-{
-    TMR0H=tmp>>8; //MSB written
-    TMR0L=tmp; //LSB written and timer updated
+void starttimer0(void){
+    TMR0H=1535>>8;      //initial value will allow for overflow to occur at exactly 131ms      
+    TMR0L=1535; 
+    T0CON0bits.T0EN=1; //turn timer on (function called out only on every time the robot goes fullspeedahead to save battery)
+
 }
+
+
 
 unsigned int get16bitTMR0val(void)
 {

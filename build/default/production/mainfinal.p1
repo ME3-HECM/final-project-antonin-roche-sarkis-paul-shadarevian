@@ -96,39 +96,37 @@ Version 4.0 HI-TECH Software Intermediate Code
 "21099
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 21099: extern volatile unsigned char CCPR4H __attribute__((address(0xF21)));
 [v _CCPR4H `Vuc ~T0 @X0 0 e@3873 ]
-"15 ./timer0.h
-[; ;./timer0.h: 15: void starttimer0(void);
-[v _starttimer0 `(v ~T0 @X0 0 ef ]
 "29 ./dc_motor.h
 [; ;./dc_motor.h: 29: void fullSpeedAhead(DC_motor *mL, DC_motor *mR, char dir);
 [v _fullSpeedAhead `(v ~T0 @X0 0 ef3`*S2015`*S2015`uc ]
-"31
-[; ;./dc_motor.h: 31: void savepath(char path[100], char instruction);
-[v _savepath `(v ~T0 @X0 0 ef2`*uc`uc ]
-"32
+[v F192 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\builtins.h
+[v __delay `JF192 ~T0 @X0 0 e ]
+[p i __delay ]
+"32 ./dc_motor.h
 [; ;./dc_motor.h: 32: int savetime(char timearray[100], int timercount);
 [v _savetime `(i ~T0 @X0 0 ef2`*uc`i ]
+"30
+[; ;./dc_motor.h: 30: void square(DC_motor *mL, DC_motor *mR, char dir);
+[v _square `(v ~T0 @X0 0 ef3`*S2015`*S2015`uc ]
 "25
 [; ;./dc_motor.h: 25: void turnRight90(DC_motor *mL, DC_motor *mR);
 [v _turnRight90 `(v ~T0 @X0 0 ef2`*S2015`*S2015 ]
+"31
+[; ;./dc_motor.h: 31: void savepath(char path[100], char instruction);
+[v _savepath `(v ~T0 @X0 0 ef2`*uc`uc ]
 "24
 [; ;./dc_motor.h: 24: void turnLeft90(DC_motor *mL, DC_motor *mR);
 [v _turnLeft90 `(v ~T0 @X0 0 ef2`*S2015`*S2015 ]
 "28
 [; ;./dc_motor.h: 28: void turn180(DC_motor *mL, DC_motor *mR);
 [v _turn180 `(v ~T0 @X0 0 ef2`*S2015`*S2015 ]
-"30
-[; ;./dc_motor.h: 30: void reversesquare(DC_motor *mL, DC_motor *mR);
-[v _reversesquare `(v ~T0 @X0 0 ef2`*S2015`*S2015 ]
 "27
 [; ;./dc_motor.h: 27: void turnRight135(DC_motor *mL, DC_motor *mR);
 [v _turnRight135 `(v ~T0 @X0 0 ef2`*S2015`*S2015 ]
 "26
 [; ;./dc_motor.h: 26: void turnLeft135(DC_motor *mL, DC_motor *mR);
 [v _turnLeft135 `(v ~T0 @X0 0 ef2`*S2015`*S2015 ]
-"33
-[; ;./dc_motor.h: 33: void returnhome(char path[100], DC_motor motorL, DC_motor motorR);
-[v _returnhome `(v ~T0 @X0 0 ef3`*uc`S2015`S2015 ]
 [t ~ __interrupt . k ]
 [t T3 __interrupt high_priority ]
 "5094 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h
@@ -2130,8 +2128,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _timeposition
 -> -> 0 `i `c
 ]
-"37
-[; ;./dc_motor.h: 37: signed char pathposition=0;
+"38
+[; ;./dc_motor.h: 38: signed char pathposition=0;
 [v _pathposition `c ~T0 @X0 1 e ]
 [i _pathposition
 -> -> 0 `i `c
@@ -2154,9 +2152,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _main ]
 [f ]
 "23
-[; ;mainfinal.c: 23:     signed int degree = -90;
-[v _degree `i ~T0 @X0 1 a ]
-[e = _degree -U -> 90 `i ]
+[; ;mainfinal.c: 23:     int a = 4;
+[v _a `i ~T0 @X0 1 a ]
+[e = _a -> 4 `i ]
 "26
 [; ;mainfinal.c: 26:     Timer0_init();
 [e ( _Timer0_init ..  ]
@@ -2170,191 +2168,182 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mainfinal.c: 29:     color_click_init();
 [e ( _color_click_init ..  ]
 "30
-[; ;mainfinal.c: 30:     unsigned int PWMcycle;
+[; ;mainfinal.c: 30:     unsigned int PWMcycle = 199;
 [v _PWMcycle `ui ~T0 @X0 1 a ]
-"31
-[; ;mainfinal.c: 31:     PWMcycle = 199;
 [e = _PWMcycle -> -> 199 `i `ui ]
-"37
-[; ;mainfinal.c: 37:     LATHbits.LATH1=0;
+"36
+[; ;mainfinal.c: 36:     LATHbits.LATH1=0;
 [e = . . _LATHbits 0 1 -> -> 0 `i `uc ]
-"38
-[; ;mainfinal.c: 38:     TRISHbits.TRISH1 = 0;
+"37
+[; ;mainfinal.c: 37:     TRISHbits.TRISH1 = 0;
 [e = . . _TRISHbits 0 1 -> -> 0 `i `uc ]
-"41
-[; ;mainfinal.c: 41:     LATDbits.LATD3=0;
+"40
+[; ;mainfinal.c: 40:     LATDbits.LATD3=0;
 [e = . . _LATDbits 0 3 -> -> 0 `i `uc ]
-"42
-[; ;mainfinal.c: 42:     TRISDbits.TRISD3 = 0;
+"41
+[; ;mainfinal.c: 41:     TRISDbits.TRISD3 = 0;
 [e = . . _TRISDbits 0 3 -> -> 0 `i `uc ]
-"45
-[; ;mainfinal.c: 45:     LATDbits.LATD4=0;
+"44
+[; ;mainfinal.c: 44:     LATDbits.LATD4=0;
 [e = . . _LATDbits 0 4 -> -> 0 `i `uc ]
-"46
-[; ;mainfinal.c: 46:     TRISDbits.TRISD4 = 0;
+"45
+[; ;mainfinal.c: 45:     TRISDbits.TRISD4 = 0;
 [e = . . _TRISDbits 0 4 -> -> 0 `i `uc ]
-"49
-[; ;mainfinal.c: 49:     struct DC_motor motorL, motorR;
+"48
+[; ;mainfinal.c: 48:     struct DC_motor motorL, motorR;
 [v _motorL `S2015 ~T0 @X0 1 a ]
 [v _motorR `S2015 ~T0 @X0 1 a ]
-"51
-[; ;mainfinal.c: 51:     motorR.power = 0;
+"50
+[; ;mainfinal.c: 50:     motorR.power = 0;
 [e = . _motorR 0 -> -> 0 `i `uc ]
-"52
-[; ;mainfinal.c: 52:     motorL.direction = 1;
+"51
+[; ;mainfinal.c: 51:     motorL.direction = 1;
 [e = . _motorL 1 -> -> 1 `i `uc ]
-"53
-[; ;mainfinal.c: 53:     motorL.posDutyHighByte=(unsigned char *)(&CCPR1H);
+"52
+[; ;mainfinal.c: 52:     motorL.posDutyHighByte=(unsigned char *)(&CCPR1H);
 [e = . _motorL 4 -> &U _CCPR1H `*uc ]
-"54
-[; ;mainfinal.c: 54:     motorL.negDutyHighByte=(unsigned char *)(&CCPR2H);
+"53
+[; ;mainfinal.c: 53:     motorL.negDutyHighByte=(unsigned char *)(&CCPR2H);
 [e = . _motorL 5 -> &U _CCPR2H `*uc ]
-"55
-[; ;mainfinal.c: 55:     motorL.PWMperiod=PWMcycle;
+"54
+[; ;mainfinal.c: 54:     motorL.PWMperiod=PWMcycle;
 [e = . _motorL 3 _PWMcycle ]
-"57
-[; ;mainfinal.c: 57:     motorL.power = 0;
+"56
+[; ;mainfinal.c: 56:     motorL.power = 0;
 [e = . _motorL 0 -> -> 0 `i `uc ]
-"58
-[; ;mainfinal.c: 58:     motorR.direction = 1;
+"57
+[; ;mainfinal.c: 57:     motorR.direction = 1;
 [e = . _motorR 1 -> -> 1 `i `uc ]
-"59
-[; ;mainfinal.c: 59:     motorR.PWMperiod=PWMcycle;
+"58
+[; ;mainfinal.c: 58:     motorR.PWMperiod=PWMcycle;
 [e = . _motorR 3 _PWMcycle ]
-"60
-[; ;mainfinal.c: 60:     motorR.posDutyHighByte=(unsigned char *)(&CCPR3H);
+"59
+[; ;mainfinal.c: 59:     motorR.posDutyHighByte=(unsigned char *)(&CCPR3H);
 [e = . _motorR 4 -> &U _CCPR3H `*uc ]
-"61
-[; ;mainfinal.c: 61:     motorR.negDutyHighByte=(unsigned char *)(&CCPR4H);
+"60
+[; ;mainfinal.c: 60:     motorR.negDutyHighByte=(unsigned char *)(&CCPR4H);
 [e = . _motorR 5 -> &U _CCPR4H `*uc ]
-"63
-[; ;mainfinal.c: 63:     char path[100];
+"62
+[; ;mainfinal.c: 62:     char path[100];
 [v _path `uc ~T0 @X0 -> 100 `i a ]
-"64
-[; ;mainfinal.c: 64:     char timearray[100];
+"63
+[; ;mainfinal.c: 63:     char timearray[100];
 [v _timearray `uc ~T0 @X0 -> 100 `i a ]
-"68
-[; ;mainfinal.c: 68:     while(1){
+"67
+[; ;mainfinal.c: 67:     while(1){
 [e :U 2018 ]
 {
 "74
-[; ;mainfinal.c: 74:     starttimer0();
-[e ( _starttimer0 ..  ]
-"75
-[; ;mainfinal.c: 75:     fullSpeedAhead(&motorL,&motorR, 1);
+[; ;mainfinal.c: 74:     fullSpeedAhead(&motorL,&motorR, 1);
 [e ( _fullSpeedAhead (3 , , &U _motorL &U _motorR -> -> 1 `i `uc ]
-"76
-[; ;mainfinal.c: 76:     savepath(path, 1);
-[e ( _savepath (2 , &U _path -> -> 1 `i `uc ]
-"78
-[; ;mainfinal.c: 78:     if (1){
-[e $ ! != -> 1 `i -> 0 `i 2020  ]
-{
+"77
+[; ;mainfinal.c: 77:     _delay((unsigned long)((100)*(64000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
 "79
-[; ;mainfinal.c: 79:     timercount = savetime(timearray, timercount);
-[e = _timercount ( _savetime (2 , &U _timearray _timercount ]
+[; ;mainfinal.c: 79:     if (a == 1){
+[e $ ! == _a -> 1 `i 2020  ]
+{
 "80
-[; ;mainfinal.c: 80:     turnRight90(&motorL,&motorR);}
-[e ( _turnRight90 (2 , &U _motorL &U _motorR ]
+[; ;mainfinal.c: 80:     timercount = savetime(timearray, timercount);
+[e = _timercount ( _savetime (2 , &U _timearray _timercount ]
+"81
+[; ;mainfinal.c: 81:     square(&motorL,&motorR, 1);
+[e ( _square (3 , , &U _motorL &U _motorR -> -> 1 `i `uc ]
+"82
+[; ;mainfinal.c: 82:     square(&motorL,&motorR, 0);
+[e ( _square (3 , , &U _motorL &U _motorR -> -> 0 `i `uc ]
+"83
+[; ;mainfinal.c: 83:     }
 }
 [e :U 2020 ]
-"81
-[; ;mainfinal.c: 81:     savepath(path, 2);
-[e ( _savepath (2 , &U _path -> -> 2 `i `uc ]
-"83
-[; ;mainfinal.c: 83:     if (1){
-[e $ ! != -> 1 `i -> 0 `i 2021  ]
-{
-"84
-[; ;mainfinal.c: 84:     timercount = savetime(timearray, timercount);
-[e = _timercount ( _savetime (2 , &U _timearray _timercount ]
 "85
-[; ;mainfinal.c: 85:     turnLeft90(&motorL,&motorR);}
-[e ( _turnLeft90 (2 , &U _motorL &U _motorR ]
+[; ;mainfinal.c: 85:     if (a == 2){
+[e $ ! == _a -> 2 `i 2021  ]
+{
+"86
+[; ;mainfinal.c: 86:     turnRight90(&motorL,&motorR);}
+[e ( _turnRight90 (2 , &U _motorL &U _motorR ]
 }
 [e :U 2021 ]
-"86
-[; ;mainfinal.c: 86:     savepath(path, 3);
-[e ( _savepath (2 , &U _path -> -> 3 `i `uc ]
+"87
+[; ;mainfinal.c: 87:     savepath(path, 2);
+[e ( _savepath (2 , &U _path -> -> 2 `i `uc ]
 "89
-[; ;mainfinal.c: 89:     if (1){
-[e $ ! != -> 1 `i -> 0 `i 2022  ]
+[; ;mainfinal.c: 89:     if (a == 3){
+[e $ ! == _a -> 3 `i 2022  ]
 {
 "90
-[; ;mainfinal.c: 90:     timercount = savetime(timearray, timercount);
-[e = _timercount ( _savetime (2 , &U _timearray _timercount ]
+[; ;mainfinal.c: 90:     turnLeft90(&motorL,&motorR);
+[e ( _turnLeft90 (2 , &U _motorL &U _motorR ]
 "91
-[; ;mainfinal.c: 91:     turn180(&motorL,&motorR);}
-[e ( _turn180 (2 , &U _motorL &U _motorR ]
+[; ;mainfinal.c: 91:     savepath(path, 3);}
+[e ( _savepath (2 , &U _path -> -> 3 `i `uc ]
 }
 [e :U 2022 ]
-"92
-[; ;mainfinal.c: 92:     savepath(path, 4);
-[e ( _savepath (2 , &U _path -> -> 4 `i `uc ]
 "94
-[; ;mainfinal.c: 94:     if (1){
-[e $ ! != -> 1 `i -> 0 `i 2023  ]
+[; ;mainfinal.c: 94:     if (a == 4){
+[e $ ! == _a -> 4 `i 2023  ]
 {
 "95
-[; ;mainfinal.c: 95:     timercount = savetime(timearray, timercount);
-[e = _timercount ( _savetime (2 , &U _timearray _timercount ]
+[; ;mainfinal.c: 95:     turn180(&motorL,&motorR);
+[e ( _turn180 (2 , &U _motorL &U _motorR ]
 "96
-[; ;mainfinal.c: 96:     reversesquare(&motorL,&motorR);
-[e ( _reversesquare (2 , &U _motorL &U _motorR ]
-"97
-[; ;mainfinal.c: 97:     turnRight90(&motorL,&motorR);
-[e ( _turnRight90 (2 , &U _motorL &U _motorR ]
-"98
-[; ;mainfinal.c: 98:     savepath(path, 2);
-[e ( _savepath (2 , &U _path -> -> 2 `i `uc ]
-"99
-[; ;mainfinal.c: 99:     }
+[; ;mainfinal.c: 96:     savepath(path, 4);}
+[e ( _savepath (2 , &U _path -> -> 4 `i `uc ]
 }
 [e :U 2023 ]
-"101
-[; ;mainfinal.c: 101:     if (1){
-[e $ ! != -> 1 `i -> 0 `i 2024  ]
+"98
+[; ;mainfinal.c: 98:     if (a == 5){
+[e $ ! == _a -> 5 `i 2024  ]
 {
+"99
+[; ;mainfinal.c: 99:     square(&motorL,&motorR, 0);
+[e ( _square (3 , , &U _motorL &U _motorR -> -> 0 `i `uc ]
+"100
+[; ;mainfinal.c: 100:     turnRight90(&motorL,&motorR);
+[e ( _turnRight90 (2 , &U _motorL &U _motorR ]
+"101
+[; ;mainfinal.c: 101:     savepath(path, 2);
+[e ( _savepath (2 , &U _path -> -> 2 `i `uc ]
 "102
-[; ;mainfinal.c: 102:     timercount = savetime(timearray, timercount);
-[e = _timercount ( _savetime (2 , &U _timearray _timercount ]
-"103
-[; ;mainfinal.c: 103:     reversesquare(&motorL,&motorR);
-[e ( _reversesquare (2 , &U _motorL &U _motorR ]
-"104
-[; ;mainfinal.c: 104:     turnLeft90(&motorL,&motorR);
-[e ( _turnLeft90 (2 , &U _motorL &U _motorR ]
-"105
-[; ;mainfinal.c: 105:     savepath(path, 3);
-[e ( _savepath (2 , &U _path -> -> 3 `i `uc ]
-"106
-[; ;mainfinal.c: 106:     }
+[; ;mainfinal.c: 102:     }
 }
 [e :U 2024 ]
-"108
-[; ;mainfinal.c: 108:     if (1){
-[e $ ! != -> 1 `i -> 0 `i 2025  ]
+"104
+[; ;mainfinal.c: 104:     if (a == 6){
+[e $ ! == _a -> 6 `i 2025  ]
 {
-"109
-[; ;mainfinal.c: 109:     timercount = savetime(timearray, timercount);
-[e = _timercount ( _savetime (2 , &U _timearray _timercount ]
-"110
-[; ;mainfinal.c: 110:     turnRight135(&motorL,&motorR);
-[e ( _turnRight135 (2 , &U _motorL &U _motorR ]
-"111
-[; ;mainfinal.c: 111:     savepath(path, 5);
-[e ( _savepath (2 , &U _path -> -> 5 `i `uc ]
-"112
-[; ;mainfinal.c: 112:     }
+"105
+[; ;mainfinal.c: 105:     square(&motorL,&motorR, 0);
+[e ( _square (3 , , &U _motorL &U _motorR -> -> 0 `i `uc ]
+"106
+[; ;mainfinal.c: 106:     turnLeft90(&motorL,&motorR);
+[e ( _turnLeft90 (2 , &U _motorL &U _motorR ]
+"107
+[; ;mainfinal.c: 107:     savepath(path, 3);
+[e ( _savepath (2 , &U _path -> -> 3 `i `uc ]
+"108
+[; ;mainfinal.c: 108:     }
 }
 [e :U 2025 ]
-"114
-[; ;mainfinal.c: 114:     if (1){
-[e $ ! != -> 1 `i -> 0 `i 2026  ]
+"110
+[; ;mainfinal.c: 110:     if (a == 7){
+[e $ ! == _a -> 7 `i 2026  ]
 {
+"111
+[; ;mainfinal.c: 111:     turnRight135(&motorL,&motorR);
+[e ( _turnRight135 (2 , &U _motorL &U _motorR ]
+"112
+[; ;mainfinal.c: 112:     savepath(path, 5);
+[e ( _savepath (2 , &U _path -> -> 5 `i `uc ]
+"113
+[; ;mainfinal.c: 113:     }
+}
+[e :U 2026 ]
 "115
-[; ;mainfinal.c: 115:     timercount = savetime(timearray, timercount);
-[e = _timercount ( _savetime (2 , &U _timearray _timercount ]
+[; ;mainfinal.c: 115:     if (a == 8){
+[e $ ! == _a -> 8 `i 2027  ]
+{
 "116
 [; ;mainfinal.c: 116:     turnLeft135(&motorL,&motorR);
 [e ( _turnLeft135 (2 , &U _motorL &U _motorR ]
@@ -2364,65 +2353,62 @@ Version 4.0 HI-TECH Software Intermediate Code
 "118
 [; ;mainfinal.c: 118:     }
 }
-[e :U 2026 ]
-"121
-[; ;mainfinal.c: 121:     if (1){
-[e $ ! != -> 1 `i -> 0 `i 2027  ]
-{
-"123
-[; ;mainfinal.c: 123:     }
-}
 [e :U 2027 ]
-"125
-[; ;mainfinal.c: 125:     if (1) {
-[e $ ! != -> 1 `i -> 0 `i 2028  ]
+"121
+[; ;mainfinal.c: 121:     if (a == 9){
+[e $ ! == _a -> 9 `i 2028  ]
 {
-"126
-[; ;mainfinal.c: 126:         timercount = savetime(timearray, timercount);
-[e = _timercount ( _savetime (2 , &U _timearray _timercount ]
-"127
-[; ;mainfinal.c: 127:         returnhome(path, motorL, motorR);
-[e ( _returnhome (3 , , &U _path _motorL _motorR ]
-"129
-[; ;mainfinal.c: 129:     }
+"122
+[; ;mainfinal.c: 122:     }
 }
 [e :U 2028 ]
-"133
-[; ;mainfinal.c: 133:     }
+"124
+[; ;mainfinal.c: 124:     if (a == 10) {
+[e $ ! == _a -> 10 `i 2029  ]
+{
+"125
+[; ;mainfinal.c: 125:         timercount = savetime(timearray, timercount);
+[e = _timercount ( _savetime (2 , &U _timearray _timercount ]
+"127
+[; ;mainfinal.c: 127:     }
+}
+[e :U 2029 ]
+"132
+[; ;mainfinal.c: 132: }
 }
 [e :U 2017 ]
 [e $U 2018  ]
 [e :U 2019 ]
-"135
-[; ;mainfinal.c: 135: }
+"134
+[; ;mainfinal.c: 134: }
 [e :UE 2016 ]
 }
 [v $root$_HighISR `(v ~T0 @X0 0 e ]
-"143
-[; ;mainfinal.c: 143: void __attribute__((picinterrupt(("high_priority")))) HighISR()
+"142
+[; ;mainfinal.c: 142: void __attribute__((picinterrupt(("high_priority")))) HighISR()
 [v _HighISR `(v ~T3 @X0 1 ef ]
-"144
-[; ;mainfinal.c: 144: {
+"143
+[; ;mainfinal.c: 143: {
 {
 [e :U _HighISR ]
 [f ]
+"144
+[; ;mainfinal.c: 144:     if (PIR0bits.TMR0IF)
+[e $ ! != -> . . _PIR0bits 0 5 `i -> 0 `i 2031  ]
 "145
-[; ;mainfinal.c: 145:     if (PIR0bits.TMR0IF)
-[e $ ! != -> . . _PIR0bits 0 5 `i -> 0 `i 2030  ]
-"146
-[; ;mainfinal.c: 146:     {
+[; ;mainfinal.c: 145:     {
 {
-"147
-[; ;mainfinal.c: 147:         timercount++;
+"146
+[; ;mainfinal.c: 146:         timercount++;
 [e ++ _timercount -> 1 `i ]
 "148
 [; ;mainfinal.c: 148:     }
 }
-[e :U 2030 ]
+[e :U 2031 ]
 "149
 [; ;mainfinal.c: 149:     PIR0bits.TMR0IF=0;
 [e = . . _PIR0bits 0 5 -> -> 0 `i `uc ]
 "150
 [; ;mainfinal.c: 150: }
-[e :UE 2029 ]
+[e :UE 2030 ]
 }

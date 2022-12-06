@@ -24261,13 +24261,14 @@ void turnLeft135(DC_motor *mL, DC_motor *mR);
 void turnRight135(DC_motor *mL, DC_motor *mR);
 void turn180(DC_motor *mL, DC_motor *mR);
 void fullSpeedAhead(DC_motor *mL, DC_motor *mR, char dir);
-void reversesquare(DC_motor *mL, DC_motor *mR);
+void square(DC_motor *mL, DC_motor *mR, char dir);
 void savepath(char path[100], char instruction);
 int savetime(char timearray[100], int timercount);
-void returnhome(char path[100], DC_motor motorL, DC_motor motorR);
+void returnhome(char path[100], DC_motor motorL, DC_motor motorR, char timearray[100]);
 void returnstep(char instruction, DC_motor motorL, DC_motor motorR);
 
 signed char timeposition=0;
+
 signed char pathposition=0;
 # 10 "mainfinal.c" 2
 
@@ -24340,8 +24341,6 @@ void __attribute__((picinterrupt(("high_priority")))) HighISR();
 
 void Timer0_init(void);
 void starttimer0(void);
-void write16bitTMR0val(unsigned int);
-unsigned int get16bitTMR0val(void);
 # 13 "mainfinal.c" 2
 
 
@@ -24353,15 +24352,14 @@ void __attribute__((picinterrupt(("high_priority")))) HighISR();
 
 void main(void){
 
-    signed int degree = -90;
+    int a = 4;
 
 
     Timer0_init();
     Interrupts_init();
     initDCmotorsPWM(199);
     color_click_init();
-    unsigned int PWMcycle;
-    PWMcycle = 199;
+    unsigned int PWMcycle = 199;
 
 
 
@@ -24404,66 +24402,66 @@ void main(void){
 
 
 
-    starttimer0();
-    fullSpeedAhead(&motorL,&motorR, 1);
-    savepath(path, 1);
 
-    if (1){
+    fullSpeedAhead(&motorL,&motorR, 1);
+
+
+    _delay((unsigned long)((100)*(64000000/4000.0)));
+
+    if (a == 1){
     timercount = savetime(timearray, timercount);
+    square(&motorL,&motorR, 1);
+    square(&motorL,&motorR, 0);
+    }
+
+    if (a == 2){
     turnRight90(&motorL,&motorR);}
     savepath(path, 2);
 
-    if (1){
-    timercount = savetime(timearray, timercount);
-    turnLeft90(&motorL,&motorR);}
-    savepath(path, 3);
+    if (a == 3){
+    turnLeft90(&motorL,&motorR);
+    savepath(path, 3);}
 
 
-    if (1){
-    timercount = savetime(timearray, timercount);
-    turn180(&motorL,&motorR);}
-    savepath(path, 4);
+    if (a == 4){
+    turn180(&motorL,&motorR);
+    savepath(path, 4);}
 
-    if (1){
-    timercount = savetime(timearray, timercount);
-    reversesquare(&motorL,&motorR);
+    if (a == 5){
+    square(&motorL,&motorR, 0);
     turnRight90(&motorL,&motorR);
     savepath(path, 2);
     }
 
-    if (1){
-    timercount = savetime(timearray, timercount);
-    reversesquare(&motorL,&motorR);
+    if (a == 6){
+    square(&motorL,&motorR, 0);
     turnLeft90(&motorL,&motorR);
     savepath(path, 3);
     }
 
-    if (1){
-    timercount = savetime(timearray, timercount);
+    if (a == 7){
     turnRight135(&motorL,&motorR);
     savepath(path, 5);
     }
 
-    if (1){
-    timercount = savetime(timearray, timercount);
+    if (a == 8){
     turnLeft135(&motorL,&motorR);
     savepath(path, 6);
     }
 
 
-    if (1){
-
+    if (a == 9){
     }
 
-    if (1) {
+    if (a == 10) {
         timercount = savetime(timearray, timercount);
-        returnhome(path, motorL, motorR);
 
     }
 
 
 
-    }
+
+}
 
 }
 
@@ -24478,6 +24476,7 @@ void __attribute__((picinterrupt(("high_priority")))) HighISR()
     if (PIR0bits.TMR0IF)
     {
         timercount++;
+
     }
     PIR0bits.TMR0IF=0;
 }
