@@ -24232,7 +24232,18 @@ unsigned char __t3rd16on(void);
 # 1 "color.c" 2
 
 # 1 "./color.h" 1
-# 12 "./color.h"
+# 10 "./color.h"
+typedef struct colors {
+    unsigned int red;
+    unsigned int blue;
+    unsigned int green;
+    unsigned int clear;
+} colors;
+
+
+
+
+
 void color_click_init(void);
 
 
@@ -24247,6 +24258,11 @@ void color_writetoaddr(char address, char value);
 
 
 unsigned int color_read_Red(void);
+unsigned int color_read_Green(void);
+unsigned int color_read_Blue(void);
+unsigned int color_read_Clear(void);
+
+char decide_color(colors *mx);
 # 2 "color.c" 2
 
 # 1 "./i2c.h" 1
@@ -24284,6 +24300,41 @@ void I2C_2_Master_Write(unsigned char data_byte);
 unsigned char I2C_2_Master_Read(unsigned char ack);
 # 3 "color.c" 2
 
+# 1 "./dc_motor.h" 1
+# 11 "./dc_motor.h"
+typedef struct DC_motor {
+    char power;
+    char direction;
+    char brakemode;
+    unsigned int PWMperiod;
+    unsigned char *posDutyHighByte;
+    unsigned char *negDutyHighByte;
+} DC_motor;
+
+
+void initDCmotorsPWM(unsigned int PWMperiod);
+void setMotorPWM(DC_motor *m);
+void stop(DC_motor *mL, DC_motor *mR);
+void turnLeft90(DC_motor *mL, DC_motor *mR);
+void turnRight90(DC_motor *mL, DC_motor *mR);
+void turnLeft135(DC_motor *mL, DC_motor *mR);
+void turnRight135(DC_motor *mL, DC_motor *mR);
+void turn180(DC_motor *mL, DC_motor *mR);
+void fullSpeedAhead(DC_motor *mL, DC_motor *mR, char dir);
+void square(DC_motor *mL, DC_motor *mR, char dir);
+void smallmovement(DC_motor *mL, DC_motor *mR, char dir);
+void savepath(char path[100], char instruction);
+int savetime(char timearray[100], int timercount);
+void returnhome(char path[100], DC_motor motorL, DC_motor motorR, char timearray[100]);
+void returnstep(char instruction, DC_motor motorL, DC_motor motorR);
+
+signed char timeposition=0;
+
+signed char pathposition=0;
+
+extern int timercount;
+# 4 "color.c" 2
+
 
 void color_click_init(void)
 {
@@ -24299,6 +24350,15 @@ void color_click_init(void)
 
 
  color_writetoaddr(0x01, 0xD5);
+
+
+    TRISFbits.TRISF7 = 0;
+    TRISGbits.TRISG1 = 0;
+    TRISAbits.TRISA4 = 0;
+
+    LATFbits.LATF7 = 0;
+    LATGbits.LATG1 = 0;
+    LATAbits.LATA4 = 0;
 }
 
 void color_writetoaddr(char address, char value){
@@ -24308,17 +24368,65 @@ void color_writetoaddr(char address, char value){
     I2C_2_Master_Write(value);
     I2C_2_Master_Stop();
 }
-
+# 46 "color.c"
 unsigned int color_read_Red(void)
 {
  unsigned int tmp;
  I2C_2_Master_Start();
  I2C_2_Master_Write(0x52 | 0x00);
  I2C_2_Master_Write(0xA0 | 0x16);
+
  I2C_2_Master_RepStart();
  I2C_2_Master_Write(0x52 | 0x01);
  tmp=I2C_2_Master_Read(1);
  tmp=tmp | (I2C_2_Master_Read(0)<<8);
  I2C_2_Master_Stop();
  return tmp;
+}
+
+unsigned int color_read_Green(void)
+{
+ unsigned int tmp;
+ I2C_2_Master_Start();
+ I2C_2_Master_Write(0x52 | 0x00);
+ I2C_2_Master_Write(0xA0 | 0x18);
+ I2C_2_Master_RepStart();
+ I2C_2_Master_Write(0x52 | 0x01);
+ tmp=I2C_2_Master_Read(1);
+ tmp=tmp | (I2C_2_Master_Read(0)<<8);
+ I2C_2_Master_Stop();
+ return tmp;
+}
+
+unsigned int color_read_Blue(void)
+{
+ unsigned int tmp;
+ I2C_2_Master_Start();
+ I2C_2_Master_Write(0x52 | 0x00);
+ I2C_2_Master_Write(0xA0 | 0x1A);
+ I2C_2_Master_RepStart();
+ I2C_2_Master_Write(0x52 | 0x01);
+ tmp=I2C_2_Master_Read(1);
+ tmp=tmp | (I2C_2_Master_Read(0)<<8);
+ I2C_2_Master_Stop();
+ return tmp;
+}
+
+unsigned int color_read_Clear(void)
+{
+ unsigned int tmp;
+ I2C_2_Master_Start();
+ I2C_2_Master_Write(0x52 | 0x00);
+ I2C_2_Master_Write(0xA0 | 0x14);
+ I2C_2_Master_RepStart();
+ I2C_2_Master_Write(0x52 | 0x01);
+ tmp=I2C_2_Master_Read(1);
+ tmp=tmp | (I2C_2_Master_Read(0)<<8);
+ I2C_2_Master_Stop();
+ return tmp;
+}
+
+char decide_color(colors *mx)
+{
+# 116 "color.c"
 }

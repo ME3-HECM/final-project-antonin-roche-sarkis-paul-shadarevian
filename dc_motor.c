@@ -116,7 +116,7 @@ void turnLeft90(DC_motor *mL, DC_motor *mR)
     mL->power = 20;
     mR->power = 20;
     
-    while (mL->power != setpower || mR->power != setpower ) {
+    while (mL->power != 50 || mR->power != 50 ) {
         __delay_ms(5);
         mL->power++;
         mR->power++;    
@@ -124,7 +124,7 @@ void turnLeft90(DC_motor *mL, DC_motor *mR)
         setMotorPWM(mR);  
     }
     
-    __delay_ms(50);
+    __delay_ms(160);
     
     stop(mL, mR);
 }
@@ -139,7 +139,7 @@ void turnRight90(DC_motor *mL, DC_motor *mR)
     mL->power = 20;
     mR->power = 20;
     
-    while (mL->power < setpower && mR->power < setpower ) {
+    while (mL->power <= 50 && mR->power <= 50 ) {
         __delay_ms(5);
         mL->power++;
         mR->power++;    
@@ -147,7 +147,7 @@ void turnRight90(DC_motor *mL, DC_motor *mR)
         setMotorPWM(mR);  
     }    
     
-    __delay_ms(50);
+    __delay_ms(160);
     
     stop(mL, mR);
 }
@@ -164,7 +164,7 @@ void turnLeft135(DC_motor *mL, DC_motor *mR)
     mL->power = 20;
     mR->power = 20;
     
-    while (mL->power != setpower || mR->power != setpower ) {
+    while (mL->power <= 50 || mR->power <= 50 ) {
         __delay_ms(10);
         mL->power++;
         mR->power++;    
@@ -188,7 +188,7 @@ void turnRight135(DC_motor *mL, DC_motor *mR)
     mL->power = 20;
     mR->power = 20;
     
-    while (mL->power != setpower || mR->power != setpower ) {
+    while (mL->power <= 50 || mR->power <= 50) {
         __delay_ms(10);
         mL->power++;
         mR->power++;    
@@ -209,14 +209,14 @@ void turn180(DC_motor *mL, DC_motor *mR)
     mL->power = 20;
     mR->power = 20;
     
-    while (mL->power != setpower || mR->power != setpower ) {
+    while (mL->power <= 50 || mR->power <= 50 ) {
         __delay_ms(10);
         mL->power++;
         mR->power++;    
         setMotorPWM(mL);    
         setMotorPWM(mR);  
     }   
-    __delay_ms(600);
+    __delay_ms(300);
     stop(mL, mR);
 }
 
@@ -239,7 +239,7 @@ void fullSpeedAhead(DC_motor *mL, DC_motor *mR, char dir) // dir = 1 is for forw
         setMotorPWM(mR);    
     }
     
-    if (dir == 1) {starttimer0;} //if robot is not on return, start timer0 to count the time the robot is going straight (after it has reached a targeted setpower above)
+    if (dir == 1 && T0CON0bits.T0EN == 0) {starttimer0;} //if robot is not on return, start timer0 to count the time the robot is going straight (after it has reached a targeted setpower above)
     
 }
 
@@ -249,7 +249,27 @@ void square(DC_motor *mL, DC_motor *mR, char dir)
     mL->direction = dir;
     mR->direction = dir;
     
-    while (mL->power != setpower || mR->power != setpower ) {
+    while (mL->power <= 50 || mR->power <= 50 ) {
+        __delay_ms(10);
+        mL->power++;
+        mR->power++;    
+        setMotorPWM(mL);    
+        setMotorPWM(mR);  
+
+    setMotorPWM(mL);    
+    setMotorPWM(mR);    
+    }
+    
+    __delay_ms(200);
+    stop(mL, mR);
+}
+
+void smallmovement(DC_motor *mL, DC_motor *mR, char dir)
+{
+    mL->direction = dir;
+    mR->direction = dir;
+    
+    while (mL->power <= 50 || mR->power <= 50 ) {
         __delay_ms(10);
         mL->power++;
         mR->power++;    
@@ -263,6 +283,7 @@ void square(DC_motor *mL, DC_motor *mR, char dir)
     stop(mL, mR);
 }
 
+//RETURN
 /************************************
  * In order to store the path and allow us to return, we have assigned a value from 1-6 for each of the instructions the list path
 1 - FullSpeedAhead            -->the direction will be reversed for the return journey)
@@ -298,14 +319,16 @@ void returnhome(char path[mazesteps], DC_motor motorL, DC_motor motorR, char tim
     if (path[pathposition--] == 1) {
     
     fullSpeedAhead(&motorL, &motorR, 0);
-        
-    int y;
-    for(y=0; y<timearray[timeposition--]; y++) {__delay_ms(4);} //continue straight the time that had been saved in timearray 
+
+//method with delay    
+//    int y;
+//    for(y=0; y<timearray[timeposition--]; y++) {__delay_ms(4);} //continue straight the time that had been saved in timearray 
 
 // This is method with timer    
-//    starttimer0; //timer instead of delay is a more efficient option
-//    while(timercount < timearray[timeposition--]); //continue straight until timer reaches the timercount 
-//    T0CON0bits.T0EN=0; //turn timer off
+    starttimer0; //timer instead of delay is a more efficient option
+    while(timercount < timearray[timeposition--]); //continue straight until timer reaches the timercount 
+    T0CON0bits.T0EN=0; //turn timer off
+    stop(&motorL, &motorR);
     }       
     
     //case if instruction is anything else

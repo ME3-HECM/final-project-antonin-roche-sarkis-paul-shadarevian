@@ -24262,6 +24262,7 @@ void turnRight135(DC_motor *mL, DC_motor *mR);
 void turn180(DC_motor *mL, DC_motor *mR);
 void fullSpeedAhead(DC_motor *mL, DC_motor *mR, char dir);
 void square(DC_motor *mL, DC_motor *mR, char dir);
+void smallmovement(DC_motor *mL, DC_motor *mR, char dir);
 void savepath(char path[100], char instruction);
 int savetime(char timearray[100], int timercount);
 void returnhome(char path[100], DC_motor motorL, DC_motor motorR, char timearray[100]);
@@ -24270,10 +24271,23 @@ void returnstep(char instruction, DC_motor motorL, DC_motor motorR);
 signed char timeposition=0;
 
 signed char pathposition=0;
+
+extern int timercount;
 # 10 "mainfinal.c" 2
 
 # 1 "./color.h" 1
-# 12 "./color.h"
+# 10 "./color.h"
+typedef struct colors {
+    unsigned int red;
+    unsigned int blue;
+    unsigned int green;
+    unsigned int clear;
+} colors;
+
+
+
+
+
 void color_click_init(void);
 
 
@@ -24288,6 +24302,11 @@ void color_writetoaddr(char address, char value);
 
 
 unsigned int color_read_Red(void);
+unsigned int color_read_Green(void);
+unsigned int color_read_Blue(void);
+unsigned int color_read_Clear(void);
+
+char decide_color(colors *mx);
 # 11 "mainfinal.c" 2
 
 # 1 "./i2c.h" 1
@@ -24346,20 +24365,48 @@ void starttimer0(void);
 
 
 
-
-int timercount=0;
+timercount=0;
 void __attribute__((picinterrupt(("high_priority")))) HighISR();
 
 void main(void){
-
-    int a = 4;
-
 
     Timer0_init();
     Interrupts_init();
     initDCmotorsPWM(199);
     color_click_init();
     unsigned int PWMcycle = 199;
+
+
+
+    color_click_init();
+    I2C_2_Master_Init();
+
+
+    struct colors reading, max, ambient;
+
+
+    reading.red = 0;
+    reading.blue = 0;
+    reading.green = 0;
+    reading.clear = 0;
+
+    max.red = 0;
+    max.blue = 0;
+    max.green = 0;
+    max.clear = 0;
+
+    LATFbits.LATF7 = 1;
+    LATGbits.LATG1 = 1;
+    LATAbits.LATA4 = 1;
+
+    TRISDbits.TRISD3 = 0;
+    LATDbits.LATD3 = 0;
+
+    TRISFbits.TRISF2 = 1;
+    ANSELFbits.ANSELF2=0;
+
+    TRISDbits.TRISD7 = 0;
+
 
 
 
@@ -24391,10 +24438,19 @@ void main(void){
     motorR.posDutyHighByte=(unsigned char *)(&CCPR3H);
     motorR.negDutyHighByte=(unsigned char *)(&CCPR4H);
 
+
+
     char path[100];
     char timearray[100];
 
 
+
+    while(PORTFbits.RF3);
+
+    ambient.red = color_read_Red();
+    ambient.blue = color_read_Blue();
+    ambient.green = color_read_Green();
+    ambient.clear = color_read_Clear();
 
     while(1){
 
@@ -24403,71 +24459,72 @@ void main(void){
 
 
 
+
     fullSpeedAhead(&motorL,&motorR, 1);
+    savepath(path, 1);
+# 126 "mainfinal.c"
+    reading.clear = (color_read_Clear()-ambient.clear)/(max.clear/1000);
 
+    if (1200 > reading.clear > 30) {
 
-    _delay((unsigned long)((100)*(64000000/4000.0)));
+     timercount = savetime(timearray, timercount);
 
-    if (a == 1){
-    timercount = savetime(timearray, timercount);
-    square(&motorL,&motorR, 1);
+    smallmovement(&motorL,&motorR, 1);
+
+    _delay((unsigned long)((200)*(64000000/4000.0)));
+
+    reading.red = (color_read_Red()-ambient.red)/(max.red/1000);
+    reading.blue = (color_read_Blue()-ambient.blue)/(max.blue/1000);
+    reading.green = (color_read_Green()-ambient.green)/(max.green/1000);
+
     square(&motorL,&motorR, 0);
-    }
 
-    if (a == 2){
+    if (decide_color(&reading) == 2){
     turnRight90(&motorL,&motorR);}
     savepath(path, 2);
 
-    if (a == 3){
+    if (decide_color(&reading) == 3){
     turnLeft90(&motorL,&motorR);
     savepath(path, 3);}
 
-
-    if (a == 4){
+    if (decide_color(&reading) == 4){
     turn180(&motorL,&motorR);
     savepath(path, 4);}
 
-    if (a == 5){
+    if (decide_color(&reading) == 5){
     square(&motorL,&motorR, 0);
     turnRight90(&motorL,&motorR);
     savepath(path, 2);
-    }
+        }
 
-    if (a == 6){
+    if (decide_color(&reading) == 6){
     square(&motorL,&motorR, 0);
     turnLeft90(&motorL,&motorR);
     savepath(path, 3);
-    }
+        }
 
-    if (a == 7){
+    if (decide_color(&reading) == 7){
     turnRight135(&motorL,&motorR);
     savepath(path, 5);
-    }
+        }
 
-    if (a == 8){
+    if (decide_color(&reading) == 8){
     turnLeft135(&motorL,&motorR);
     savepath(path, 6);
+        }
+
+    if (1){
+        }
+
+    if (decide_color(&reading) == 9) {
+        returnhome(path, motorL, motorR, timearray);
+        }
+
+
     }
-
-
-    if (a == 9){
-    }
-
-    if (a == 10) {
-        timercount = savetime(timearray, timercount);
-
-    }
-
-
-
 
 }
-
 }
-
-
-
-
 
 
 
@@ -24476,7 +24533,7 @@ void __attribute__((picinterrupt(("high_priority")))) HighISR()
     if (PIR0bits.TMR0IF)
     {
         timercount++;
-
     }
     PIR0bits.TMR0IF=0;
+
 }
