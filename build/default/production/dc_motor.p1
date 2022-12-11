@@ -3073,140 +3073,140 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;dc_motor.c: 284: }
 [e :UE 2055 ]
 }
-"299
-[; ;dc_motor.c: 299: void savepath(char path[100], char instruction)
-[v _savepath `(v ~T0 @X0 1 ef2`*uc`uc ]
 "300
-[; ;dc_motor.c: 300: {
+[; ;dc_motor.c: 300: void savepath(char path[100], char instruction)
+[v _savepath `(v ~T0 @X0 1 ef2`*uc`uc ]
+"301
+[; ;dc_motor.c: 301: {
 {
 [e :U _savepath ]
-"299
-[; ;dc_motor.c: 299: void savepath(char path[100], char instruction)
+"300
+[; ;dc_motor.c: 300: void savepath(char path[100], char instruction)
 [v _path `*uc ~T0 @X0 1 r1 ]
 [v _instruction `uc ~T0 @X0 1 r2 ]
-"300
-[; ;dc_motor.c: 300: {
-[f ]
 "301
-[; ;dc_motor.c: 301:     path[pathposition] = instruction;
-[e = *U + _path * -> _pathposition `x -> -> # *U _path `i `x _instruction ]
+[; ;dc_motor.c: 301: {
+[f ]
 "302
-[; ;dc_motor.c: 302:     pathposition++;
-[e ++ _pathposition -> -> 1 `i `c ]
+[; ;dc_motor.c: 302:     path[pathposition] = instruction;
+[e = *U + _path * -> _pathposition `x -> -> # *U _path `i `x _instruction ]
 "303
-[; ;dc_motor.c: 303: }
+[; ;dc_motor.c: 303:     pathposition++;
+[e ++ _pathposition -> -> 1 `i `c ]
+"304
+[; ;dc_motor.c: 304: }
 [e :UE 2059 ]
 }
-"305
-[; ;dc_motor.c: 305: int savetime(char timearray[100], int timercount)
-[v _savetime `(i ~T0 @X0 1 ef2`*uc`i ]
 "306
-[; ;dc_motor.c: 306: {
+[; ;dc_motor.c: 306: int savetime(char timearray[100], int timercount)
+[v _savetime `(i ~T0 @X0 1 ef2`*uc`i ]
+"307
+[; ;dc_motor.c: 307: {
 {
 [e :U _savetime ]
-"305
-[; ;dc_motor.c: 305: int savetime(char timearray[100], int timercount)
+"306
+[; ;dc_motor.c: 306: int savetime(char timearray[100], int timercount)
 [v _timearray `*uc ~T0 @X0 1 r1 ]
 [v _timercount `i ~T0 @X0 1 r2 ]
-"306
-[; ;dc_motor.c: 306: {
-[f ]
 "307
-[; ;dc_motor.c: 307:     T0CON0bits.T0EN=0;
-[e = . . _T0CON0bits 0 4 -> -> 0 `i `uc ]
+[; ;dc_motor.c: 307: {
+[f ]
 "308
-[; ;dc_motor.c: 308:     timearray[timeposition]=timercount;
-[e = *U + _timearray * -> _timeposition `x -> -> # *U _timearray `i `x -> _timercount `uc ]
+[; ;dc_motor.c: 308:     T0CON0bits.T0EN=0;
+[e = . . _T0CON0bits 0 4 -> -> 0 `i `uc ]
 "309
-[; ;dc_motor.c: 309:     timeposition++;
-[e ++ _timeposition -> -> 1 `i `c ]
+[; ;dc_motor.c: 309:     timearray[timeposition]=timercount;
+[e = *U + _timearray * -> _timeposition `x -> -> # *U _timearray `i `x -> _timercount `uc ]
 "310
-[; ;dc_motor.c: 310:     timercount = 0;
-[e = _timercount -> 0 `i ]
+[; ;dc_motor.c: 310:     timeposition++;
+[e ++ _timeposition -> -> 1 `i `c ]
 "311
-[; ;dc_motor.c: 311:     return timercount;
+[; ;dc_motor.c: 311:     timercount = 0;
+[e = _timercount -> 0 `i ]
+"312
+[; ;dc_motor.c: 312:     return timercount;
 [e ) _timercount ]
 [e $UE 2060  ]
-"312
-[; ;dc_motor.c: 312: }
+"313
+[; ;dc_motor.c: 313: }
 [e :UE 2060 ]
 }
-"314
-[; ;dc_motor.c: 314: void returnhome(char path[100], DC_motor motorL, DC_motor motorR, char timearray[100])
-[v _returnhome `(v ~T0 @X0 1 ef4`*uc`S2015`S2015`*uc ]
 "315
-[; ;dc_motor.c: 315: {
+[; ;dc_motor.c: 315: void returnhome(char path[100], DC_motor motorL, DC_motor motorR, char timearray[100])
+[v _returnhome `(v ~T0 @X0 1 ef4`*uc`S2015`S2015`*uc ]
+"316
+[; ;dc_motor.c: 316: {
 {
 [e :U _returnhome ]
-"314
-[; ;dc_motor.c: 314: void returnhome(char path[100], DC_motor motorL, DC_motor motorR, char timearray[100])
+"315
+[; ;dc_motor.c: 315: void returnhome(char path[100], DC_motor motorL, DC_motor motorR, char timearray[100])
 [v _path `*uc ~T0 @X0 1 r1 ]
 [v _motorL `S2015 ~T0 @X0 1 r2 ]
 [v _motorR `S2015 ~T0 @X0 1 r3 ]
 [v _timearray `*uc ~T0 @X0 1 r4 ]
-"315
-[; ;dc_motor.c: 315: {
-[f ]
 "316
-[; ;dc_motor.c: 316:     while (pathposition >= 0) {
+[; ;dc_motor.c: 316: {
+[f ]
+"317
+[; ;dc_motor.c: 317:     while (pathposition >= 0) {
 [e $U 2062  ]
 [e :U 2063 ]
 {
-"319
-[; ;dc_motor.c: 319:     if (path[pathposition--] == 1) {
+"320
+[; ;dc_motor.c: 320:     if (path[pathposition--] == 1) {
 [e $ ! == -> *U + _path * -> -- _pathposition -> -> 1 `i `c `x -> -> # *U _path `i `x `i -> 1 `i 2065  ]
 {
-"321
-[; ;dc_motor.c: 321:     fullSpeedAhead(&motorL, &motorR, 0);
+"322
+[; ;dc_motor.c: 322:     fullSpeedAhead(&motorL, &motorR, 0);
 [e ( _fullSpeedAhead (3 , , &U _motorL &U _motorR -> -> 0 `i `uc ]
-"328
-[; ;dc_motor.c: 328:     starttimer0;
-[e &U _starttimer0 ]
 "329
-[; ;dc_motor.c: 329:     while(timercount < timearray[timeposition--]);
+[; ;dc_motor.c: 329:     starttimer0;
+[e &U _starttimer0 ]
+"330
+[; ;dc_motor.c: 330:     while(timercount < timearray[timeposition--]);
 [e $U 2066  ]
 [e :U 2067 ]
 [e :U 2066 ]
 [e $ < _timercount -> *U + _timearray * -> -- _timeposition -> -> 1 `i `c `x -> -> # *U _timearray `i `x `i 2067  ]
 [e :U 2068 ]
-"330
-[; ;dc_motor.c: 330:     T0CON0bits.T0EN=0;
-[e = . . _T0CON0bits 0 4 -> -> 0 `i `uc ]
-"331
-[; ;dc_motor.c: 331:     stop(&motorL, &motorR);
-[e ( _stop (2 , &U _motorL &U _motorR ]
 "332
-[; ;dc_motor.c: 332:     }
+[; ;dc_motor.c: 332:     T0CON0bits.T0EN=0;
+[e = . . _T0CON0bits 0 4 -> -> 0 `i `uc ]
+"333
+[; ;dc_motor.c: 333:     stop(&motorL, &motorR);
+[e ( _stop (2 , &U _motorL &U _motorR ]
+"335
+[; ;dc_motor.c: 335:     }
 }
 [e $U 2069  ]
-"335
-[; ;dc_motor.c: 335:     else if (path[pathposition] != 1) {
+"338
+[; ;dc_motor.c: 338:     else if (path[pathposition] != 1) {
 [e :U 2065 ]
 [e $ ! != -> *U + _path * -> _pathposition `x -> -> # *U _path `i `x `i -> 1 `i 2070  ]
 {
-"336
-[; ;dc_motor.c: 336:     returnstep(path[pathposition], motorL, motorR);
+"339
+[; ;dc_motor.c: 339:     returnstep(path[pathposition], motorL, motorR);
 [e ( _returnstep (3 , , *U + _path * -> _pathposition `x -> -> # *U _path `i `x _motorL _motorR ]
-"337
-[; ;dc_motor.c: 337:     square(&motorL, &motorR, 1);}
+"340
+[; ;dc_motor.c: 340:     square(&motorL, &motorR, 1);}
 [e ( _square (3 , , &U _motorL &U _motorR -> -> 1 `i `uc ]
 }
 [e :U 2070 ]
 [e :U 2069 ]
-"338
-[; ;dc_motor.c: 338:     }
+"341
+[; ;dc_motor.c: 341:     }
 }
 [e :U 2062 ]
-"316
-[; ;dc_motor.c: 316:     while (pathposition >= 0) {
+"317
+[; ;dc_motor.c: 317:     while (pathposition >= 0) {
 [e $ >= -> _pathposition `i -> 0 `i 2063  ]
 [e :U 2064 ]
-"339
-[; ;dc_motor.c: 339: }
+"342
+[; ;dc_motor.c: 342: }
 [e :UE 2061 ]
 }
-"341
-[; ;dc_motor.c: 341: void returnstep(char instruction, DC_motor motorL, DC_motor motorR) {
+"344
+[; ;dc_motor.c: 344: void returnstep(char instruction, DC_motor motorL, DC_motor motorR) {
 [v _returnstep `(v ~T0 @X0 1 ef3`uc`S2015`S2015 ]
 {
 [e :U _returnstep ]
@@ -3214,42 +3214,49 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _motorL `S2015 ~T0 @X0 1 r2 ]
 [v _motorR `S2015 ~T0 @X0 1 r3 ]
 [f ]
-"342
-[; ;dc_motor.c: 342:     if (instruction == 2) {turnLeft90(&motorL,&motorR);}
+"345
+[; ;dc_motor.c: 345:     if (instruction == 2) {turnLeft90(&motorL,&motorR);}
 [e $ ! == -> _instruction `i -> 2 `i 2072  ]
 {
 [e ( _turnLeft90 (2 , &U _motorL &U _motorR ]
 }
 [e :U 2072 ]
-"343
-[; ;dc_motor.c: 343:     if (instruction == 3) {turnRight90(&motorL,&motorR);}
+"346
+[; ;dc_motor.c: 346:     if (instruction == 3) {turnRight90(&motorL,&motorR);}
 [e $ ! == -> _instruction `i -> 3 `i 2073  ]
 {
 [e ( _turnRight90 (2 , &U _motorL &U _motorR ]
 }
 [e :U 2073 ]
-"344
-[; ;dc_motor.c: 344:     if (instruction == 4) {turn180(&motorL,&motorR);}
+"347
+[; ;dc_motor.c: 347:     if (instruction == 4) {turn180(&motorL,&motorR);}
 [e $ ! == -> _instruction `i -> 4 `i 2074  ]
 {
 [e ( _turn180 (2 , &U _motorL &U _motorR ]
 }
 [e :U 2074 ]
-"345
-[; ;dc_motor.c: 345:     if (instruction == 5) {turnLeft135(&motorL,&motorR);}
+"348
+[; ;dc_motor.c: 348:     if (instruction == 5) {turnLeft135(&motorL,&motorR);}
 [e $ ! == -> _instruction `i -> 5 `i 2075  ]
 {
 [e ( _turnLeft135 (2 , &U _motorL &U _motorR ]
 }
 [e :U 2075 ]
-"346
-[; ;dc_motor.c: 346:     if (instruction == 6) {turnRight135(&motorL,&motorR);}
+"349
+[; ;dc_motor.c: 349:     if (instruction == 6) {turnRight135(&motorL,&motorR);}
 [e $ ! == -> _instruction `i -> 6 `i 2076  ]
 {
 [e ( _turnRight135 (2 , &U _motorL &U _motorR ]
 }
 [e :U 2076 ]
-"347
-[; ;dc_motor.c: 347: }
+"350
+[; ;dc_motor.c: 350:     if (instruction == 7) {square(&motorL,&motorR, 0);}
+[e $ ! == -> _instruction `i -> 7 `i 2077  ]
+{
+[e ( _square (3 , , &U _motorL &U _motorR -> -> 0 `i `uc ]
+}
+[e :U 2077 ]
+"351
+[; ;dc_motor.c: 351: }
 [e :UE 2071 ]
 }

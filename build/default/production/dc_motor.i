@@ -24558,7 +24558,7 @@ void smallmovement(DC_motor *mL, DC_motor *mR, char dir)
 
     stop(mL, mR);
 }
-# 299 "dc_motor.c"
+# 300 "dc_motor.c"
 void savepath(char path[100], char instruction)
 {
     path[pathposition] = instruction;
@@ -24590,8 +24590,10 @@ void returnhome(char path[100], DC_motor motorL, DC_motor motorR, char timearray
 
     starttimer0;
     while(timercount < timearray[timeposition--]);
+
     T0CON0bits.T0EN=0;
     stop(&motorL, &motorR);
+
     }
 
 
@@ -24607,4 +24609,5 @@ void returnstep(char instruction, DC_motor motorL, DC_motor motorR) {
     if (instruction == 4) {turn180(&motorL,&motorR);}
     if (instruction == 5) {turnLeft135(&motorL,&motorR);}
     if (instruction == 6) {turnRight135(&motorL,&motorR);}
+    if (instruction == 7) {square(&motorL,&motorR, 0);}
 }

@@ -21,6 +21,8 @@
       <itemPath>timer0.h</itemPath>
       <itemPath>color.c</itemPath>
       <itemPath>color.h</itemPath>
+      <itemPath>ADC.c</itemPath>
+      <itemPath>ADC.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

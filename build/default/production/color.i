@@ -24358,7 +24358,7 @@ void color_click_init(void)
 
     LATFbits.LATF7 = 0;
     LATGbits.LATG1 = 0;
-    LATAbits.LATA4 = 0;
+    LATAbits.LATA4 = 1;
 }
 
 void color_writetoaddr(char address, char value){
@@ -24428,5 +24428,27 @@ unsigned int color_read_Clear(void)
 
 char decide_color(colors *mx)
 {
-# 116 "color.c"
+
+    unsigned int rr = mx->red/(mx->clear/100);
+    unsigned int br = mx->blue/(mx->clear/100);
+    unsigned int gr = mx->green/(mx->clear/100);
+
+    if ((150<rr) & (40<br && br<80) & (0<gr && gr<40) & (200<mx->clear && mx->clear<400)) {return 2;}
+
+    if ((60<rr && rr<100) & (60<br && br<100) & (110<gr) & (mx->clear<550)) {return 3;}
+
+    if ((45<rr && rr<55) & (160<br && br<180) & (90<gr && gr<110) & (100<mx->clear && mx->clear<200)) {return 4;}
+
+    if ((105<rr) & (br<80) & (95<gr) & (600<mx->clear && mx->clear<800)) {return 5;}
+
+    if ((100<rr && rr<120) & (br>80) & (gr<100) & (550<mx->clear && mx->clear<750)) {return 6;}
+
+    if ((140<rr) & (br<85) & (gr<85) & (mx->clear<600)) {return 7;}
+
+    if ((rr<90) & (110<br) & (120<gr) & (400<mx->clear && mx->clear<700)) {return 8;}
+
+    if ((85<rr && rr<110) & (85<br && br<110) & (85<gr && gr<110) & (700<mx->clear && mx->clear<1000)) {return 9;}
+
+    else{return 9;}
+# 138 "color.c"
 }

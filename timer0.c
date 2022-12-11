@@ -47,17 +47,3 @@ void starttimer0(void){
     T0CON0bits.T0EN=1; //turn timer on (function called out only on every time the robot goes fullspeedahead to save battery)
 
 }
-
-
-
-unsigned int get16bitTMR0val(void)
-{
-	//add your code to get the full 16 bit timer value here
-   unsigned int a;
-   
-    // it's a good idea to initialise the timer registers so we know we are at 0
-    a = TMR0L;       
-    a = a|(TMR0H<<8);
-    
-    return a;
-}

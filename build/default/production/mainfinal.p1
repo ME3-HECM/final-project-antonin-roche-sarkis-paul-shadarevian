@@ -112,7 +112,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12320
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 12320: extern volatile ANSELFbits_t ANSELFbits __attribute__((address(0xEB4)));
 [v _ANSELFbits `VS567 ~T0 @X0 0 e@3764 ]
-"29236
+"8 ./ADC.h
+[; ;./ADC.h: 8: void ADC_init(void);
+[v _ADC_init `(v ~T0 @X0 0 ef ]
+"9
+[; ;./ADC.h: 9: unsigned int ADC_getval(void);
+[v _ADC_getval `(ui ~T0 @X0 0 ef ]
+"29236 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 29236:     struct {
 [s S1361 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S1361 . LATH0 LATH1 LATH2 LATH3 ]
@@ -200,12 +206,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "29 ./dc_motor.h
 [; ;./dc_motor.h: 29: void fullSpeedAhead(DC_motor *mL, DC_motor *mR, char dir);
 [v _fullSpeedAhead `(v ~T0 @X0 0 ef3`*S2015`*S2015`uc ]
-"32
-[; ;./dc_motor.h: 32: void savepath(char path[100], char instruction);
-[v _savepath `(v ~T0 @X0 0 ef2`*uc`uc ]
 "33
 [; ;./dc_motor.h: 33: int savetime(char timearray[100], int timercount);
 [v _savetime `(i ~T0 @X0 0 ef2`*uc`i ]
+"32
+[; ;./dc_motor.h: 32: void savepath(char path[100], char instruction);
+[v _savepath `(v ~T0 @X0 0 ef2`*uc`uc ]
 "31
 [; ;./dc_motor.h: 31: void smallmovement(DC_motor *mL, DC_motor *mR, char dir);
 [v _smallmovement `(v ~T0 @X0 0 ef3`*S2015`*S2015`uc ]
@@ -213,9 +219,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\builtins.h
 [v __delay `JF192 ~T0 @X0 0 e ]
 [p i __delay ]
-"30 ./dc_motor.h
-[; ;./dc_motor.h: 30: void square(DC_motor *mL, DC_motor *mR, char dir);
-[v _square `(v ~T0 @X0 0 ef3`*S2015`*S2015`uc ]
 "39 ./color.h
 [; ;./color.h: 39: char decide_color(colors *mx);
 [v _decide_color `(uc ~T0 @X0 0 ef1`*S2016 ]
@@ -228,6 +231,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "28
 [; ;./dc_motor.h: 28: void turn180(DC_motor *mL, DC_motor *mR);
 [v _turn180 `(v ~T0 @X0 0 ef2`*S2015`*S2015 ]
+"30
+[; ;./dc_motor.h: 30: void square(DC_motor *mL, DC_motor *mR, char dir);
+[v _square `(v ~T0 @X0 0 ef3`*S2015`*S2015`uc ]
 "27
 [; ;./dc_motor.h: 27: void turnRight135(DC_motor *mL, DC_motor *mR);
 [v _turnRight135 `(v ~T0 @X0 0 ef2`*S2015`*S2015 ]
@@ -2248,366 +2254,444 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./timer0.h: 9: unsigned int on_period,off_period;
 [v _on_period `ui ~T0 @X0 1 e ]
 [v _off_period `ui ~T0 @X0 1 e ]
-"17 mainfinal.c
-[; ;mainfinal.c: 17: timercount=0;
+"18 mainfinal.c
+[; ;mainfinal.c: 18: timercount=0;
 [v _timercount `i ~T0 @X0 1 e ]
 [i _timercount
 -> 0 `i
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"20
-[; ;mainfinal.c: 20: void main(void){
+"21
+[; ;mainfinal.c: 21: void main(void){
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"22
-[; ;mainfinal.c: 22:     Timer0_init();
-[e ( _Timer0_init ..  ]
 "23
-[; ;mainfinal.c: 23:     Interrupts_init();
-[e ( _Interrupts_init ..  ]
+[; ;mainfinal.c: 23:     Timer0_init();
+[e ( _Timer0_init ..  ]
 "24
-[; ;mainfinal.c: 24:     initDCmotorsPWM(199);
-[e ( _initDCmotorsPWM (1 -> -> 199 `i `ui ]
+[; ;mainfinal.c: 24:     Interrupts_init();
+[e ( _Interrupts_init ..  ]
 "25
-[; ;mainfinal.c: 25:     color_click_init();
-[e ( _color_click_init ..  ]
+[; ;mainfinal.c: 25:     initDCmotorsPWM(199);
+[e ( _initDCmotorsPWM (1 -> -> 199 `i `ui ]
 "26
-[; ;mainfinal.c: 26:     unsigned int PWMcycle = 199;
+[; ;mainfinal.c: 26:     color_click_init();
+[e ( _color_click_init ..  ]
+"27
+[; ;mainfinal.c: 27:     unsigned int PWMcycle = 199;
 [v _PWMcycle `ui ~T0 @X0 1 a ]
 [e = _PWMcycle -> -> 199 `i `ui ]
-"30
-[; ;mainfinal.c: 30:     color_click_init();
-[e ( _color_click_init ..  ]
 "31
-[; ;mainfinal.c: 31:     I2C_2_Master_Init();
+[; ;mainfinal.c: 31:     color_click_init();
+[e ( _color_click_init ..  ]
+"32
+[; ;mainfinal.c: 32:     I2C_2_Master_Init();
 [e ( _I2C_2_Master_Init ..  ]
-"34
-[; ;mainfinal.c: 34:     struct colors reading, max, ambient;
+"35
+[; ;mainfinal.c: 35:     struct colors reading, max, ambient;
 [v _reading `S2016 ~T0 @X0 1 a ]
 [v _max `S2016 ~T0 @X0 1 a ]
 [v _ambient `S2016 ~T0 @X0 1 a ]
-"37
-[; ;mainfinal.c: 37:     reading.red = 0;
-[e = . _reading 0 -> -> 0 `i `ui ]
 "38
-[; ;mainfinal.c: 38:     reading.blue = 0;
-[e = . _reading 1 -> -> 0 `i `ui ]
+[; ;mainfinal.c: 38:     reading.red = 0;
+[e = . _reading 0 -> -> 0 `i `ui ]
 "39
-[; ;mainfinal.c: 39:     reading.green = 0;
-[e = . _reading 2 -> -> 0 `i `ui ]
+[; ;mainfinal.c: 39:     reading.blue = 0;
+[e = . _reading 1 -> -> 0 `i `ui ]
 "40
-[; ;mainfinal.c: 40:     reading.clear = 0;
+[; ;mainfinal.c: 40:     reading.green = 0;
+[e = . _reading 2 -> -> 0 `i `ui ]
+"41
+[; ;mainfinal.c: 41:     reading.clear = 0;
 [e = . _reading 3 -> -> 0 `i `ui ]
-"42
-[; ;mainfinal.c: 42:     max.red = 0;
-[e = . _max 0 -> -> 0 `i `ui ]
 "43
-[; ;mainfinal.c: 43:     max.blue = 0;
-[e = . _max 1 -> -> 0 `i `ui ]
+[; ;mainfinal.c: 43:     max.red = 0;
+[e = . _max 0 -> -> 0 `i `ui ]
 "44
-[; ;mainfinal.c: 44:     max.green = 0;
-[e = . _max 2 -> -> 0 `i `ui ]
+[; ;mainfinal.c: 44:     max.blue = 0;
+[e = . _max 1 -> -> 0 `i `ui ]
 "45
-[; ;mainfinal.c: 45:     max.clear = 0;
+[; ;mainfinal.c: 45:     max.green = 0;
+[e = . _max 2 -> -> 0 `i `ui ]
+"46
+[; ;mainfinal.c: 46:     max.clear = 0;
 [e = . _max 3 -> -> 0 `i `ui ]
-"47
-[; ;mainfinal.c: 47:     LATFbits.LATF7 = 1;
-[e = . . _LATFbits 0 7 -> -> 1 `i `uc ]
 "48
-[; ;mainfinal.c: 48:     LATGbits.LATG1 = 1;
-[e = . . _LATGbits 0 1 -> -> 1 `i `uc ]
+[; ;mainfinal.c: 48:     LATFbits.LATF7 = 1;
+[e = . . _LATFbits 0 7 -> -> 1 `i `uc ]
 "49
-[; ;mainfinal.c: 49:     LATAbits.LATA4 = 1;
+[; ;mainfinal.c: 49:     LATGbits.LATG1 = 1;
+[e = . . _LATGbits 0 1 -> -> 1 `i `uc ]
+"50
+[; ;mainfinal.c: 50:     LATAbits.LATA4 = 1;
 [e = . . _LATAbits 0 4 -> -> 1 `i `uc ]
-"51
-[; ;mainfinal.c: 51:     TRISDbits.TRISD3 = 0;
-[e = . . _TRISDbits 0 3 -> -> 0 `i `uc ]
 "52
-[; ;mainfinal.c: 52:     LATDbits.LATD3 = 0;
+[; ;mainfinal.c: 52:     TRISDbits.TRISD3 = 0;
+[e = . . _TRISDbits 0 3 -> -> 0 `i `uc ]
+"53
+[; ;mainfinal.c: 53:     LATDbits.LATD3 = 0;
 [e = . . _LATDbits 0 3 -> -> 0 `i `uc ]
-"54
-[; ;mainfinal.c: 54:     TRISFbits.TRISF2 = 1;
-[e = . . _TRISFbits 0 2 -> -> 1 `i `uc ]
 "55
-[; ;mainfinal.c: 55:     ANSELFbits.ANSELF2=0;
+[; ;mainfinal.c: 55:     TRISFbits.TRISF2 = 1;
+[e = . . _TRISFbits 0 2 -> -> 1 `i `uc ]
+"56
+[; ;mainfinal.c: 56:     ANSELFbits.ANSELF2=0;
 [e = . . _ANSELFbits 0 2 -> -> 0 `i `uc ]
 "57
-[; ;mainfinal.c: 57:     TRISDbits.TRISD7 = 0;
+[; ;mainfinal.c: 57:     LATDbits.LATD7 = 0;
+[e = . . _LATDbits 0 7 -> -> 0 `i `uc ]
+"58
+[; ;mainfinal.c: 58:     TRISDbits.TRISD7 = 0;
 [e = . . _TRISDbits 0 7 -> -> 0 `i `uc ]
-"64
-[; ;mainfinal.c: 64:     LATHbits.LATH1=0;
+"66
+[; ;mainfinal.c: 66:     ADC_init();
+[e ( _ADC_init ..  ]
+"67
+[; ;mainfinal.c: 67:     if (ADC_getval()<100){LATDbits.LATD7 = 1;}
+[e $ ! < ( _ADC_getval ..  -> -> 100 `i `ui 2018  ]
+{
+[e = . . _LATDbits 0 7 -> -> 1 `i `uc ]
+}
+[e :U 2018 ]
+"71
+[; ;mainfinal.c: 71:     LATHbits.LATH1=0;
 [e = . . _LATHbits 0 1 -> -> 0 `i `uc ]
-"65
-[; ;mainfinal.c: 65:     TRISHbits.TRISH1 = 0;
-[e = . . _TRISHbits 0 1 -> -> 0 `i `uc ]
-"68
-[; ;mainfinal.c: 68:     LATDbits.LATD3=0;
-[e = . . _LATDbits 0 3 -> -> 0 `i `uc ]
-"69
-[; ;mainfinal.c: 69:     TRISDbits.TRISD3 = 0;
-[e = . . _TRISDbits 0 3 -> -> 0 `i `uc ]
 "72
-[; ;mainfinal.c: 72:     LATDbits.LATD4=0;
+[; ;mainfinal.c: 72:     TRISHbits.TRISH1 = 0;
+[e = . . _TRISHbits 0 1 -> -> 0 `i `uc ]
+"74
+[; ;mainfinal.c: 74:     LATDbits.LATD3=0;
+[e = . . _LATDbits 0 3 -> -> 0 `i `uc ]
+"75
+[; ;mainfinal.c: 75:     TRISDbits.TRISD3 = 0;
+[e = . . _TRISDbits 0 3 -> -> 0 `i `uc ]
+"77
+[; ;mainfinal.c: 77:     LATDbits.LATD4=0;
 [e = . . _LATDbits 0 4 -> -> 0 `i `uc ]
-"73
-[; ;mainfinal.c: 73:     TRISDbits.TRISD4 = 0;
+"78
+[; ;mainfinal.c: 78:     TRISDbits.TRISD4 = 0;
 [e = . . _TRISDbits 0 4 -> -> 0 `i `uc ]
-"76
-[; ;mainfinal.c: 76:     struct DC_motor motorL, motorR;
+"82
+[; ;mainfinal.c: 82:     struct DC_motor motorL, motorR;
 [v _motorL `S2015 ~T0 @X0 1 a ]
 [v _motorR `S2015 ~T0 @X0 1 a ]
-"78
-[; ;mainfinal.c: 78:     motorR.power = 0;
-[e = . _motorR 0 -> -> 0 `i `uc ]
-"79
-[; ;mainfinal.c: 79:     motorL.direction = 1;
-[e = . _motorL 1 -> -> 1 `i `uc ]
-"80
-[; ;mainfinal.c: 80:     motorL.posDutyHighByte=(unsigned char *)(&CCPR1H);
-[e = . _motorL 4 -> &U _CCPR1H `*uc ]
-"81
-[; ;mainfinal.c: 81:     motorL.negDutyHighByte=(unsigned char *)(&CCPR2H);
-[e = . _motorL 5 -> &U _CCPR2H `*uc ]
-"82
-[; ;mainfinal.c: 82:     motorL.PWMperiod=PWMcycle;
-[e = . _motorL 3 _PWMcycle ]
 "84
-[; ;mainfinal.c: 84:     motorL.power = 0;
-[e = . _motorL 0 -> -> 0 `i `uc ]
+[; ;mainfinal.c: 84:     motorR.power = 0;
+[e = . _motorR 0 -> -> 0 `i `uc ]
 "85
-[; ;mainfinal.c: 85:     motorR.direction = 1;
-[e = . _motorR 1 -> -> 1 `i `uc ]
+[; ;mainfinal.c: 85:     motorL.direction = 1;
+[e = . _motorL 1 -> -> 1 `i `uc ]
 "86
-[; ;mainfinal.c: 86:     motorR.PWMperiod=PWMcycle;
-[e = . _motorR 3 _PWMcycle ]
+[; ;mainfinal.c: 86:     motorL.posDutyHighByte=(unsigned char *)(&CCPR1H);
+[e = . _motorL 4 -> &U _CCPR1H `*uc ]
 "87
-[; ;mainfinal.c: 87:     motorR.posDutyHighByte=(unsigned char *)(&CCPR3H);
-[e = . _motorR 4 -> &U _CCPR3H `*uc ]
+[; ;mainfinal.c: 87:     motorL.negDutyHighByte=(unsigned char *)(&CCPR2H);
+[e = . _motorL 5 -> &U _CCPR2H `*uc ]
 "88
-[; ;mainfinal.c: 88:     motorR.negDutyHighByte=(unsigned char *)(&CCPR4H);
-[e = . _motorR 5 -> &U _CCPR4H `*uc ]
+[; ;mainfinal.c: 88:     motorL.PWMperiod=PWMcycle;
+[e = . _motorL 3 _PWMcycle ]
+"90
+[; ;mainfinal.c: 90:     motorL.power = 0;
+[e = . _motorL 0 -> -> 0 `i `uc ]
+"91
+[; ;mainfinal.c: 91:     motorR.direction = 1;
+[e = . _motorR 1 -> -> 1 `i `uc ]
 "92
-[; ;mainfinal.c: 92:     char path[100];
-[v _path `uc ~T0 @X0 -> 100 `i a ]
+[; ;mainfinal.c: 92:     motorR.PWMperiod=PWMcycle;
+[e = . _motorR 3 _PWMcycle ]
 "93
-[; ;mainfinal.c: 93:     char timearray[100];
-[v _timearray `uc ~T0 @X0 -> 100 `i a ]
-"97
-[; ;mainfinal.c: 97:     while(PORTFbits.RF3);
-[e $U 2018  ]
-[e :U 2019 ]
-[e :U 2018 ]
-[e $ != -> . . _PORTFbits 0 3 `i -> 0 `i 2019  ]
-[e :U 2020 ]
+[; ;mainfinal.c: 93:     motorR.posDutyHighByte=(unsigned char *)(&CCPR3H);
+[e = . _motorR 4 -> &U _CCPR3H `*uc ]
+"94
+[; ;mainfinal.c: 94:     motorR.negDutyHighByte=(unsigned char *)(&CCPR4H);
+[e = . _motorR 5 -> &U _CCPR4H `*uc ]
+"98
+[; ;mainfinal.c: 98:     char path[100];
+[v _path `uc ~T0 @X0 -> 100 `i a ]
 "99
-[; ;mainfinal.c: 99:     ambient.red = color_read_Red();
-[e = . _ambient 0 ( _color_read_Red ..  ]
-"100
-[; ;mainfinal.c: 100:     ambient.blue = color_read_Blue();
-[e = . _ambient 1 ( _color_read_Blue ..  ]
-"101
-[; ;mainfinal.c: 101:     ambient.green = color_read_Green();
-[e = . _ambient 2 ( _color_read_Green ..  ]
-"102
-[; ;mainfinal.c: 102:     ambient.clear = color_read_Clear();
-[e = . _ambient 3 ( _color_read_Clear ..  ]
-"104
-[; ;mainfinal.c: 104:     while(1){
-[e :U 2022 ]
-{
+[; ;mainfinal.c: 99:     char timearray[100];
+[v _timearray `uc ~T0 @X0 -> 100 `i a ]
+"105
+[; ;mainfinal.c: 105:     TRISFbits.TRISF2 = 1;
+[e = . . _TRISFbits 0 2 -> -> 1 `i `uc ]
+"106
+[; ;mainfinal.c: 106:     ANSELFbits.ANSELF2=0;
+[e = . . _ANSELFbits 0 2 -> -> 0 `i `uc ]
+"107
+[; ;mainfinal.c: 107:     LATDbits.LATD7 = 0;
+[e = . . _LATDbits 0 7 -> -> 0 `i `uc ]
+"108
+[; ;mainfinal.c: 108:     TRISDbits.TRISD7 = 0;
+[e = . . _TRISDbits 0 7 -> -> 0 `i `uc ]
+"111
+[; ;mainfinal.c: 111:     TRISFbits.TRISF3 = 1;
+[e = . . _TRISFbits 0 3 -> -> 1 `i `uc ]
 "112
-[; ;mainfinal.c: 112:     fullSpeedAhead(&motorL,&motorR, 1);
-[e ( _fullSpeedAhead (3 , , &U _motorL &U _motorR -> -> 1 `i `uc ]
+[; ;mainfinal.c: 112:     ANSELFbits.ANSELF3 = 0;
+[e = . . _ANSELFbits 0 3 -> -> 0 `i `uc ]
 "113
-[; ;mainfinal.c: 113:     savepath(path, 1);
-[e ( _savepath (2 , &U _path -> -> 1 `i `uc ]
-"126
-[; ;mainfinal.c: 126:     reading.clear = (color_read_Clear()-ambient.clear)/(max.clear/1000);
-[e = . _reading 3 / - ( _color_read_Clear ..  . _ambient 3 / . _max 3 -> -> 1000 `i `ui ]
-"128
-[; ;mainfinal.c: 128:     if (1200 > reading.clear > 30) {
-[e $ ! > -> > -> -> 1200 `i `ui . _reading 3 `i -> 30 `i 2024  ]
-{
+[; ;mainfinal.c: 113:     LATHbits.LATH3 = 0;
+[e = . . _LATHbits 0 3 -> -> 0 `i `uc ]
+"114
+[; ;mainfinal.c: 114:     TRISHbits.TRISH3 = 0;
+[e = . . _TRISHbits 0 3 -> -> 0 `i `uc ]
+"117
+[; ;mainfinal.c: 117:     while(PORTFbits.RF3);
+[e $U 2019  ]
+[e :U 2020 ]
+[e :U 2019 ]
+[e $ != -> . . _PORTFbits 0 3 `i -> 0 `i 2020  ]
+[e :U 2021 ]
+"119
+[; ;mainfinal.c: 119:     LATHbits.LATH3 = 1;
+[e = . . _LATHbits 0 3 -> -> 1 `i `uc ]
+"120
+[; ;mainfinal.c: 120:     ambient.red = color_read_Red();
+[e = . _ambient 0 ( _color_read_Red ..  ]
+"121
+[; ;mainfinal.c: 121:     ambient.blue = color_read_Blue();
+[e = . _ambient 1 ( _color_read_Blue ..  ]
+"122
+[; ;mainfinal.c: 122:     ambient.green = color_read_Green();
+[e = . _ambient 2 ( _color_read_Green ..  ]
+"123
+[; ;mainfinal.c: 123:     ambient.clear = color_read_Clear();
+[e = . _ambient 3 ( _color_read_Clear ..  ]
+"124
+[; ;mainfinal.c: 124:     LATHbits.LATH3 = 0;
+[e = . . _LATHbits 0 3 -> -> 0 `i `uc ]
+"127
+[; ;mainfinal.c: 127:     while (PORTFbits.RF2);
+[e $U 2022  ]
+[e :U 2023 ]
+[e :U 2022 ]
+[e $ != -> . . _PORTFbits 0 2 `i -> 0 `i 2023  ]
+[e :U 2024 ]
+"129
+[; ;mainfinal.c: 129:     LATDbits.LATD7 = 1;
+[e = . . _LATDbits 0 7 -> -> 1 `i `uc ]
 "130
-[; ;mainfinal.c: 130:      timercount = savetime(timearray, timercount);
-[e = _timercount ( _savetime (2 , &U _timearray _timercount ]
+[; ;mainfinal.c: 130:     max.red = color_read_Red();
+[e = . _max 0 ( _color_read_Red ..  ]
+"131
+[; ;mainfinal.c: 131:     max.blue = color_read_Blue();
+[e = . _max 1 ( _color_read_Blue ..  ]
 "132
-[; ;mainfinal.c: 132:     smallmovement(&motorL,&motorR, 1);
-[e ( _smallmovement (3 , , &U _motorL &U _motorR -> -> 1 `i `uc ]
+[; ;mainfinal.c: 132:     max.green = color_read_Green();
+[e = . _max 2 ( _color_read_Green ..  ]
+"133
+[; ;mainfinal.c: 133:     max.clear = color_read_Clear();
+[e = . _max 3 ( _color_read_Clear ..  ]
 "134
-[; ;mainfinal.c: 134:     _delay((unsigned long)((200)*(64000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-"136
-[; ;mainfinal.c: 136:     reading.red = (color_read_Red()-ambient.red)/(max.red/1000);
-[e = . _reading 0 / - ( _color_read_Red ..  . _ambient 0 / . _max 0 -> -> 1000 `i `ui ]
+[; ;mainfinal.c: 134:     LATDbits.LATD7 = 0;
+[e = . . _LATDbits 0 7 -> -> 0 `i `uc ]
 "137
-[; ;mainfinal.c: 137:     reading.blue = (color_read_Blue()-ambient.blue)/(max.blue/1000);
-[e = . _reading 1 / - ( _color_read_Blue ..  . _ambient 1 / . _max 1 -> -> 1000 `i `ui ]
-"138
-[; ;mainfinal.c: 138:     reading.green = (color_read_Green()-ambient.green)/(max.green/1000);
-[e = . _reading 2 / - ( _color_read_Green ..  . _ambient 2 / . _max 2 -> -> 1000 `i `ui ]
-"140
-[; ;mainfinal.c: 140:     square(&motorL,&motorR, 0);
-[e ( _square (3 , , &U _motorL &U _motorR -> -> 0 `i `uc ]
-"142
-[; ;mainfinal.c: 142:     if (decide_color(&reading) == 2){
-[e $ ! == -> ( _decide_color (1 &U _reading `i -> 2 `i 2025  ]
-{
-"143
-[; ;mainfinal.c: 143:     turnRight90(&motorL,&motorR);}
-[e ( _turnRight90 (2 , &U _motorL &U _motorR ]
-}
-[e :U 2025 ]
-"144
-[; ;mainfinal.c: 144:     savepath(path, 2);
-[e ( _savepath (2 , &U _path -> -> 2 `i `uc ]
-"146
-[; ;mainfinal.c: 146:     if (decide_color(&reading) == 3){
-[e $ ! == -> ( _decide_color (1 &U _reading `i -> 3 `i 2026  ]
-{
-"147
-[; ;mainfinal.c: 147:     turnLeft90(&motorL,&motorR);
-[e ( _turnLeft90 (2 , &U _motorL &U _motorR ]
-"148
-[; ;mainfinal.c: 148:     savepath(path, 3);}
-[e ( _savepath (2 , &U _path -> -> 3 `i `uc ]
-}
+[; ;mainfinal.c: 137:     while(1){
 [e :U 2026 ]
+{
+"139
+[; ;mainfinal.c: 139:     fullSpeedAhead(&motorL,&motorR, 1);
+[e ( _fullSpeedAhead (3 , , &U _motorL &U _motorR -> -> 1 `i `uc ]
+"141
+[; ;mainfinal.c: 141:     reading.clear = (color_read_Clear()-ambient.clear)/(max.clear/1000);
+[e = . _reading 3 / - ( _color_read_Clear ..  . _ambient 3 / . _max 3 -> -> 1000 `i `ui ]
+"143
+[; ;mainfinal.c: 143:     if (1200 > reading.clear > 30) {
+[e $ ! > -> > -> -> 1200 `i `ui . _reading 3 `i -> 30 `i 2028  ]
+{
+"145
+[; ;mainfinal.c: 145:     timercount = savetime(timearray, timercount);
+[e = _timercount ( _savetime (2 , &U _timearray _timercount ]
+"146
+[; ;mainfinal.c: 146:     savepath(path, 1);
+[e ( _savepath (2 , &U _path -> -> 1 `i `uc ]
+"148
+[; ;mainfinal.c: 148:     smallmovement(&motorL,&motorR, 1);
+[e ( _smallmovement (3 , , &U _motorL &U _motorR -> -> 1 `i `uc ]
 "150
-[; ;mainfinal.c: 150:     if (decide_color(&reading) == 4){
-[e $ ! == -> ( _decide_color (1 &U _reading `i -> 4 `i 2027  ]
-{
-"151
-[; ;mainfinal.c: 151:     turn180(&motorL,&motorR);
-[e ( _turn180 (2 , &U _motorL &U _motorR ]
+[; ;mainfinal.c: 150:     _delay((unsigned long)((200)*(64000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
 "152
-[; ;mainfinal.c: 152:     savepath(path, 4);}
-[e ( _savepath (2 , &U _path -> -> 4 `i `uc ]
-}
-[e :U 2027 ]
+[; ;mainfinal.c: 152:     reading.red = (color_read_Red()-ambient.red)/(max.red/1000+1);
+[e = . _reading 0 / - ( _color_read_Red ..  . _ambient 0 + / . _max 0 -> -> 1000 `i `ui -> -> 1 `i `ui ]
+"153
+[; ;mainfinal.c: 153:     reading.blue = (color_read_Blue()-ambient.blue)/(max.blue/1000+1);
+[e = . _reading 1 / - ( _color_read_Blue ..  . _ambient 1 + / . _max 1 -> -> 1000 `i `ui -> -> 1 `i `ui ]
 "154
-[; ;mainfinal.c: 154:     if (decide_color(&reading) == 5){
-[e $ ! == -> ( _decide_color (1 &U _reading `i -> 5 `i 2028  ]
-{
-"155
-[; ;mainfinal.c: 155:     square(&motorL,&motorR, 0);
-[e ( _square (3 , , &U _motorL &U _motorR -> -> 0 `i `uc ]
+[; ;mainfinal.c: 154:     reading.green = (color_read_Green()-ambient.green)/(max.green/1000+1);
+[e = . _reading 2 / - ( _color_read_Green ..  . _ambient 2 + / . _max 2 -> -> 1000 `i `ui -> -> 1 `i `ui ]
 "156
-[; ;mainfinal.c: 156:     turnRight90(&motorL,&motorR);
-[e ( _turnRight90 (2 , &U _motorL &U _motorR ]
-"157
-[; ;mainfinal.c: 157:     savepath(path, 2);
-[e ( _savepath (2 , &U _path -> -> 2 `i `uc ]
+[; ;mainfinal.c: 156:     smallmovement(&motorL,&motorR, 0);
+[e ( _smallmovement (3 , , &U _motorL &U _motorR -> -> 0 `i `uc ]
 "158
-[; ;mainfinal.c: 158:         }
-}
-[e :U 2028 ]
+[; ;mainfinal.c: 158:     char step = decide_color(&reading);
+[v _step `uc ~T0 @X0 1 a ]
+[e = _step ( _decide_color (1 &U _reading ]
 "160
-[; ;mainfinal.c: 160:     if (decide_color(&reading) == 6){
-[e $ ! == -> ( _decide_color (1 &U _reading `i -> 6 `i 2029  ]
+[; ;mainfinal.c: 160:     if (step == 2){
+[e $ ! == -> _step `i -> 2 `i 2029  ]
 {
 "161
-[; ;mainfinal.c: 161:     square(&motorL,&motorR, 0);
-[e ( _square (3 , , &U _motorL &U _motorR -> -> 0 `i `uc ]
-"162
-[; ;mainfinal.c: 162:     turnLeft90(&motorL,&motorR);
-[e ( _turnLeft90 (2 , &U _motorL &U _motorR ]
-"163
-[; ;mainfinal.c: 163:     savepath(path, 3);
-[e ( _savepath (2 , &U _path -> -> 3 `i `uc ]
-"164
-[; ;mainfinal.c: 164:         }
+[; ;mainfinal.c: 161:     turnRight90(&motorL,&motorR);}
+[e ( _turnRight90 (2 , &U _motorL &U _motorR ]
 }
 [e :U 2029 ]
-"166
-[; ;mainfinal.c: 166:     if (decide_color(&reading) == 7){
-[e $ ! == -> ( _decide_color (1 &U _reading `i -> 7 `i 2030  ]
+"162
+[; ;mainfinal.c: 162:     savepath(path, 2);
+[e ( _savepath (2 , &U _path -> -> 2 `i `uc ]
+"164
+[; ;mainfinal.c: 164:     if (step == 3){
+[e $ ! == -> _step `i -> 3 `i 2030  ]
 {
-"167
-[; ;mainfinal.c: 167:     turnRight135(&motorL,&motorR);
-[e ( _turnRight135 (2 , &U _motorL &U _motorR ]
-"168
-[; ;mainfinal.c: 168:     savepath(path, 5);
-[e ( _savepath (2 , &U _path -> -> 5 `i `uc ]
-"169
-[; ;mainfinal.c: 169:         }
+"165
+[; ;mainfinal.c: 165:     turnLeft90(&motorL,&motorR);
+[e ( _turnLeft90 (2 , &U _motorL &U _motorR ]
+"166
+[; ;mainfinal.c: 166:     savepath(path, 3);}
+[e ( _savepath (2 , &U _path -> -> 3 `i `uc ]
 }
 [e :U 2030 ]
-"171
-[; ;mainfinal.c: 171:     if (decide_color(&reading) == 8){
-[e $ ! == -> ( _decide_color (1 &U _reading `i -> 8 `i 2031  ]
+"168
+[; ;mainfinal.c: 168:     if (step == 4){
+[e $ ! == -> _step `i -> 4 `i 2031  ]
 {
-"172
-[; ;mainfinal.c: 172:     turnLeft135(&motorL,&motorR);
-[e ( _turnLeft135 (2 , &U _motorL &U _motorR ]
-"173
-[; ;mainfinal.c: 173:     savepath(path, 6);
-[e ( _savepath (2 , &U _path -> -> 6 `i `uc ]
-"174
-[; ;mainfinal.c: 174:         }
+"169
+[; ;mainfinal.c: 169:     turn180(&motorL,&motorR);
+[e ( _turn180 (2 , &U _motorL &U _motorR ]
+"170
+[; ;mainfinal.c: 170:     savepath(path, 4);}
+[e ( _savepath (2 , &U _path -> -> 4 `i `uc ]
 }
 [e :U 2031 ]
-"176
-[; ;mainfinal.c: 176:     if (1){
-[e $ ! != -> 1 `i -> 0 `i 2032  ]
+"172
+[; ;mainfinal.c: 172:     if (step == 5){
+[e $ ! == -> _step `i -> 5 `i 2032  ]
 {
+"173
+[; ;mainfinal.c: 173:     square(&motorL,&motorR, 0);
+[e ( _square (3 , , &U _motorL &U _motorR -> -> 0 `i `uc ]
+"174
+[; ;mainfinal.c: 174:     turnRight90(&motorL,&motorR);
+[e ( _turnRight90 (2 , &U _motorL &U _motorR ]
+"175
+[; ;mainfinal.c: 175:     savepath(path, 2);
+[e ( _savepath (2 , &U _path -> -> 2 `i `uc ]
+"176
+[; ;mainfinal.c: 176:     savepath(path, 7);
+[e ( _savepath (2 , &U _path -> -> 7 `i `uc ]
 "177
 [; ;mainfinal.c: 177:         }
 }
 [e :U 2032 ]
 "179
-[; ;mainfinal.c: 179:     if (decide_color(&reading) == 9) {
-[e $ ! == -> ( _decide_color (1 &U _reading `i -> 9 `i 2033  ]
+[; ;mainfinal.c: 179:     if (step == 6){
+[e $ ! == -> _step `i -> 6 `i 2033  ]
 {
 "180
-[; ;mainfinal.c: 180:         returnhome(path, motorL, motorR, timearray);
-[e ( _returnhome (4 , , , &U _path _motorL _motorR &U _timearray ]
+[; ;mainfinal.c: 180:     square(&motorL,&motorR, 0);
+[e ( _square (3 , , &U _motorL &U _motorR -> -> 0 `i `uc ]
 "181
-[; ;mainfinal.c: 181:         }
+[; ;mainfinal.c: 181:     turnLeft90(&motorL,&motorR);
+[e ( _turnLeft90 (2 , &U _motorL &U _motorR ]
+"182
+[; ;mainfinal.c: 182:     savepath(path, 3);
+[e ( _savepath (2 , &U _path -> -> 3 `i `uc ]
+"183
+[; ;mainfinal.c: 183:     savepath(path, 7);
+[e ( _savepath (2 , &U _path -> -> 7 `i `uc ]
+"184
+[; ;mainfinal.c: 184:         }
 }
 [e :U 2033 ]
-"184
-[; ;mainfinal.c: 184:     }
-}
-[e :U 2024 ]
 "186
-[; ;mainfinal.c: 186: }
-}
-[e :U 2021 ]
-[e $U 2022  ]
-[e :U 2023 ]
+[; ;mainfinal.c: 186:     if (step == 7){
+[e $ ! == -> _step `i -> 7 `i 2034  ]
+{
 "187
-[; ;mainfinal.c: 187: }
+[; ;mainfinal.c: 187:     turnRight135(&motorL,&motorR);
+[e ( _turnRight135 (2 , &U _motorL &U _motorR ]
+"188
+[; ;mainfinal.c: 188:     savepath(path, 5);
+[e ( _savepath (2 , &U _path -> -> 5 `i `uc ]
+"189
+[; ;mainfinal.c: 189:         }
+}
+[e :U 2034 ]
+"191
+[; ;mainfinal.c: 191:     if (step == 8){
+[e $ ! == -> _step `i -> 8 `i 2035  ]
+{
+"192
+[; ;mainfinal.c: 192:     turnLeft135(&motorL,&motorR);
+[e ( _turnLeft135 (2 , &U _motorL &U _motorR ]
+"193
+[; ;mainfinal.c: 193:     savepath(path, 6);
+[e ( _savepath (2 , &U _path -> -> 6 `i `uc ]
+"194
+[; ;mainfinal.c: 194:         }
+}
+[e :U 2035 ]
+"196
+[; ;mainfinal.c: 196:     if (1){
+[e $ ! != -> 1 `i -> 0 `i 2036  ]
+{
+"197
+[; ;mainfinal.c: 197:         }
+}
+[e :U 2036 ]
+"199
+[; ;mainfinal.c: 199:     if (step == 9) {
+[e $ ! == -> _step `i -> 9 `i 2037  ]
+{
+"206
+[; ;mainfinal.c: 206:         returnhome(path, motorL, motorR, timearray);
+[e ( _returnhome (4 , , , &U _path _motorL _motorR &U _timearray ]
+"207
+[; ;mainfinal.c: 207:         }
+}
+[e :U 2037 ]
+"209
+[; ;mainfinal.c: 209:     }
+}
+[e :U 2028 ]
+"211
+[; ;mainfinal.c: 211: }
+}
+[e :U 2025 ]
+[e $U 2026  ]
+[e :U 2027 ]
+"212
+[; ;mainfinal.c: 212: }
 [e :UE 2017 ]
 }
 [v $root$_HighISR `(v ~T0 @X0 0 e ]
-"191
-[; ;mainfinal.c: 191: void __attribute__((picinterrupt(("high_priority")))) HighISR()
+"216
+[; ;mainfinal.c: 216: void __attribute__((picinterrupt(("high_priority")))) HighISR()
 [v _HighISR `(v ~T3 @X0 1 ef ]
-"192
-[; ;mainfinal.c: 192: {
+"217
+[; ;mainfinal.c: 217: {
 {
 [e :U _HighISR ]
 [f ]
-"193
-[; ;mainfinal.c: 193:     if (PIR0bits.TMR0IF)
-[e $ ! != -> . . _PIR0bits 0 5 `i -> 0 `i 2035  ]
-"194
-[; ;mainfinal.c: 194:     {
+"218
+[; ;mainfinal.c: 218:     if (PIR0bits.TMR0IF)
+[e $ ! != -> . . _PIR0bits 0 5 `i -> 0 `i 2039  ]
+"219
+[; ;mainfinal.c: 219:     {
 {
-"195
-[; ;mainfinal.c: 195:         timercount++;
+"220
+[; ;mainfinal.c: 220:         timercount++;
 [e ++ _timercount -> 1 `i ]
-"196
-[; ;mainfinal.c: 196:     }
+"221
+[; ;mainfinal.c: 221:     }
 }
-[e :U 2035 ]
-"197
-[; ;mainfinal.c: 197:     PIR0bits.TMR0IF=0;
+[e :U 2039 ]
+"222
+[; ;mainfinal.c: 222:     PIR0bits.TMR0IF=0;
 [e = . . _PIR0bits 0 5 -> -> 0 `i `uc ]
-"199
-[; ;mainfinal.c: 199: }
-[e :UE 2034 ]
+"224
+[; ;mainfinal.c: 224: }
+[e :UE 2038 ]
 }

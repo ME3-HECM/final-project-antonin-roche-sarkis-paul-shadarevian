@@ -292,6 +292,7 @@ void smallmovement(DC_motor *mL, DC_motor *mR, char dir)
 4 - Turn180 (Blue)         --> Turn180 called in return journey
 5 - TurnRight135 (Orange)       --> TurnLeft135 called in return journey
 6 - TurnLeft135 (Light Blue)       --> TurnLeft135 called in return journey
+7 - Square (part of yellow and pink) --> square in the opposite direction
 
 *We have optimised the return path by removing the reverse square (which is not necessary in the return journey) 
 **************************************/
@@ -327,8 +328,10 @@ void returnhome(char path[mazesteps], DC_motor motorL, DC_motor motorR, char tim
 // This is method with timer    
     starttimer0; //timer instead of delay is a more efficient option
     while(timercount < timearray[timeposition--]); //continue straight until timer reaches the timercount 
+    
     T0CON0bits.T0EN=0; //turn timer off
-    stop(&motorL, &motorR);
+    stop(&motorL, &motorR);//stop once the device has gone straight for the required amount of time
+    
     }       
     
     //case if instruction is anything else
@@ -344,4 +347,5 @@ void returnstep(char instruction, DC_motor motorL, DC_motor motorR) {
     if (instruction == 4) {turn180(&motorL,&motorR);}
     if (instruction == 5) {turnLeft135(&motorL,&motorR);}
     if (instruction == 6) {turnRight135(&motorL,&motorR);}           
+    if (instruction == 7) {square(&motorL,&motorR, 0);}
 }

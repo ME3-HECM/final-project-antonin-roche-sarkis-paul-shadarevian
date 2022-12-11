@@ -1,4 +1,4 @@
-# 1 "timer0.c"
+# 1 "ADC.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "timer0.c" 2
+# 1 "ADC.c" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -24229,60 +24229,49 @@ __attribute__((__unsupported__("The READTIMER" "0" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\\pic\\include\\xc.h" 2 3
-# 1 "timer0.c" 2
+# 1 "ADC.c" 2
 
-# 1 "./timer0.h" 1
-
-
+# 1 "./ADC.h" 1
 
 
 
 
 
 
-unsigned int on_period,off_period;
 
-void Interrupts_init(void);
-void __attribute__((picinterrupt(("high_priority")))) HighISR();
-
-void Timer0_init(void);
-void starttimer0(void);
-# 2 "timer0.c" 2
+void ADC_init(void);
+unsigned int ADC_getval(void);
+# 2 "ADC.c" 2
 
 
 
 
 
 
-void Interrupts_init(void)
+
+void ADC_init(void)
 {
-    PIE0bits.TMR0IE=1;
-    INTCONbits.PEIE=1;
-    INTCONbits.IPEN=0;
-    INTCONbits.GIE=1;
+    TRISAbits.TRISA4=1;
+    ANSELAbits.ANSELA4=1;
+
+
+    ADREFbits.ADNREF = 0;
+    ADREFbits.ADPREF = 0b00;
+    ADPCH=0b11;
+    ADCON0bits.ADFM = 0;
+    ADCON0bits.ADCS = 1;
+    ADCON0bits.ADON = 1;
 }
 
-
-
-
-
-void Timer0_init(void)
+unsigned int ADC_getval(void)
 {
-# 33 "timer0.c"
-    T0CON1bits.T0CS=0b010;
-    T0CON1bits.T0ASYNC=1;
-    T0CON1bits.T0CKPS=0b0000;
-    T0CON0bits.T016BIT=1;
-}
+    unsigned int tmpval;
 
+    ADCON0bits.GO = 1;
 
+    while (ADCON0bits.GO);
 
+    tmpval = ADRESH;
 
-
-
-void starttimer0(void){
-    TMR0H=1535>>8;
-    TMR0L=1535;
-    T0CON0bits.T0EN=1;
-
+    return tmpval;
 }

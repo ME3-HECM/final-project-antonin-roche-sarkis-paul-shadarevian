@@ -24362,6 +24362,18 @@ void Timer0_init(void);
 void starttimer0(void);
 # 13 "mainfinal.c" 2
 
+# 1 "./ADC.h" 1
+
+
+
+
+
+
+
+void ADC_init(void);
+unsigned int ADC_getval(void);
+# 14 "mainfinal.c" 2
+
 
 
 
@@ -24404,7 +24416,7 @@ void main(void){
 
     TRISFbits.TRISF2 = 1;
     ANSELFbits.ANSELF2=0;
-
+    LATDbits.LATD7 = 0;
     TRISDbits.TRISD7 = 0;
 
 
@@ -24412,16 +24424,21 @@ void main(void){
 
 
 
+
+    ADC_init();
+    if (ADC_getval()<100){LATDbits.LATD7 = 1;}
+
+
+
     LATHbits.LATH1=0;
     TRISHbits.TRISH1 = 0;
-
 
     LATDbits.LATD3=0;
     TRISDbits.TRISD3 = 0;
 
-
     LATDbits.LATD4=0;
     TRISDbits.TRISD4 = 0;
+
 
 
     struct DC_motor motorL, motorR;
@@ -24445,70 +24462,95 @@ void main(void){
 
 
 
+
+
+    TRISFbits.TRISF2 = 1;
+    ANSELFbits.ANSELF2=0;
+    LATDbits.LATD7 = 0;
+    TRISDbits.TRISD7 = 0;
+
+
+    TRISFbits.TRISF3 = 1;
+    ANSELFbits.ANSELF3 = 0;
+    LATHbits.LATH3 = 0;
+    TRISHbits.TRISH3 = 0;
+
+
     while(PORTFbits.RF3);
 
+    LATHbits.LATH3 = 1;
     ambient.red = color_read_Red();
     ambient.blue = color_read_Blue();
     ambient.green = color_read_Green();
     ambient.clear = color_read_Clear();
+    LATHbits.LATH3 = 0;
+
+
+    while (PORTFbits.RF2);
+
+    LATDbits.LATD7 = 1;
+    max.red = color_read_Red();
+    max.blue = color_read_Blue();
+    max.green = color_read_Green();
+    max.clear = color_read_Clear();
+    LATDbits.LATD7 = 0;
+
 
     while(1){
 
-
-
-
-
-
-
     fullSpeedAhead(&motorL,&motorR, 1);
-    savepath(path, 1);
-# 126 "mainfinal.c"
+
     reading.clear = (color_read_Clear()-ambient.clear)/(max.clear/1000);
 
     if (1200 > reading.clear > 30) {
 
-     timercount = savetime(timearray, timercount);
+    timercount = savetime(timearray, timercount);
+    savepath(path, 1);
 
     smallmovement(&motorL,&motorR, 1);
 
     _delay((unsigned long)((200)*(64000000/4000.0)));
 
-    reading.red = (color_read_Red()-ambient.red)/(max.red/1000);
-    reading.blue = (color_read_Blue()-ambient.blue)/(max.blue/1000);
-    reading.green = (color_read_Green()-ambient.green)/(max.green/1000);
+    reading.red = (color_read_Red()-ambient.red)/(max.red/1000+1);
+    reading.blue = (color_read_Blue()-ambient.blue)/(max.blue/1000+1);
+    reading.green = (color_read_Green()-ambient.green)/(max.green/1000+1);
 
-    square(&motorL,&motorR, 0);
+    smallmovement(&motorL,&motorR, 0);
 
-    if (decide_color(&reading) == 2){
+    char step = decide_color(&reading);
+
+    if (step == 2){
     turnRight90(&motorL,&motorR);}
     savepath(path, 2);
 
-    if (decide_color(&reading) == 3){
+    if (step == 3){
     turnLeft90(&motorL,&motorR);
     savepath(path, 3);}
 
-    if (decide_color(&reading) == 4){
+    if (step == 4){
     turn180(&motorL,&motorR);
     savepath(path, 4);}
 
-    if (decide_color(&reading) == 5){
+    if (step == 5){
     square(&motorL,&motorR, 0);
     turnRight90(&motorL,&motorR);
     savepath(path, 2);
+    savepath(path, 7);
         }
 
-    if (decide_color(&reading) == 6){
+    if (step == 6){
     square(&motorL,&motorR, 0);
     turnLeft90(&motorL,&motorR);
     savepath(path, 3);
+    savepath(path, 7);
         }
 
-    if (decide_color(&reading) == 7){
+    if (step == 7){
     turnRight135(&motorL,&motorR);
     savepath(path, 5);
         }
 
-    if (decide_color(&reading) == 8){
+    if (step == 8){
     turnLeft135(&motorL,&motorR);
     savepath(path, 6);
         }
@@ -24516,10 +24558,15 @@ void main(void){
     if (1){
         }
 
-    if (decide_color(&reading) == 9) {
+    if (step == 9) {
+
+
+
+
+
+
         returnhome(path, motorL, motorR, timearray);
         }
-
 
     }
 

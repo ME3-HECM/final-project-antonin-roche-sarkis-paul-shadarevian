@@ -2118,28 +2118,3 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;timer0.c: 49: }
 [e :UE 2017 ]
 }
-"53
-[; ;timer0.c: 53: unsigned int get16bitTMR0val(void)
-[v _get16bitTMR0val `(ui ~T0 @X0 1 ef ]
-"54
-[; ;timer0.c: 54: {
-{
-[e :U _get16bitTMR0val ]
-[f ]
-"56
-[; ;timer0.c: 56:    unsigned int a;
-[v _a `ui ~T0 @X0 1 a ]
-"59
-[; ;timer0.c: 59:     a = TMR0L;
-[e = _a -> _TMR0L `ui ]
-"60
-[; ;timer0.c: 60:     a = a|(TMR0H<<8);
-[e = _a | _a -> << -> _TMR0H `i -> 8 `i `ui ]
-"62
-[; ;timer0.c: 62:     return a;
-[e ) _a ]
-[e $UE 2018  ]
-"63
-[; ;timer0.c: 63: }
-[e :UE 2018 ]
-}
