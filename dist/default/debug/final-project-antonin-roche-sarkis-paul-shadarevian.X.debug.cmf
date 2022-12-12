@@ -11,16 +11,16 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\sps220\AppData\Local\Temp\xcAsdfs.o
+$C:\Users\sps220\AppData\Local\Temp\xcAsc70.o
 idloc IDLOC 5 200000 200000 10 1 1
 init CODE 0 3A 3A 4 1 2
-reset_vec CODE 0 0 0 4 1 2
+reset_vec CODE 0 0 0 6 1 2
 config CONFIG 4 300000 300000 C 1 1
-$dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
+$dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
 cinit CODE 0 26F6 26F6 32 1 2
 idloc IDLOC 5 200000 200000 10 1 1
 text0 CODE 0 6D2 6D2 64C 1 2
-text1 CODE 0 27A0 27A0 20 1 2
+text1 CODE 0 27D0 27D0 20 1 2
 text2 CODE 0 23BE 23BE 90 1 2
 text3 CODE 0 3E 3E 694 1 2
 text4 CODE 0 16BC 16BC 1B4 1 2
@@ -31,18 +31,18 @@ text8 CODE 0 2534 2534 50 1 2
 text9 CODE 0 2584 2584 50 1 2
 text10 CODE 0 25D4 25D4 50 1 2
 text11 CODE 0 2624 2624 50 1 2
-text12 CODE 0 2862 2862 A 1 2
+text12 CODE 0 2872 2872 A 1 2
 text13 CODE 0 2674 2674 42 1 2
 text14 CODE 0 26B6 26B6 40 1 2
-text15 CODE 0 27C0 27C0 20 1 2
-text16 CODE 0 284A 284A C 1 2
-text17 CODE 0 286C 286C A 1 2
-text18 CODE 0 2876 2876 A 1 2
-text19 CODE 0 2752 2752 28 1 2
-text20 CODE 0 2728 2728 2A 1 2
+text15 CODE 0 27F0 27F0 20 1 2
+text16 CODE 0 285A 285A C 1 2
+text17 CODE 0 287C 287C A 1 2
+text18 CODE 0 2886 2886 A 1 2
+text19 CODE 0 2782 2782 28 1 2
+text20 CODE 0 2758 2758 2A 1 2
 text21 CODE 0 14E2 14E2 1DA 1 2
 text22 CODE 0 217A 217A C6 1 2
-text23 CODE 0 2834 2834 16 1 2
+text23 CODE 0 2844 2844 16 1 2
 text24 CODE 0 19DC 19DC 13E 1 2
 text25 CODE 0 2302 2302 BC 1 2
 text26 CODE 0 2240 2240 C2 1 2
@@ -54,13 +54,13 @@ text31 CODE 0 1EE0 1EE0 E8 1 2
 text32 CODE 0 24C2 24C2 72 1 2
 text33 CODE 0 20AE 20AE CC 1 2
 text34 CODE 0 1870 1870 16C 1 2
-text35 CODE 0 277A 277A 26 1 2
+text35 CODE 0 27AA 27AA 26 1 2
 text36 CODE 0 244E 244E 74 1 2
-text37 CODE 0 2800 2800 1A 1 2
-text38 CODE 0 2856 2856 C 1 2
-text39 CODE 0 281A 281A 1A 1 2
-text40 CODE 0 27E0 27E0 20 1 2
-text42 CODE 0 2880 2880 8 1 2
+text37 CODE 0 2810 2810 1A 1 2
+text38 CODE 0 2866 2866 C 1 2
+text39 CODE 0 282A 282A 1A 1 2
+text40 CODE 0 2728 2728 30 1 2
+text42 CODE 0 2890 2890 8 1 2
 cstackCOMRAM COMRAM 1 1 1 4D 1 1
 cstackBANK0 BANK0 1 60 60 48 1 1
 temp COMRAM 1 57 57 1 1 1
@@ -90,11 +90,11 @@ BANK6 600-6FF 1
 BANK7 700-7FF 1
 BANK8 800-8FF 1
 BANK9 900-9FF 1
-CONST 4-7 1
-CONST 2888-1FFFF 1
-SMALLCONST 2888-1FFFF 1
-CODE 4-7 1
-CODE 2888-1FFFF 1
+CONST 6-7 1
+CONST 2898-1FFFF 1
+SMALLCONST 2898-1FFFF 1
+CODE 6-7 1
+CODE 2898-1FFFF 1
 BANK10 A00-AFF 1
 BANK11 B00-BFF 1
 BANK12 C00-CFF 1
@@ -106,7 +106,7 @@ BIGRAM 2C8-DE9 1
 BIGSFR DEF-FFF 1
 COMRAM 58-5F 1
 EEDATA 310000-3103FF 1
-MEDIUMCONST 2888-FFFF 1
+MEDIUMCONST 2898-FFFF 1
 MEDIUMCONST 10E00-1FFFF 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -121,49 +121,50 @@ MEDIUMCONST 10E00-1FFFF 1
 # are in ascending order of addresses.
 # All other numeric values are in decimal.
 %LINETAB
-$dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-8 intcode CODE >18803:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
+$dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+8 intcode CODE >18818:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
 8 intcode CODE >193:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\mainfinal.c
 A intcode CODE >195:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\mainfinal.c
 2A intcode CODE >197:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\mainfinal.c
 2E intcode CODE >198:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\mainfinal.c
 32 intcode CODE >200:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\mainfinal.c
 36 intcode CODE >201:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\mainfinal.c
-2880 text42 CODE >42:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
-2880 text42 CODE >43:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
-2884 text42 CODE >44:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
-2886 text42 CODE >46:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
-27E0 text40 CODE >23:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
-27E0 text40 CODE >27:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
-27E2 text40 CODE >29:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
-27F0 text40 CODE >31:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
-27F6 text40 CODE >33:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
-27FE text40 CODE >34:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
-281A text39 CODE >9:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
-281A text39 CODE >11:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
-281C text39 CODE >12:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
-2820 text39 CODE >15:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
-2824 text39 CODE >16:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
-2828 text39 CODE >17:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
-282C text39 CODE >18:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
-282E text39 CODE >19:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
-2830 text39 CODE >20:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
-2832 text39 CODE >21:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
-2856 text38 CODE >8:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
-2856 text38 CODE >10:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
-285A text38 CODE >11:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
-285C text38 CODE >12:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
-285E text38 CODE >13:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
-2860 text38 CODE >14:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
-2800 text37 CODE >19:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
-2800 text37 CODE >32:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
-2808 text37 CODE >33:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
-280A text37 CODE >34:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
-280E text37 CODE >35:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
-2810 text37 CODE >37:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
-2814 text37 CODE >38:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
-2816 text37 CODE >39:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
-2818 text37 CODE >40:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
+2890 text42 CODE >42:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
+2890 text42 CODE >43:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
+2894 text42 CODE >44:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
+2896 text42 CODE >46:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
+2728 text40 CODE >23:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
+2728 text40 CODE >27:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
+272A text40 CODE >29:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
+2738 text40 CODE >31:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
+273E text40 CODE >33:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
+274E text40 CODE >36:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
+2756 text40 CODE >37:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
+282A text39 CODE >9:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
+282A text39 CODE >11:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
+282C text39 CODE >12:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
+2830 text39 CODE >15:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
+2834 text39 CODE >16:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
+2838 text39 CODE >17:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
+283C text39 CODE >18:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
+283E text39 CODE >19:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
+2840 text39 CODE >20:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
+2842 text39 CODE >21:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\ADC.c
+2866 text38 CODE >8:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
+2866 text38 CODE >10:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
+286A text38 CODE >11:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
+286C text38 CODE >12:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
+286E text38 CODE >13:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
+2870 text38 CODE >14:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
+2810 text37 CODE >19:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
+2810 text37 CODE >32:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
+2818 text37 CODE >33:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
+281A text37 CODE >34:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
+281E text37 CODE >35:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
+2820 text37 CODE >37:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
+2824 text37 CODE >38:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
+2826 text37 CODE >39:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
+2828 text37 CODE >40:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
 244E text36 CODE >7:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\lwdiv.c
 244E text36 CODE >13:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\lwdiv.c
 2456 text36 CODE >14:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\lwdiv.c
@@ -181,12 +182,12 @@ A intcode CODE >195:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\g
 24B8 text36 CODE >28:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\lwdiv.c
 24B8 text36 CODE >29:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\lwdiv.c
 24C0 text36 CODE >30:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\lwdiv.c
-277A text35 CODE >15:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul16.c
-277A text35 CODE >37:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul16.c
-2786 text35 CODE >38:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul16.c
-278E text35 CODE >39:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul16.c
-2796 text35 CODE >52:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul16.c
-279E text35 CODE >53:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul16.c
+27AA text35 CODE >15:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul16.c
+27AA text35 CODE >37:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul16.c
+27B6 text35 CODE >38:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul16.c
+27BE text35 CODE >39:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul16.c
+27C6 text35 CODE >52:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul16.c
+27CE text35 CODE >53:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul16.c
 1870 text34 CODE >74:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
 1870 text34 CODE >77:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
 188C text34 CODE >78:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
@@ -351,10 +352,10 @@ A intcode CODE >195:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\g
 1AFE text24 CODE >376:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
 1B16 text24 CODE >378:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
 1B18 text24 CODE >379:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
-2834 text23 CODE >326:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
-2836 text23 CODE >328:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
-2846 text23 CODE >329:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
-2848 text23 CODE >330:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
+2844 text23 CODE >326:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
+2846 text23 CODE >328:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
+2856 text23 CODE >329:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
+2858 text23 CODE >330:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
 217A text22 CODE >245:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
 217A text22 CODE >247:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
 218E text22 CODE >248:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
@@ -402,41 +403,41 @@ A intcode CODE >195:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\g
 167A text21 CODE >307:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
 1692 text21 CODE >308:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
 16BA text21 CODE >310:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
-2728 text20 CODE >4:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-2728 text20 CODE >7:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-2732 text20 CODE >8:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-2734 text20 CODE >9:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-2738 text20 CODE >12:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-273A text20 CODE >13:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-273C text20 CODE >14:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-273E text20 CODE >15:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-2740 text20 CODE >16:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-2744 text20 CODE >17:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-2748 text20 CODE >18:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-274C text20 CODE >19:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-2750 text20 CODE >20:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-2752 text19 CODE >22:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-2752 text19 CODE >24:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-2778 text19 CODE >25:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-2876 text18 CODE >27:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-2876 text18 CODE >29:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-287A text18 CODE >30:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-287E text18 CODE >31:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-286C text17 CODE >39:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-286C text17 CODE >41:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-2870 text17 CODE >42:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-2874 text17 CODE >43:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-284A text16 CODE >45:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-284C text16 CODE >47:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-2850 text16 CODE >48:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-2854 text16 CODE >49:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-27C0 text15 CODE >33:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\color.c
-27C2 text15 CODE >34:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\color.c
-27C6 text15 CODE >35:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\color.c
-27CC text15 CODE >36:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\color.c
-27D4 text15 CODE >37:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\color.c
-27DA text15 CODE >38:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\color.c
-27DE text15 CODE >39:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\color.c
+2758 text20 CODE >4:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+2758 text20 CODE >7:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+2762 text20 CODE >8:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+2764 text20 CODE >9:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+2768 text20 CODE >12:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+276A text20 CODE >13:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+276C text20 CODE >14:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+276E text20 CODE >15:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+2770 text20 CODE >16:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+2774 text20 CODE >17:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+2778 text20 CODE >18:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+277C text20 CODE >19:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+2780 text20 CODE >20:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+2782 text19 CODE >22:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+2782 text19 CODE >24:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+27A8 text19 CODE >25:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+2886 text18 CODE >27:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+2886 text18 CODE >29:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+288A text18 CODE >30:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+288E text18 CODE >31:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+287C text17 CODE >39:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+287C text17 CODE >41:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+2880 text17 CODE >42:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+2884 text17 CODE >43:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+285A text16 CODE >45:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+285C text16 CODE >47:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+2860 text16 CODE >48:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+2864 text16 CODE >49:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+27F0 text15 CODE >33:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\color.c
+27F2 text15 CODE >34:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\color.c
+27F6 text15 CODE >35:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\color.c
+27FC text15 CODE >36:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\color.c
+2804 text15 CODE >37:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\color.c
+280A text15 CODE >38:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\color.c
+280E text15 CODE >39:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\color.c
 26B6 text14 CODE >6:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\color.c
 26B6 text14 CODE >9:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\color.c
 26BA text14 CODE >12:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\color.c
@@ -460,10 +461,10 @@ A intcode CODE >195:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\g
 26B0 text13 CODE >60:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
 26B2 text13 CODE >61:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
 26B4 text13 CODE >62:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-2862 text12 CODE >33:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-2862 text12 CODE >35:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-2866 text12 CODE >36:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
-286A text12 CODE >37:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+2872 text12 CODE >33:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+2872 text12 CODE >35:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+2876 text12 CODE >36:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
+287A text12 CODE >37:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
 2624 text11 CODE >77:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\color.c
 2624 text11 CODE >80:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\color.c
 2628 text11 CODE >81:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\color.c
@@ -784,12 +785,12 @@ BA text3 CODE >109:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\gi
 2442 text2 CODE >69:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
 244A text2 CODE >70:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
 244C text2 CODE >71:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
-27A0 text1 CODE >332:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
-27A0 text1 CODE >334:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
-27A4 text1 CODE >335:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
-27BC text1 CODE >336:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
-27BE text1 CODE >337:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
-27BE text1 CODE >338:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
+27D0 text1 CODE >332:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
+27D0 text1 CODE >334:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
+27D4 text1 CODE >335:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
+27EC text1 CODE >336:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
+27EE text1 CODE >337:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
+27EE text1 CODE >338:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
 6D2 text0 CODE >22:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\mainfinal.c
 6D2 text0 CODE >26:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\mainfinal.c
 6D6 text0 CODE >27:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\mainfinal.c
@@ -889,34 +890,34 @@ CC6 text0 CODE >176:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\g
 CC8 text0 CODE >169:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\mainfinal.c
 CD8 text0 CODE >179:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\mainfinal.c
 CEE text0 CODE >181:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\mainfinal.c
-26F6 cinit CODE >8231:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
-26F6 cinit CODE >8233:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
-26F6 cinit CODE >8236:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
-26F6 cinit CODE >8283:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
-26FA cinit CODE >8284:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
-26FC cinit CODE >8285:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
-26FC cinit CODE >8286:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
-26FE cinit CODE >8287:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
-2700 cinit CODE >8288:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
-2702 cinit CODE >8291:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
-2706 cinit CODE >8292:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
-2708 cinit CODE >8293:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
-2708 cinit CODE >8294:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
-270A cinit CODE >8295:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
-270C cinit CODE >8296:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
-270E cinit CODE >8299:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
-2710 cinit CODE >8300:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
-2712 cinit CODE >8303:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
-2716 cinit CODE >8304:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
-2718 cinit CODE >8305:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
-2718 cinit CODE >8306:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
-271A cinit CODE >8307:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
-271C cinit CODE >8308:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
-271E cinit CODE >8314:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
-271E cinit CODE >8316:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
-2720 cinit CODE >8317:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
-2722 cinit CODE >8318:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
-2724 cinit CODE >8319:C:\Users\sps220\AppData\Local\Temp\xcAsdfs.s
+26F6 cinit CODE >8231:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
+26F6 cinit CODE >8233:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
+26F6 cinit CODE >8236:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
+26F6 cinit CODE >8283:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
+26FA cinit CODE >8284:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
+26FC cinit CODE >8285:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
+26FC cinit CODE >8286:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
+26FE cinit CODE >8287:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
+2700 cinit CODE >8288:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
+2702 cinit CODE >8291:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
+2706 cinit CODE >8292:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
+2708 cinit CODE >8293:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
+2708 cinit CODE >8294:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
+270A cinit CODE >8295:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
+270C cinit CODE >8296:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
+270E cinit CODE >8299:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
+2710 cinit CODE >8300:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
+2712 cinit CODE >8303:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
+2716 cinit CODE >8304:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
+2718 cinit CODE >8305:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
+2718 cinit CODE >8306:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
+271A cinit CODE >8307:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
+271C cinit CODE >8308:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
+271E cinit CODE >8314:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
+271E cinit CODE >8316:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
+2720 cinit CODE >8317:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
+2722 cinit CODE >8318:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
+2724 cinit CODE >8319:C:\Users\sps220\AppData\Local\Temp\xcAsc70.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -929,573 +930,573 @@ CEE text0 CODE >181:C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\g
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-__Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hspace_0 2888 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hspace_1 2C8 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hspace_2 0 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hspace_4 60000C 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-color_writetoaddr@address 4 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-turn180@mL 1E 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-turn180@mR 20 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hibigdata 0 0 CODE 0 ibigdata dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\sps220\AppData\Local\Temp\xcAsdfs.o
-__Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-setMotorPWM@m 13 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-main@PWMcycle 7A 0 BANK0 1 cstackBANK0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_timercount 52 0 COMRAM 1 bssCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-main@a 79 0 BANK0 1 cstackBANK0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_T2PR FBC 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\sps220\AppData\Local\Temp\xcAsdfs.o
-_main 6D2 0 CODE 0 text0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_path 100 0 BANK1 1 bssBANK1 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_step A8 0 BANK0 1 bssBANK0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_stop 24C2 0 CODE 0 text32 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-btemp 57 0 COMRAM 1 temp dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-start 3A 0 CODE 0 init C:\Users\sps220\AppData\Local\Temp\xcAsdfs.o
-___flmul@aexp 12 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___flmul@bexp 13 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___flmul@prod 14 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___flmul@sign D 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___flmul@temp 18 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-carryoutstep@mx 74 0 BANK0 1 cstackBANK0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_turnRight135 1DF8 0 CODE 0 text28 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-?___wmul 1 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-color_read_Green@tmp A 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hpowerup 3A 0 CODE 0 powerup dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_timearray 200 0 BANK2 1 bssBANK2 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-ttemp5 58 0 COMRAM 1 temp dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-ttemp6 5B 0 COMRAM 1 temp dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-ttemp7 5F 0 COMRAM 1 temp dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-returnhome@motorL 37 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-returnhome@motorR 40 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__accesstop 60 0 ABS 0 - C:\Users\sps220\AppData\Local\Temp\xcAsdfs.o
-intlevel0 0 0 CODE 0 text C:\Users\sps220\AppData\Local\Temp\xcAsdfs.o
-intlevel1 0 0 CODE 0 text C:\Users\sps220\AppData\Local\Temp\xcAsdfs.o
-intlevel2 0 0 CODE 0 text C:\Users\sps220\AppData\Local\Temp\xcAsdfs.o
-intlevel3 0 0 CODE 0 text C:\Users\sps220\AppData\Local\Temp\xcAsdfs.o
-_turn180 1EE0 0 CODE 0 text31 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-wtemp8 58 0 COMRAM 1 temp dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_carryoutstep 14E2 0 CODE 0 text21 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hifardata 0 0 CODE 0 ifardata dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hclrtext 0 0 ABS 0 clrtext dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___wmul@multiplicand 3 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_ADRESH F64 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_Interrupts_init 2862 0 CODE 0 text38 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-decide_color@br 3E 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-decide_color@gr 3A 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-decide_color@mx 28 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-decide_color@rr 3C 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\sps220\AppData\Local\Temp\xcAsdfs.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\sps220\AppData\Local\Temp\xcAsdfs.o
-I2C_2_Master_Read@ack 3 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-I2C_2_Master_Read@tmp 4 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_CCPR1H FAA 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_CCPR2H FA6 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_CCPR3H F25 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_CCPR4H F21 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-color_writetoaddr@value 3 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-?_ADC_getval 1 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_turnRight90 1DF8 0 CODE 0 text27 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of___wmul 27A0 0 CODE 0 text35 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-main@max 90 0 BANK0 1 cstackBANK0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_turnRight135 1EE0 0 CODE 0 text28 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___fldiv@aexp 27 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___fldiv@bexp 26 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___fldiv@sign 1F 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_ADC_init 281A 0 CODE 0 text39 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-color_read_Blue@tmp A 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hintcodelo 3A 0 CODE 0 intcodelo dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of___fldiv 14E2 0 CODE 0 text7 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of___flmul 1148 0 CODE 0 text6 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of___fltol 1C20 0 CODE 0 text5 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_timeposition 56 0 COMRAM 1 bssCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of___lwdiv 24C2 0 CODE 0 text36 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_smallmovement 2240 0 CODE 0 text22 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_ADC_init 2834 0 CODE 0 text39 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-carryoutstep@motorL 60 0 BANK0 1 cstackBANK0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-carryoutstep@motorR 69 0 BANK0 1 cstackBANK0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-carryoutstep@read 72 0 BANK0 1 cstackBANK0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-carryoutstep@step 78 0 BANK0 1 cstackBANK0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___lwdiv@quotient 10 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___fldiv@a 13 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___fldiv@b F 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___flmul@a 5 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___flmul@b 1 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lintcodelo 3A 0 CODE 0 intcodelo dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_Interrupts_init 2856 0 CODE 0 text38 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_SSP2CON1bits ED9 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-start_initialization 26F6 0 CODE 0 cinit dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_SSP2CON2bits EDA 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_carryoutstep 16BC 0 CODE 0 text21 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_off_period 4E 0 COMRAM 1 bssCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_setMotorPWM 1870 0 CODE 0 text34 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_TRISAbits F81 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_TRISCbits F83 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_TRISDbits F84 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_TRISEbits F85 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_TRISFbits F86 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_TRISGbits F87 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_TRISHbits F88 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___rparam_used 1 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_RC7PPS E69 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_RD5PPS E6F 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_RD6PPS E70 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_RE2PPS E74 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_RE4PPS E76 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_ADREFbits F58 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_RG6PPS E88 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_on_period 50 0 COMRAM 1 bssCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__pcstackBANK0 60 0 BANK0 1 cstackBANK0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_I2C_2_Master_Start 2880 0 CODE 0 text18 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_I2C_2_Master_Write 2856 0 CODE 0 text16 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_turnLeft135 20AE 0 CODE 0 text30 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-I2C_2_Master_Write@data_byte 2 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-isa$xinst 0 0 ABS 0 - C:\Users\sps220\AppData\Local\Temp\xcAsdfs.o
-ADC_getval@tmpval 3 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hbank0 0 0 ABS 0 bank0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hbank1 0 0 ABS 0 bank1 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hbank2 0 0 ABS 0 bank2 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hbank3 0 0 ABS 0 bank3 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hbank4 0 0 ABS 0 bank4 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hbank5 0 0 ABS 0 bank5 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hbank6 0 0 ABS 0 bank6 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hbank7 0 0 ABS 0 bank7 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hbank8 0 0 ABS 0 bank8 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hbank9 0 0 ABS 0 bank9 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hcinit 0 0 ABS 0 cinit dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hconst 0 0 CONST 0 const dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_square 23BE 0 CODE 0 text25 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hidata 0 0 CODE 0 idata dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hidloc 200010 0 IDLOC 5 idloc dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_color_read_Clear 25D4 0 CODE 0 text10 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hnvbit 0 0 COMRAM 1 nvbit dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_color_read_Green 2584 0 CODE 0 text9 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hparam 0 0 COMRAM 1 rparam dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hrdata 0 0 COMRAM 1 rdata dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hstack 0 0 STACK 2 stack dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext0 0 0 ABS 0 text0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext1 0 0 ABS 0 text1 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext2 0 0 ABS 0 text2 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext3 0 0 ABS 0 text3 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext4 0 0 ABS 0 text4 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext5 0 0 ABS 0 text5 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext6 0 0 ABS 0 text6 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext7 0 0 ABS 0 text7 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext8 0 0 ABS 0 text8 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext9 0 0 ABS 0 text9 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_main$2841 7C 0 BANK0 1 cstackBANK0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___lwdiv@counter 12 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hbank10 0 0 ABS 0 bank10 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hbank11 0 0 ABS 0 bank11 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hbank12 0 0 ABS 0 bank12 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hbank13 0 0 ABS 0 bank13 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hbigram 0 0 ABS 0 bigram dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hbigsfr 0 0 ABS 0 bigsfr dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\sps220\AppData\Local\Temp\xcAsdfs.o
-___xxtofl@arg B 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___xxtofl@exp A 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___xxtofl@val 1 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-turnLeft90@mL 1E 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-turnLeft90@mR 20 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_HighISR 3A 0 CODE 0 intcode dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hcomram 0 0 ABS 0 comram dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hconfig 30000C 0 CONFIG 4 config dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_T2HLTbits FBE 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lbank0 0 0 ABS 0 bank0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lbank1 0 0 ABS 0 bank1 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lbank2 0 0 ABS 0 bank2 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lbank3 0 0 ABS 0 bank3 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lbank4 0 0 ABS 0 bank4 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lbank5 0 0 ABS 0 bank5 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lbank6 0 0 ABS 0 bank6 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lbank7 0 0 ABS 0 bank7 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lbank8 0 0 ABS 0 bank8 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lbank9 0 0 ABS 0 bank9 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lcinit 0 0 ABS 0 cinit dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lconst 0 0 CONST 0 const dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lidata 0 0 CODE 0 idata dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lidloc 0 0 IDLOC 5 idloc dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lnvbit 0 0 COMRAM 1 nvbit dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lparam 0 0 COMRAM 1 rparam dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lrdata 0 0 COMRAM 1 rdata dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lstack 0 0 STACK 2 stack dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext0 0 0 ABS 0 text0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext1 0 0 ABS 0 text1 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext2 0 0 ABS 0 text2 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext3 0 0 ABS 0 text3 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext4 0 0 ABS 0 text4 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext5 0 0 ABS 0 text5 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext6 0 0 ABS 0 text6 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext7 0 0 ABS 0 text7 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext8 0 0 ABS 0 text8 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext9 0 0 ABS 0 text9 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-returnstep@motorL 24 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-returnstep@motorR 2D 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_I2C_2_Master_Start 2876 0 CODE 0 text18 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-initDCmotorsPWM@PWMperiod 1 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_I2C_2_Master_Write 284A 0 CODE 0 text16 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hfarbss 0 0 FARRAM 0 farbss dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___flmul@grs E 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lintcode_body 0 0 ABS 0 intcode_body dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_PORTFbits F8E 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_INTCONbits FF2 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-smallmovement@dir 22 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Habs1 0 0 ABS 0 abs1 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hdata 0 0 ABS 0 data dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hheap 0 0 HEAP 7 heap dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hinit 3E 0 CODE 0 init dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hrbit 0 0 COMRAM 1 rbit dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hrbss 0 0 COMRAM 1 rbss dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htemp 58 0 COMRAM 1 temp dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext 0 0 ABS 0 text dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Labs1 0 0 ABS 0 abs1 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ldata 0 0 ABS 0 data dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lheap 0 0 HEAP 7 heap dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Linit 3A 0 CODE 0 init dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lrbit 0 0 COMRAM 1 rbit dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lrbss 0 0 COMRAM 1 rbss dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltemp 57 0 COMRAM 1 temp dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext 0 0 ABS 0 text dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_returnhome 19DC 0 CODE 0 text24 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_returnstep 2240 0 CODE 0 text26 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_SSP2CON2 EDA 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_SSP2STAT ED8 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___wmul 277A 0 CODE 0 text35 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-int$flags 57 0 COMRAM 1 temp dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_Timer0_init 2800 0 CODE 0 text37 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_turnLeft90 1C20 0 CODE 0 text29 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hintret 0 0 ABS 0 intret dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hirdata 0 0 CODE 0 irdata dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__S0 2888 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__S1 2C8 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__S4 0 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__S5 0 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-smallmovement@mL 1E 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-smallmovement@mR 20 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-fullSpeedAhead@mL 19 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-fullSpeedAhead@mR 1B 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_decide_color 3E 0 CODE 0 text3 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_color_read_Red 2534 0 CODE 0 text8 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-setMotorPWM@posDuty 17 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hnvrram 0 0 COMRAM 1 nvrram dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___xxtofl 16BC 0 CODE 0 text4 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lintentry 0 0 ABS 0 intentry dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_color_click_init 26B6 0 CODE 0 text14 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hramtop E00 0 RAM 0 ramtop dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_starttimer0 2880 0 CODE 0 text42 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hrparam 0 0 COMRAM 1 rparam dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_CCPTMRS0bits FAD 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of___xxtofl 1870 0 CODE 0 text4 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__activetblptr 0 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_savepath 2834 0 CODE 0 text23 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_savetime 27A0 0 CODE 0 text1 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hstruct 0 0 COMRAM 1 struct dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__LbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__LbssBANK1 0 0 ABS 0 bssBANK1 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__LbssBANK2 0 0 ABS 0 bssBANK2 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext10 0 0 ABS 0 text10 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext11 0 0 ABS 0 text11 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext12 0 0 ABS 0 text12 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext13 0 0 ABS 0 text13 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext14 0 0 ABS 0 text14 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext15 0 0 ABS 0 text15 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext16 0 0 ABS 0 text16 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext17 0 0 ABS 0 text17 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext18 0 0 ABS 0 text18 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext19 0 0 ABS 0 text19 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext20 0 0 ABS 0 text20 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext21 0 0 ABS 0 text21 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext22 0 0 ABS 0 text22 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext23 0 0 ABS 0 text23 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext24 0 0 ABS 0 text24 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext25 0 0 ABS 0 text25 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext26 0 0 ABS 0 text26 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext27 0 0 ABS 0 text27 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext28 0 0 ABS 0 text28 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext29 0 0 ABS 0 text29 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext30 0 0 ABS 0 text30 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext31 0 0 ABS 0 text31 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext32 0 0 ABS 0 text32 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext33 0 0 ABS 0 text33 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext34 0 0 ABS 0 text34 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext35 0 0 ABS 0 text35 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext36 0 0 ABS 0 text36 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext37 0 0 ABS 0 text37 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext38 0 0 ABS 0 text38 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext39 0 0 ABS 0 text39 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext40 0 0 ABS 0 text40 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Htext42 0 0 ABS 0 text42 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_color_read_Clear 2624 0 CODE 0 text10 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_color_read_Green 25D4 0 CODE 0 text9 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_PIE0bits E29 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_interruptenable 54 0 COMRAM 1 bssCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_savepath 284A 0 CODE 0 text23 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_savetime 27C0 0 CODE 0 text1 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_returnhome 1B1A 0 CODE 0 text24 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_returnstep 2302 0 CODE 0 text26 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-turnRight135@mL 1E 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-turnRight135@mR 20 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext10 25D4 0 CODE 0 text10 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext11 2624 0 CODE 0 text11 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext12 2862 0 CODE 0 text12 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext13 2674 0 CODE 0 text13 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext14 26B6 0 CODE 0 text14 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext15 27C0 0 CODE 0 text15 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext16 284A 0 CODE 0 text16 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext17 286C 0 CODE 0 text17 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext18 2876 0 CODE 0 text18 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext19 2752 0 CODE 0 text19 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext20 2728 0 CODE 0 text20 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext21 14E2 0 CODE 0 text21 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext22 217A 0 CODE 0 text22 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext23 2834 0 CODE 0 text23 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext24 19DC 0 CODE 0 text24 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext25 2302 0 CODE 0 text25 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext26 2240 0 CODE 0 text26 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext27 1D0E 0 CODE 0 text27 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext28 1DF8 0 CODE 0 text28 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext29 1C20 0 CODE 0 text29 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext30 1FC8 0 CODE 0 text30 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext31 1EE0 0 CODE 0 text31 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext32 24C2 0 CODE 0 text32 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext33 20AE 0 CODE 0 text33 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext34 1870 0 CODE 0 text34 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext35 277A 0 CODE 0 text35 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext36 244E 0 CODE 0 text36 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext37 2800 0 CODE 0 text37 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext38 2856 0 CODE 0 text38 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext39 281A 0 CODE 0 text39 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext40 27E0 0 CODE 0 text40 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext42 2880 0 CODE 0 text42 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-carryoutstep@amb 76 0 BANK0 1 cstackBANK0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___fldiv 1148 0 CODE 0 text7 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___flmul D1E 0 CODE 0 text6 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___fltol 1B1A 0 CODE 0 text5 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_turnLeft90 1D0E 0 CODE 0 text29 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___lwdiv 244E 0 CODE 0 text36 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lbank10 0 0 ABS 0 bank10 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lbank11 0 0 ABS 0 bank11 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lbank12 0 0 ABS 0 bank12 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lbank13 0 0 ABS 0 bank13 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lbigbss 0 0 BIGRAM 1 bigbss dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lbigram 0 0 ABS 0 bigram dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lbigsfr 0 0 ABS 0 bigsfr dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-color_read_Red@tmp A 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_color_read_Red 2584 0 CODE 0 text8 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lcomram 0 0 ABS 0 comram dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lconfig 0 0 CONFIG 4 config dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-decide_color@brf 32 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-decide_color@grf 36 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-decide_color@rrf 2E 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___wmul@multiplier 1 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_LATAbits F79 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_LATCbits F7B 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_LATDbits F7C 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_LATEbits F7D 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_LATFbits F7E 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_LATGbits F7F 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_LATHbits F80 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___fldiv@grs 22 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___fldiv@rem 1B 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_I2C_2_Master_Idle 277A 0 CODE 0 text19 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_I2C_2_Master_Init 2752 0 CODE 0 text20 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_I2C_2_Master_Read 26B6 0 CODE 0 text13 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_I2C_2_Master_Stop 2876 0 CODE 0 text17 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-square@dir 22 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-square@mL 1E 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-square@mR 20 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lfarbss 0 0 FARRAM 0 farbss dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___lwdiv@divisor E 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-?_color_read_Red 5 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_square 2302 0 CODE 0 text25 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-fullSpeedAhead@dir 1D 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lfardata 0 0 FARRAM 0 fardata dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-isa$std 1 0 ABS 0 - C:\Users\sps220\AppData\Local\Temp\xcAsdfs.o
-___fldiv@new_exp 20 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_decide_color 6D2 0 CODE 0 text3 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-stackhi 0 0 ABS 0 - C:\Users\sps220\AppData\Local\Temp\xcAsdfs.o
-stacklo 0 0 ABS 0 - C:\Users\sps220\AppData\Local\Temp\xcAsdfs.o
-stop@mL 19 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-stop@mR 1B 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-main@ambient 98 0 BANK0 1 cstackBANK0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lintcode 8 0 CODE 0 intcode dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lintret 0 0 ABS 0 intret dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lirdata 0 0 CODE 0 irdata dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_ADCON0bits F60 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lspace_0 0 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lspace_1 0 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lspace_2 0 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lspace_4 0 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__pbssCOMRAM 4E 0 COMRAM 1 bssCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-color_read_Clear@tmp A 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_PIR0bits E33 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___fltol@exp1 23 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-main@reading A0 0 BANK0 1 cstackBANK0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_setMotorPWM 19DC 0 CODE 0 text34 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-end_of_initialization 271E 0 CODE 0 cinit dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_color_click_init 26F6 0 CODE 0 text14 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_T2CLKCONbits FBF 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hintentry 0 0 ABS 0 intentry dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-savetime@timercount 1 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_ADC_getval 27E0 0 CODE 0 text40 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___lwdiv@dividend C 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-?___fldiv F 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-?___flmul 1 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-?___fltol 1A 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-turnRight90@mL 1E 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-turnRight90@mR 20 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-?___lwdiv C 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_CCP4CONbits F22 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hreset_vec 4 0 CODE 0 reset_vec dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-?_color_read_Blue 5 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__HbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__HbssBANK1 0 0 ABS 0 bssBANK1 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__HbssBANK2 0 0 ABS 0 bssBANK2 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_initDCmotorsPWM 244E 0 CODE 0 text2 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lramtop E00 0 RAM 0 ramtop dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lrparam 0 0 COMRAM 1 rparam dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_fullSpeedAhead 20AE 0 CODE 0 text33 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__pcinit 26F6 0 CODE 0 cinit dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_turn180 1FC8 0 CODE 0 text31 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_color_read_Blue 2674 0 CODE 0 text11 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext0 6D2 0 CODE 0 text0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext1 27A0 0 CODE 0 text1 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext2 23BE 0 CODE 0 text2 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext3 3E 0 CODE 0 text3 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext4 16BC 0 CODE 0 text4 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext5 1B1A 0 CODE 0 text5 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext6 D1E 0 CODE 0 text6 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext7 1148 0 CODE 0 text7 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext8 2534 0 CODE 0 text8 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ptext9 2584 0 CODE 0 text9 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-savepath@instruction 1 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_I2C_2_Master_RepStart 286C 0 CODE 0 text12 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lstruct 0 0 COMRAM 1 struct dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext10 0 0 ABS 0 text10 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext11 0 0 ABS 0 text11 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext12 0 0 ABS 0 text12 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext13 0 0 ABS 0 text13 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext14 0 0 ABS 0 text14 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext15 0 0 ABS 0 text15 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext16 0 0 ABS 0 text16 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext17 0 0 ABS 0 text17 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext18 0 0 ABS 0 text18 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext19 0 0 ABS 0 text19 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext20 0 0 ABS 0 text20 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext21 0 0 ABS 0 text21 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext22 0 0 ABS 0 text22 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext23 0 0 ABS 0 text23 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext24 0 0 ABS 0 text24 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext25 0 0 ABS 0 text25 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext26 0 0 ABS 0 text26 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext27 0 0 ABS 0 text27 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext28 0 0 ABS 0 text28 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext29 0 0 ABS 0 text29 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext30 0 0 ABS 0 text30 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext31 0 0 ABS 0 text31 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext32 0 0 ABS 0 text32 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext33 0 0 ABS 0 text33 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext34 0 0 ABS 0 text34 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext35 0 0 ABS 0 text35 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext36 0 0 ABS 0 text36 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext37 0 0 ABS 0 text37 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext38 0 0 ABS 0 text38 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext39 0 0 ABS 0 text39 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext40 0 0 ABS 0 text40 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Ltext42 0 0 ABS 0 text42 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_color_writetoaddr 27E0 0 CODE 0 text15 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__ramtop E00 0 RAM 0 ramtop C:\Users\sps220\AppData\Local\Temp\xcAsdfs.o
-_HighISR 8 0 CODE 0 intcode dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-main@motorL 7E 0 BANK0 1 cstackBANK0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-main@motorR 87 0 BANK0 1 cstackBANK0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lpowerup 3A 0 CODE 0 powerup dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-?___xxtofl 1 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_pathposition 55 0 COMRAM 1 bssCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-returnstep@instruction 36 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___fltol@sign1 22 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_turnRight90 1D0E 0 CODE 0 text27 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-setMotorPWM@negDuty 18 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_I2C_2_Master_RepStart 2862 0 CODE 0 text12 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_CCP3CONbits F26 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___heap_hi 0 0 ABS 0 - C:\Users\sps220\AppData\Local\Temp\xcAsdfs.o
-___heap_lo 0 0 ABS 0 - C:\Users\sps220\AppData\Local\Temp\xcAsdfs.o
-_I2C_2_Master_Idle 2752 0 CODE 0 text19 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_I2C_2_Master_Init 2728 0 CODE 0 text20 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_I2C_2_Master_Read 2674 0 CODE 0 text13 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_I2C_2_Master_Stop 286C 0 CODE 0 text17 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___fltol@f1 1A 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___param_bank 0 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of__initialization 271E 0 CODE 0 cinit dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Libigdata 0 0 CODE 0 ibigdata dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lclrtext 0 0 ABS 0 clrtext dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_ADC_getval 2800 0 CODE 0 text40 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_Timer0_init 281A 0 CODE 0 text37 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_initDCmotorsPWM 23BE 0 CODE 0 text2 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_fullSpeedAhead 217A 0 CODE 0 text33 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_T0CON0bits FD5 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_T0CON1bits FD6 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_color_read_Blue 2624 0 CODE 0 text11 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_SSP2ADD ED6 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_SSP2BUF ED5 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-?_color_read_Clear 5 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-?_color_read_Green 5 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-turnLeft135@mL 1E 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-turnLeft135@mR 20 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_main D1E 0 CODE 0 text0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_stop 2534 0 CODE 0 text32 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_CCP2CONbits FA7 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__pintcode 8 0 CODE 0 intcode dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_ADPCH F5F 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_TMR0H FD4 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_TMR0L FD3 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__HRAM 0 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hbss 0 0 RAM 1 bss dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hram 0 0 ABS 0 ram dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hsfr 0 0 ABS 0 sfr dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__LRAM 1 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lbss 0 0 RAM 1 bss dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lram 0 0 ABS 0 ram dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lsfr 0 0 ABS 0 sfr dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__initialization 26F6 0 CODE 0 cinit dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___xxtofl@sign 9 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__pbssBANK0 A8 0 BANK0 1 bssBANK0 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__pbssBANK1 100 0 BANK1 1 bssBANK1 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__pbssBANK2 200 0 BANK2 1 bssBANK2 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__end_of_starttimer0 2888 0 CODE 0 text42 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_T2CONbits FBD 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hfardata 0 0 FARRAM 0 fardata dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-___wmul@product 5 0 COMRAM 1 cstackCOMRAM dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_color_writetoaddr 27C0 0 CODE 0 text15 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_turnLeft135 1FC8 0 CODE 0 text30 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Lifardata 0 0 CODE 0 ifardata dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_SSP2CLKPPS E1C 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_CCP1CONbits FAB 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_ANSELDbits EA7 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_ANSELFbits EB4 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_smallmovement 217A 0 CODE 0 text22 dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-_SSP2DATPPS E1D 0 ABS 0 - dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
-__Hintcode 3A 0 CODE 0 intcode dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.o
+__Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hspace_0 2898 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hspace_1 2C8 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hspace_2 0 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hspace_4 60000C 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+color_writetoaddr@address 4 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+turn180@mL 1E 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+turn180@mR 20 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hibigdata 0 0 CODE 0 ibigdata dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\sps220\AppData\Local\Temp\xcAsc70.o
+__Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+setMotorPWM@m 13 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+main@PWMcycle 7A 0 BANK0 1 cstackBANK0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_timercount 52 0 COMRAM 1 bssCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+main@a 79 0 BANK0 1 cstackBANK0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_T2PR FBC 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___sp 0 0 STACK 2 stack C:\Users\sps220\AppData\Local\Temp\xcAsc70.o
+_main 6D2 0 CODE 0 text0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_path 100 0 BANK1 1 bssBANK1 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_step A8 0 BANK0 1 bssBANK0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_stop 24C2 0 CODE 0 text32 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+btemp 57 0 COMRAM 1 temp dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+start 3A 0 CODE 0 init C:\Users\sps220\AppData\Local\Temp\xcAsc70.o
+___flmul@aexp 12 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___flmul@bexp 13 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___flmul@prod 14 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___flmul@sign D 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___flmul@temp 18 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+carryoutstep@mx 74 0 BANK0 1 cstackBANK0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_turnRight135 1DF8 0 CODE 0 text28 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+?___wmul 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+color_read_Green@tmp A 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hpowerup 3A 0 CODE 0 powerup dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_timearray 200 0 BANK2 1 bssBANK2 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+ttemp5 58 0 COMRAM 1 temp dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+ttemp6 5B 0 COMRAM 1 temp dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+ttemp7 5F 0 COMRAM 1 temp dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+returnhome@motorL 37 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+returnhome@motorR 40 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__accesstop 60 0 ABS 0 - C:\Users\sps220\AppData\Local\Temp\xcAsc70.o
+intlevel0 0 0 CODE 0 text C:\Users\sps220\AppData\Local\Temp\xcAsc70.o
+intlevel1 0 0 CODE 0 text C:\Users\sps220\AppData\Local\Temp\xcAsc70.o
+intlevel2 0 0 CODE 0 text C:\Users\sps220\AppData\Local\Temp\xcAsc70.o
+intlevel3 0 0 CODE 0 text C:\Users\sps220\AppData\Local\Temp\xcAsc70.o
+_turn180 1EE0 0 CODE 0 text31 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+wtemp8 58 0 COMRAM 1 temp dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_carryoutstep 14E2 0 CODE 0 text21 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hifardata 0 0 CODE 0 ifardata dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hclrtext 0 0 ABS 0 clrtext dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___wmul@multiplicand 3 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_ADRESH F64 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_Interrupts_init 2872 0 CODE 0 text38 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+decide_color@br 3E 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+decide_color@gr 3A 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+decide_color@mx 28 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+decide_color@rr 3C 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\sps220\AppData\Local\Temp\xcAsc70.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\sps220\AppData\Local\Temp\xcAsc70.o
+I2C_2_Master_Read@ack 3 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+I2C_2_Master_Read@tmp 4 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_CCPR1H FAA 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_CCPR2H FA6 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_CCPR3H F25 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_CCPR4H F21 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+color_writetoaddr@value 3 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+?_ADC_getval 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hintcode_body 0 0 ABS 0 intcode_body dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_turnRight90 1DF8 0 CODE 0 text27 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of___wmul 27D0 0 CODE 0 text35 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+main@max 90 0 BANK0 1 cstackBANK0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_turnRight135 1EE0 0 CODE 0 text28 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___fldiv@aexp 27 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___fldiv@bexp 26 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___fldiv@sign 1F 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_ADC_init 282A 0 CODE 0 text39 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+color_read_Blue@tmp A 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hintcodelo 3A 0 CODE 0 intcodelo dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of___fldiv 14E2 0 CODE 0 text7 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of___flmul 1148 0 CODE 0 text6 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of___fltol 1C20 0 CODE 0 text5 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_timeposition 56 0 COMRAM 1 bssCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of___lwdiv 24C2 0 CODE 0 text36 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_smallmovement 2240 0 CODE 0 text22 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_ADC_init 2844 0 CODE 0 text39 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+carryoutstep@motorL 60 0 BANK0 1 cstackBANK0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+carryoutstep@motorR 69 0 BANK0 1 cstackBANK0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+carryoutstep@read 72 0 BANK0 1 cstackBANK0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+carryoutstep@step 78 0 BANK0 1 cstackBANK0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___lwdiv@quotient 10 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___fldiv@a 13 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___fldiv@b F 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___flmul@a 5 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___flmul@b 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lintcodelo 3A 0 CODE 0 intcodelo dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_Interrupts_init 2866 0 CODE 0 text38 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_SSP2CON1bits ED9 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+start_initialization 26F6 0 CODE 0 cinit dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_SSP2CON2bits EDA 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_carryoutstep 16BC 0 CODE 0 text21 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_off_period 4E 0 COMRAM 1 bssCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_setMotorPWM 1870 0 CODE 0 text34 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_TRISAbits F81 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_TRISCbits F83 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_TRISDbits F84 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_TRISEbits F85 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_TRISFbits F86 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_TRISGbits F87 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_TRISHbits F88 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___rparam_used 1 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_RC7PPS E69 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_RD5PPS E6F 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_RD6PPS E70 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_RE2PPS E74 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_RE4PPS E76 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_ADREFbits F58 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_RG6PPS E88 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_on_period 50 0 COMRAM 1 bssCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__pcstackBANK0 60 0 BANK0 1 cstackBANK0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_I2C_2_Master_Start 2890 0 CODE 0 text18 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_I2C_2_Master_Write 2866 0 CODE 0 text16 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_turnLeft135 20AE 0 CODE 0 text30 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+I2C_2_Master_Write@data_byte 2 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+isa$xinst 0 0 ABS 0 - C:\Users\sps220\AppData\Local\Temp\xcAsc70.o
+ADC_getval@tmpval 3 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hbank0 0 0 ABS 0 bank0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hbank1 0 0 ABS 0 bank1 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hbank2 0 0 ABS 0 bank2 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hbank3 0 0 ABS 0 bank3 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hbank4 0 0 ABS 0 bank4 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hbank5 0 0 ABS 0 bank5 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hbank6 0 0 ABS 0 bank6 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hbank7 0 0 ABS 0 bank7 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hbank8 0 0 ABS 0 bank8 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hbank9 0 0 ABS 0 bank9 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hcinit 0 0 ABS 0 cinit dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hconst 0 0 CONST 0 const dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_square 23BE 0 CODE 0 text25 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hidata 0 0 CODE 0 idata dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hidloc 200010 0 IDLOC 5 idloc dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_color_read_Clear 25D4 0 CODE 0 text10 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hnvbit 0 0 COMRAM 1 nvbit dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_color_read_Green 2584 0 CODE 0 text9 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hparam 0 0 COMRAM 1 rparam dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hrdata 0 0 COMRAM 1 rdata dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hstack 0 0 STACK 2 stack dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext0 0 0 ABS 0 text0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext1 0 0 ABS 0 text1 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext2 0 0 ABS 0 text2 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext3 0 0 ABS 0 text3 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext4 0 0 ABS 0 text4 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext5 0 0 ABS 0 text5 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext6 0 0 ABS 0 text6 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext7 0 0 ABS 0 text7 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext8 0 0 ABS 0 text8 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext9 0 0 ABS 0 text9 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_main$2841 7C 0 BANK0 1 cstackBANK0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___lwdiv@counter 12 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hbank10 0 0 ABS 0 bank10 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hbank11 0 0 ABS 0 bank11 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hbank12 0 0 ABS 0 bank12 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hbank13 0 0 ABS 0 bank13 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hbigram 0 0 ABS 0 bigram dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hbigsfr 0 0 ABS 0 bigsfr dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\sps220\AppData\Local\Temp\xcAsc70.o
+___xxtofl@arg B 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___xxtofl@exp A 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___xxtofl@val 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+turnLeft90@mL 1E 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+turnLeft90@mR 20 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_HighISR 3A 0 CODE 0 intcode dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hcomram 0 0 ABS 0 comram dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hconfig 30000C 0 CONFIG 4 config dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_T2HLTbits FBE 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lbank0 0 0 ABS 0 bank0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lbank1 0 0 ABS 0 bank1 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lbank2 0 0 ABS 0 bank2 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lbank3 0 0 ABS 0 bank3 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lbank4 0 0 ABS 0 bank4 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lbank5 0 0 ABS 0 bank5 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lbank6 0 0 ABS 0 bank6 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lbank7 0 0 ABS 0 bank7 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lbank8 0 0 ABS 0 bank8 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lbank9 0 0 ABS 0 bank9 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lcinit 0 0 ABS 0 cinit dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lconst 0 0 CONST 0 const dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lidata 0 0 CODE 0 idata dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lidloc 0 0 IDLOC 5 idloc dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lnvbit 0 0 COMRAM 1 nvbit dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lparam 0 0 COMRAM 1 rparam dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lrdata 0 0 COMRAM 1 rdata dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lstack 0 0 STACK 2 stack dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext0 0 0 ABS 0 text0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext1 0 0 ABS 0 text1 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext2 0 0 ABS 0 text2 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext3 0 0 ABS 0 text3 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext4 0 0 ABS 0 text4 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext5 0 0 ABS 0 text5 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext6 0 0 ABS 0 text6 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext7 0 0 ABS 0 text7 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext8 0 0 ABS 0 text8 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext9 0 0 ABS 0 text9 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+returnstep@motorL 24 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+returnstep@motorR 2D 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_I2C_2_Master_Start 2886 0 CODE 0 text18 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+initDCmotorsPWM@PWMperiod 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_I2C_2_Master_Write 285A 0 CODE 0 text16 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hfarbss 0 0 FARRAM 0 farbss dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___flmul@grs E 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lintcode_body 0 0 ABS 0 intcode_body dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_PORTFbits F8E 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_INTCONbits FF2 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+smallmovement@dir 22 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Habs1 0 0 ABS 0 abs1 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hdata 0 0 ABS 0 data dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hheap 0 0 HEAP 7 heap dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hinit 3E 0 CODE 0 init dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hrbit 0 0 COMRAM 1 rbit dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hrbss 0 0 COMRAM 1 rbss dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htemp 58 0 COMRAM 1 temp dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext 0 0 ABS 0 text dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Labs1 0 0 ABS 0 abs1 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ldata 0 0 ABS 0 data dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lheap 0 0 HEAP 7 heap dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Linit 3A 0 CODE 0 init dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lrbit 0 0 COMRAM 1 rbit dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lrbss 0 0 COMRAM 1 rbss dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltemp 57 0 COMRAM 1 temp dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext 0 0 ABS 0 text dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_returnhome 19DC 0 CODE 0 text24 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_returnstep 2240 0 CODE 0 text26 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_SSP2CON2 EDA 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_SSP2STAT ED8 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___wmul 27AA 0 CODE 0 text35 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+int$flags 57 0 COMRAM 1 temp dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_Timer0_init 2810 0 CODE 0 text37 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_turnLeft90 1C20 0 CODE 0 text29 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hintret 0 0 ABS 0 intret dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hirdata 0 0 CODE 0 irdata dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__S0 2898 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__S1 2C8 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__S4 0 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__S5 0 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+smallmovement@mL 1E 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+smallmovement@mR 20 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+fullSpeedAhead@mL 19 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+fullSpeedAhead@mR 1B 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_decide_color 3E 0 CODE 0 text3 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_color_read_Red 2534 0 CODE 0 text8 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+setMotorPWM@posDuty 17 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hnvrram 0 0 COMRAM 1 nvrram dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___xxtofl 16BC 0 CODE 0 text4 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lintentry 0 0 ABS 0 intentry dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_color_click_init 26B6 0 CODE 0 text14 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hramtop E00 0 RAM 0 ramtop dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_starttimer0 2890 0 CODE 0 text42 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hrparam 0 0 COMRAM 1 rparam dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_CCPTMRS0bits FAD 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of___xxtofl 1870 0 CODE 0 text4 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__activetblptr 0 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_savepath 2844 0 CODE 0 text23 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_savetime 27D0 0 CODE 0 text1 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hstruct 0 0 COMRAM 1 struct dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__LbssBANK0 0 0 ABS 0 bssBANK0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__LbssBANK1 0 0 ABS 0 bssBANK1 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__LbssBANK2 0 0 ABS 0 bssBANK2 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext10 0 0 ABS 0 text10 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext11 0 0 ABS 0 text11 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext12 0 0 ABS 0 text12 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext13 0 0 ABS 0 text13 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext14 0 0 ABS 0 text14 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext15 0 0 ABS 0 text15 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext16 0 0 ABS 0 text16 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext17 0 0 ABS 0 text17 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext18 0 0 ABS 0 text18 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext19 0 0 ABS 0 text19 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext20 0 0 ABS 0 text20 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext21 0 0 ABS 0 text21 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext22 0 0 ABS 0 text22 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext23 0 0 ABS 0 text23 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext24 0 0 ABS 0 text24 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext25 0 0 ABS 0 text25 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext26 0 0 ABS 0 text26 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext27 0 0 ABS 0 text27 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext28 0 0 ABS 0 text28 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext29 0 0 ABS 0 text29 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext30 0 0 ABS 0 text30 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext31 0 0 ABS 0 text31 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext32 0 0 ABS 0 text32 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext33 0 0 ABS 0 text33 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext34 0 0 ABS 0 text34 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext35 0 0 ABS 0 text35 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext36 0 0 ABS 0 text36 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext37 0 0 ABS 0 text37 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext38 0 0 ABS 0 text38 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext39 0 0 ABS 0 text39 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext40 0 0 ABS 0 text40 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Htext42 0 0 ABS 0 text42 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_color_read_Clear 2624 0 CODE 0 text10 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_color_read_Green 25D4 0 CODE 0 text9 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_PIE0bits E29 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_interruptenable 54 0 COMRAM 1 bssCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_savepath 285A 0 CODE 0 text23 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_savetime 27F0 0 CODE 0 text1 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_returnhome 1B1A 0 CODE 0 text24 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_returnstep 2302 0 CODE 0 text26 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+turnRight135@mL 1E 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+turnRight135@mR 20 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext10 25D4 0 CODE 0 text10 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext11 2624 0 CODE 0 text11 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext12 2872 0 CODE 0 text12 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext13 2674 0 CODE 0 text13 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext14 26B6 0 CODE 0 text14 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext15 27F0 0 CODE 0 text15 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext16 285A 0 CODE 0 text16 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext17 287C 0 CODE 0 text17 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext18 2886 0 CODE 0 text18 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext19 2782 0 CODE 0 text19 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext20 2758 0 CODE 0 text20 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext21 14E2 0 CODE 0 text21 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext22 217A 0 CODE 0 text22 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext23 2844 0 CODE 0 text23 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext24 19DC 0 CODE 0 text24 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext25 2302 0 CODE 0 text25 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext26 2240 0 CODE 0 text26 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext27 1D0E 0 CODE 0 text27 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext28 1DF8 0 CODE 0 text28 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext29 1C20 0 CODE 0 text29 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext30 1FC8 0 CODE 0 text30 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext31 1EE0 0 CODE 0 text31 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext32 24C2 0 CODE 0 text32 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext33 20AE 0 CODE 0 text33 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext34 1870 0 CODE 0 text34 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext35 27AA 0 CODE 0 text35 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext36 244E 0 CODE 0 text36 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext37 2810 0 CODE 0 text37 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext38 2866 0 CODE 0 text38 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext39 282A 0 CODE 0 text39 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext40 2728 0 CODE 0 text40 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext42 2890 0 CODE 0 text42 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+carryoutstep@amb 76 0 BANK0 1 cstackBANK0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___fldiv 1148 0 CODE 0 text7 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___flmul D1E 0 CODE 0 text6 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___fltol 1B1A 0 CODE 0 text5 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_turnLeft90 1D0E 0 CODE 0 text29 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___lwdiv 244E 0 CODE 0 text36 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lbank10 0 0 ABS 0 bank10 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lbank11 0 0 ABS 0 bank11 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lbank12 0 0 ABS 0 bank12 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lbank13 0 0 ABS 0 bank13 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lbigram 0 0 ABS 0 bigram dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lbigsfr 0 0 ABS 0 bigsfr dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+color_read_Red@tmp A 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_color_read_Red 2584 0 CODE 0 text8 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lcomram 0 0 ABS 0 comram dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lconfig 0 0 CONFIG 4 config dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+decide_color@brf 32 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+decide_color@grf 36 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+decide_color@rrf 2E 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___wmul@multiplier 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_LATAbits F79 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_LATCbits F7B 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_LATDbits F7C 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_LATEbits F7D 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_LATFbits F7E 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_LATGbits F7F 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_LATHbits F80 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___fldiv@grs 22 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___fldiv@rem 1B 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_I2C_2_Master_Idle 27AA 0 CODE 0 text19 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_I2C_2_Master_Init 2782 0 CODE 0 text20 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_I2C_2_Master_Read 26B6 0 CODE 0 text13 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_I2C_2_Master_Stop 2886 0 CODE 0 text17 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+square@dir 22 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+square@mL 1E 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+square@mR 20 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lfarbss 0 0 FARRAM 0 farbss dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___lwdiv@divisor E 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+?_color_read_Red 5 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_square 2302 0 CODE 0 text25 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+fullSpeedAhead@dir 1D 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lfardata 0 0 FARRAM 0 fardata dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+isa$std 1 0 ABS 0 - C:\Users\sps220\AppData\Local\Temp\xcAsc70.o
+___fldiv@new_exp 20 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_decide_color 6D2 0 CODE 0 text3 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+stackhi 0 0 ABS 0 - C:\Users\sps220\AppData\Local\Temp\xcAsc70.o
+stacklo 0 0 ABS 0 - C:\Users\sps220\AppData\Local\Temp\xcAsc70.o
+stop@mL 19 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+stop@mR 1B 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+main@ambient 98 0 BANK0 1 cstackBANK0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lintcode 8 0 CODE 0 intcode dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lintret 0 0 ABS 0 intret dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lirdata 0 0 CODE 0 irdata dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_ADCON0bits F60 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lspace_0 0 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lspace_1 0 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lspace_2 0 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lspace_4 0 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__pbssCOMRAM 4E 0 COMRAM 1 bssCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+color_read_Clear@tmp A 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_PIR0bits E33 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___fltol@exp1 23 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+main@reading A0 0 BANK0 1 cstackBANK0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_setMotorPWM 19DC 0 CODE 0 text34 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+end_of_initialization 271E 0 CODE 0 cinit dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_color_click_init 26F6 0 CODE 0 text14 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_T2CLKCONbits FBF 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lnvrram 0 0 COMRAM 1 nvrram dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hintentry 0 0 ABS 0 intentry dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+savetime@timercount 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_ADC_getval 2728 0 CODE 0 text40 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___lwdiv@dividend C 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+?___fldiv F 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+?___flmul 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+?___fltol 1A 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+turnRight90@mL 1E 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+turnRight90@mR 20 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+?___lwdiv C 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_CCP4CONbits F22 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hreset_vec 6 0 CODE 0 reset_vec dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+?_color_read_Blue 5 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__HbssBANK0 0 0 ABS 0 bssBANK0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__HbssBANK1 0 0 ABS 0 bssBANK1 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__HbssBANK2 0 0 ABS 0 bssBANK2 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_initDCmotorsPWM 244E 0 CODE 0 text2 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lramtop E00 0 RAM 0 ramtop dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lrparam 0 0 COMRAM 1 rparam dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_fullSpeedAhead 20AE 0 CODE 0 text33 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__pcinit 26F6 0 CODE 0 cinit dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_turn180 1FC8 0 CODE 0 text31 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_color_read_Blue 2674 0 CODE 0 text11 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext0 6D2 0 CODE 0 text0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext1 27D0 0 CODE 0 text1 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext2 23BE 0 CODE 0 text2 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext3 3E 0 CODE 0 text3 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext4 16BC 0 CODE 0 text4 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext5 1B1A 0 CODE 0 text5 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext6 D1E 0 CODE 0 text6 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext7 1148 0 CODE 0 text7 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext8 2534 0 CODE 0 text8 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ptext9 2584 0 CODE 0 text9 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+savepath@instruction 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_I2C_2_Master_RepStart 287C 0 CODE 0 text12 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lstruct 0 0 COMRAM 1 struct dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext10 0 0 ABS 0 text10 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext11 0 0 ABS 0 text11 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext12 0 0 ABS 0 text12 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext13 0 0 ABS 0 text13 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext14 0 0 ABS 0 text14 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext15 0 0 ABS 0 text15 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext16 0 0 ABS 0 text16 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext17 0 0 ABS 0 text17 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext18 0 0 ABS 0 text18 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext19 0 0 ABS 0 text19 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext20 0 0 ABS 0 text20 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext21 0 0 ABS 0 text21 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext22 0 0 ABS 0 text22 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext23 0 0 ABS 0 text23 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext24 0 0 ABS 0 text24 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext25 0 0 ABS 0 text25 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext26 0 0 ABS 0 text26 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext27 0 0 ABS 0 text27 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext28 0 0 ABS 0 text28 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext29 0 0 ABS 0 text29 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext30 0 0 ABS 0 text30 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext31 0 0 ABS 0 text31 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext32 0 0 ABS 0 text32 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext33 0 0 ABS 0 text33 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext34 0 0 ABS 0 text34 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext35 0 0 ABS 0 text35 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext36 0 0 ABS 0 text36 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext37 0 0 ABS 0 text37 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext38 0 0 ABS 0 text38 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext39 0 0 ABS 0 text39 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext40 0 0 ABS 0 text40 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Ltext42 0 0 ABS 0 text42 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_color_writetoaddr 2810 0 CODE 0 text15 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__ramtop E00 0 RAM 0 ramtop C:\Users\sps220\AppData\Local\Temp\xcAsc70.o
+_HighISR 8 0 CODE 0 intcode dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+main@motorL 7E 0 BANK0 1 cstackBANK0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+main@motorR 87 0 BANK0 1 cstackBANK0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lpowerup 3A 0 CODE 0 powerup dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+?___xxtofl 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_pathposition 55 0 COMRAM 1 bssCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+returnstep@instruction 36 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___fltol@sign1 22 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lreset_vec 0 0 CODE 0 reset_vec dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_turnRight90 1D0E 0 CODE 0 text27 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+setMotorPWM@negDuty 18 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_I2C_2_Master_RepStart 2872 0 CODE 0 text12 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_CCP3CONbits F26 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___heap_hi 0 0 ABS 0 - C:\Users\sps220\AppData\Local\Temp\xcAsc70.o
+___heap_lo 0 0 ABS 0 - C:\Users\sps220\AppData\Local\Temp\xcAsc70.o
+_I2C_2_Master_Idle 2782 0 CODE 0 text19 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_I2C_2_Master_Init 2758 0 CODE 0 text20 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_I2C_2_Master_Read 2674 0 CODE 0 text13 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_I2C_2_Master_Stop 287C 0 CODE 0 text17 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___fltol@f1 1A 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___param_bank 0 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of__initialization 271E 0 CODE 0 cinit dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Libigdata 0 0 CODE 0 ibigdata dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lclrtext 0 0 ABS 0 clrtext dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_ADC_getval 2758 0 CODE 0 text40 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_Timer0_init 282A 0 CODE 0 text37 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_initDCmotorsPWM 23BE 0 CODE 0 text2 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_fullSpeedAhead 217A 0 CODE 0 text33 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_T0CON0bits FD5 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_T0CON1bits FD6 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_color_read_Blue 2624 0 CODE 0 text11 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_SSP2ADD ED6 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_SSP2BUF ED5 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+?_color_read_Clear 5 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+?_color_read_Green 5 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+turnLeft135@mL 1E 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+turnLeft135@mR 20 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_main D1E 0 CODE 0 text0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_stop 2534 0 CODE 0 text32 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_CCP2CONbits FA7 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__pintcode 8 0 CODE 0 intcode dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_ADPCH F5F 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_TMR0H FD4 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_TMR0L FD3 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__HRAM 0 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hbss 0 0 RAM 1 bss dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hram 0 0 ABS 0 ram dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hsfr 0 0 ABS 0 sfr dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__LRAM 1 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lbss 0 0 RAM 1 bss dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lram 0 0 ABS 0 ram dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lsfr 0 0 ABS 0 sfr dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__initialization 26F6 0 CODE 0 cinit dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___xxtofl@sign 9 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__pbssBANK0 A8 0 BANK0 1 bssBANK0 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__pbssBANK1 100 0 BANK1 1 bssBANK1 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__pbssBANK2 200 0 BANK2 1 bssBANK2 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__end_of_starttimer0 2898 0 CODE 0 text42 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_T2CONbits FBD 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hfardata 0 0 FARRAM 0 fardata dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+___wmul@product 5 0 COMRAM 1 cstackCOMRAM dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_color_writetoaddr 27F0 0 CODE 0 text15 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hsmallconst 0 0 SMALLCONST 0 smallconst dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_turnLeft135 1FC8 0 CODE 0 text30 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Lifardata 0 0 CODE 0 ifardata dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_SSP2CLKPPS E1C 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_CCP1CONbits FAB 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_ANSELDbits EA7 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_ANSELFbits EB4 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_smallmovement 217A 0 CODE 0 text22 dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+_SSP2DATPPS E1D 0 ABS 0 - dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
+__Hintcode 3A 0 CODE 0 intcode dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -1522,10 +1523,10 @@ __Hintcode 3A 0 CODE 0 intcode dist/default/production\final-project-antonin-roc
 %SEGMENTS
 cstackCOMRAM 1 1 1 57 1
 cstackBANK0 1 60 60 49 1
-reset_vec 0 0 0 4 1
+reset_vec 0 0 0 6 1
 bssBANK1 1 100 100 64 1
 bssBANK2 1 200 200 C8 1
-intcode 0 8 8 2880 1
+intcode 0 8 8 2890 1
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal

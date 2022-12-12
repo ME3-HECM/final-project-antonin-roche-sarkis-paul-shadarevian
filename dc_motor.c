@@ -5,13 +5,12 @@
 
 // function initialise T2 and CCP for DC motor control
 void initDCmotorsPWM(unsigned int PWMperiod){
-    //initialise your TRIS and LAT registers for PWM  
     
+    //initialise your TRIS and LAT registers for PWM  
     LATEbits.LATE2 = 0;
     LATEbits.LATE4 = 0;        
     LATCbits.LATC7 = 0;
-    LATGbits.LATG6 = 0; 
-    
+    LATGbits.LATG6 = 0;  
     TRISEbits.TRISE2 = 0;
     TRISEbits.TRISE4 = 0;        
     TRISCbits.TRISC7 = 0;
@@ -53,68 +52,65 @@ void initDCmotorsPWM(unsigned int PWMperiod){
     CCPTMRS0bits.C4TSEL=0;
     
     //configure each CCP
+    //CCP1
     CCP1CONbits.FMT=1; // left aligned duty cycle (we can just use high byte)
     CCP1CONbits.CCP1MODE=0b1100; //PWM mode  
     CCP1CONbits.EN=1; //turn on
-    
+    //CCP2
     CCP2CONbits.FMT=1; // left aligned
     CCP2CONbits.CCP2MODE=0b1100; //PWM mode  
     CCP2CONbits.EN=1; //turn on
-    
+    //CCP3
     CCP3CONbits.FMT=1; // left aligned
     CCP3CONbits.CCP3MODE=0b1100; //PWM mode  
     CCP3CONbits.EN=1; //turn on
-    
+    //CCP4
     CCP4CONbits.FMT=1; // left aligned
     CCP4CONbits.CCP4MODE=0b1100; //PWM mode  
     CCP4CONbits.EN=1; //turn on
-}
+    }
 
 // function to set CCP PWM output from the values in the motor structure
 void setMotorPWM(DC_motor *m)
 {
     unsigned char posDuty, negDuty; //duty cycle values for different sides of the motor
-    
     if(m->brakemode) {
         posDuty=m->PWMperiod - ((unsigned int)(m->power)*(m->PWMperiod))/100; //inverted PWM duty
         negDuty=m->PWMperiod; //other side of motor is high all the time
-    }
+        }
     else {
         posDuty=0; //other side of motor is low all the time 
         negDuty=((unsigned int)(m->power)*(m->PWMperiod))/100; // PWM duty
-    }
-    
+        }
+  
     if (m->direction) {
         *(m->posDutyHighByte)=posDuty;  //assign values to the CCP duty cycle registers
         *(m->negDutyHighByte)=negDuty;       
-    } else {
+        } 
+    else {
         *(m->posDutyHighByte)=negDuty;  //do it the other way around to change direction
         *(m->negDutyHighByte)=posDuty;
+        }
     }
-}
 
 //function to stop the robot gradually 
 void stop(DC_motor *mL, DC_motor *mR)
-{
-    
+{  
     while (mL->power > 0 && mR->power > 0) {
     mL->power--;
     mR->power--;
     __delay_ms(1);
     setMotorPWM(mL);
     setMotorPWM(mR);
+        }
     }
-
-}
 
 //function to make the robot turn left 
 void turnLeft90(DC_motor *mL, DC_motor *mR)
 {   stop(mL, mR);
-    
     mL->direction = 0;
     mR->direction = 1;
-    
-    mL->power = 20;
+    mL->power = 20; //starting power to allow buggy enough power to turn 
     mR->power = 20;
     
     while (mL->power != 50 || mR->power != 50 ) {
@@ -123,21 +119,17 @@ void turnLeft90(DC_motor *mL, DC_motor *mR)
         mR->power++;    
         setMotorPWM(mL);    
         setMotorPWM(mR);  
-    }
-    
-    __delay_ms(250);
-    
+        }    
+    __delay_ms(250);    
     stop(mL, mR);
-}
+    }
 
 //function to make the robot turn right 
 void turnRight90(DC_motor *mL, DC_motor *mR)
 {   stop(mL, mR);
-    
     mL->direction = 1;
     mR->direction = 0;
-    
-    mL->power = 20;
+    mL->power = 20;//starting power to allow buggy enough power to turn 
     mR->power = 20;
     
     while (mL->power <= 50 && mR->power <= 50 ) {
@@ -146,22 +138,17 @@ void turnRight90(DC_motor *mL, DC_motor *mR)
         mR->power++;    
         setMotorPWM(mL);    
         setMotorPWM(mR);  
-    }    
-    
+        }    
     __delay_ms(210);
-    
     stop(mL, mR);
-}
+    }
 
 //function to make the robot turn left 
 void turnLeft135(DC_motor *mL, DC_motor *mR)
 {
     stop(mL, mR);
-    
-    
     mL->direction = 0;
     mR->direction = 1;
-    
     mL->power = 20;
     mR->power = 20;
     
@@ -171,21 +158,18 @@ void turnLeft135(DC_motor *mL, DC_motor *mR)
         mR->power++;    
         setMotorPWM(mL);    
         setMotorPWM(mR);  
-    }
-    
-    __delay_ms(290);
+        }    
+    __delay_ms(290); //allow adequate delay so that it turns 135 degrees
     stop(mL, mR);
 
-}
+    }
 
 //function to make the robot turn right 
 void turnRight135(DC_motor *mL, DC_motor *mR)
 { 
     stop(mL, mR);
-    
     mL->direction = 1;
     mR->direction = 0;
-   
     mL->power = 20;
     mR->power = 20;
     
@@ -195,18 +179,16 @@ void turnRight135(DC_motor *mL, DC_motor *mR)
         mR->power++;    
         setMotorPWM(mL);    
         setMotorPWM(mR);  
-    }
-
-    __delay_ms(250);
+        }
+    __delay_ms(250); //allow adequate delay so that it turns 135 degrees
     stop(mL, mR);
-}
+    }
 
 void turn180(DC_motor *mL, DC_motor *mR)
 { 
     stop(mL, mR); 
     mL->direction = 1;
     mR->direction = 0;
-    
     mL->power = 20;
     mR->power = 20;
     
@@ -216,10 +198,10 @@ void turn180(DC_motor *mL, DC_motor *mR)
         mR->power++;    
         setMotorPWM(mL);    
         setMotorPWM(mR);  
-    }   
+        }   
     __delay_ms(420);
     stop(mL, mR);
-}
+    }
 
 
 //function to make the robot go straight
@@ -230,42 +212,36 @@ void fullSpeedAhead(DC_motor *mL, DC_motor *mR, char dir) // dir = 1 is for forw
     mL->direction = dir;
     mR->direction = dir;
     
-    //stop(mL, mR); 
-    //mL->power = mR->power;
     while (mL->power <= setpower && mR->power <= setpower ) {
         __delay_ms(10);
         mL->power++;
         mR->power++;    
         setMotorPWM(mL);    
         setMotorPWM(mR);    
-    }
-    
+        }    
     //if robot is not on return, start incrementing timercount to record the time the robot is going straight (after it has reached a targeted setpower above)
-    
     if (interruptenable == 0) {
         timercount = 0;
         interruptenable = 1;
-    } 
-}
+        } 
+    }
 
 //function to make the robot go forward or in reverse by approx. a square
 void square(DC_motor *mL, DC_motor *mR, char dir)
 {
     mL->direction = dir;
     mR->direction = dir;
-    
     while (mL->power <= 60 || mR->power <= 60 ) {
         __delay_ms(10);
         mL->power++;
         mR->power++;    
         setMotorPWM(mL);    
         setMotorPWM(mR);  
-    }
-    
+        }
     __delay_ms(455);
     stop(mL, mR);
 }
-
+//Function to collide into and out of the wall (about 1/2 a square)
 void smallmovement(DC_motor *mL, DC_motor *mR, char dir)
 {
     stop(mL, mR);
@@ -278,13 +254,10 @@ void smallmovement(DC_motor *mL, DC_motor *mR, char dir)
         mR->power++;    
         setMotorPWM(mL);    
         setMotorPWM(mR);   
-    }
-    
+        }  
     __delay_ms(10);
-    
     stop(mL, mR);
-}
-
+    }
 
 //Function to carry out instruction based on colour detected
 void carryoutstep(DC_motor motorL, DC_motor motorR, struct colors *read, struct colors *mx, struct colors *amb, char step)
@@ -307,14 +280,13 @@ void carryoutstep(DC_motor motorL, DC_motor motorR, struct colors *read, struct 
     turnRight90(&motorL,&motorR);
     savepath(7);
     savepath(2); //return is carried out in the reverse order
-    }
+        }
   
     if (step  == 6){ //pink   
     square(&motorL,&motorR, 0);
     turnLeft90(&motorL,&motorR);    
     savepath(7);
     savepath(3);
-
         } 
     
     if (step  == 7){  //orange
@@ -336,7 +308,6 @@ void carryoutstep(DC_motor motorL, DC_motor motorR, struct colors *read, struct 
         returnhome(motorL, motorR);
         }    
 }
-
 
 //RETURN
 /************************************
@@ -366,7 +337,6 @@ void savetime(int timercount)
     timercount = 0;
 }
 
-
 void returnhome(DC_motor motorL, DC_motor motorR)
 {   
     //Turn LEDs off as they are not needed for the return journey
@@ -374,35 +344,38 @@ void returnhome(DC_motor motorL, DC_motor motorR)
     LATGbits.LATG1 = 0; // red LED
     LATAbits.LATA4 = 0; // green LED
     
+    //Move the index 1 back so that the index points to a non-zero value
     pathposition--;
     timeposition--;
-    while (pathposition >= 0) {
     
-    //case if instruction is fullspeedahead()
-    if (path[pathposition] == 1) {
-    stop(&motorL, &motorR);
-    interruptenable = 0; //turn incrementing in the interrupt off
-    fullSpeedAhead(&motorL, &motorR, 0);
-    pathposition=pathposition-1;
+    while (pathposition >= 0) { //iterate from the last saved value in the array to the first value
+    
+        //case if instruction is fullspeedahead()
+        if (path[pathposition] == 1) {
+            stop(&motorL, &motorR); //checks if stopped to avoid any unwanted forward motion before timer begins
+            interruptenable = 0; //ensuring the interruptenable is 0 such that  
+            fullSpeedAhead(&motorL, &motorR, 0);
+            pathposition=pathposition-1;
 
-// This is method with timer    
-    //ADC2String(timercount, timearray[0], timearray[1], 0);
-    while(timercount < timearray[timeposition]); //continue straight until timer reaches the timercount 
+            // Go straight forward for the amount of time specified in the timearray
+            while(timercount < timearray[timeposition]); //continue straight until timer causes the timercount memorised in the timearray 
     
-    timeposition--;    
-    stop(&motorL, &motorR);//stop once the device has gone straight for the required amount of time
-    }       
+            timeposition--;    
+            stop(&motorL, &motorR);//stop once the device has gone straight for the required amount of time
+            }       
     
-    //case if instruction is anything else
-    else if (path[pathposition] != 1) {
-    returnstep(path[pathposition], motorL, motorR);
-    square(&motorL, &motorR, 1); //this will allow it to go back, collide with the wall and reallign itself with the wall     
-    pathposition--;  
-    }
-    }
+        //case if instruction is anything apart from fullspeedahead() (Timearray is not required in this case)
+        else if (path[pathposition] != 1) {
+            returnstep(path[pathposition], motorL, motorR);
+            square(&motorL, &motorR, 1); //this will allow it to go back, collide with the wall and reallign itself with the wall     
+            pathposition--;  
+            }
+        }
+    //Turn on LED to indicate that buggy has arrived home
     LATDbits.LATD7 = 1;  
     __delay_ms(500);
-    Sleep();
+    //Once home, there is no need to waste power, so sleep
+    Sleep(); 
 }
 
 void returnstep(char instruction, DC_motor motorL, DC_motor motorR) {
@@ -411,5 +384,5 @@ void returnstep(char instruction, DC_motor motorL, DC_motor motorR) {
     if (instruction == 4) {turn180(&motorL,&motorR);}
     if (instruction == 5) {turnLeft135(&motorL,&motorR);}
     if (instruction == 6) {turnRight135(&motorL,&motorR);}           
-    if (instruction == 7) {} //no need to return a square
+    if (instruction == 7) {} //no need to return a square as the 'else if' statement in 'return home' will automatically call it for each step (for alignment purposes) 
 }

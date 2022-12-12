@@ -109,11 +109,11 @@ char decide_color(colors *mx)
     float brf = (float) mx->blue/(mx->clear); //ratio of blue
     float grf = (float) mx->green/(mx->clear); //ratio of green
     
-    unsigned int rr = (int) (100*rrf); 
+    //conversion back to integer so as to minimise use of floats and hence use of memory
+    unsigned int rr = (int) (100*rrf);
     unsigned int br = (int) (100*brf);    
     unsigned int gr = (int) (100*grf); 
       
-    //ADC2String(rr, br, gr, mx->clear);
     
     if ((150<rr) & (br<80) & (gr<40) & (200<mx->clear && mx->clear<400)) {return 2;} //red
     
@@ -131,6 +131,6 @@ char decide_color(colors *mx)
     
     if ((82<rr && rr<107) & (82<br && br<107) & (82<gr && gr<107) & (700<mx->clear && mx->clear<1200)) {return 9;} //white light
     
-    else {return 10;} //if no colour is detected, return 10
+    else {return 10;} //if the colour is not detected, return 10
     
 }

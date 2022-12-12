@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.hex">
+  <executable name="dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.hex">
     <memory name="program">
       <units>bytes</units>
       <length>131072</length>
-      <used>10372</used>
-      <free>120700</free>
+      <used>10390</used>
+      <free>120682</free>
     </memory>
     <memory name="data">
       <units>bytes</units>

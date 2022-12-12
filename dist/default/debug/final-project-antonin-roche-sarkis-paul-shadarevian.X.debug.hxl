@@ -1,31 +1,31 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.hex
- -Odist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.hex
- -logfile=dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.hxl
+ dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.hex
+ -Odist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.hex
+ -logfile=dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.hxl
  -addressing=1
  -break=300000
 
 ### Memory Usage ###
  Intel Hex-file ranges:
-  0h - 3h		(dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.hex)
-  8h - 2887h		(dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.hex)
-  200000h - 20000Fh		(dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.hex)
-  300000h - 30000Bh		(dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.hex)
+  0h - 5h		(dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.hex)
+  8h - 2897h		(dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.hex)
+  200000h - 20000Fh		(dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.hex)
+  300000h - 30000Bh		(dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.hex)
  Unused ranges:
-  4h - 7h
-  2888h - 1FFFFFh
+  6h - 7h
+  2898h - 1FFFFFh
   200010h - 2FFFFFh
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Intel Hex-file         (dist/default/production\final-project-antonin-roche-sarkis-paul-shadarevian.X.production.hex)
+  H1 = Intel Hex-file         (dist/default/debug\final-project-antonin-roche-sarkis-paul-shadarevian.X.debug.hex)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
-00000000 | H1 H1 H1 H1 -- -- -- -- H1 H1 H1 H1 H1 H1 H1 H1
+00000000 | H1 H1 H1 H1 H1 H1 -- -- H1 H1 H1 H1 H1 H1 H1 H1
 00000010 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000020 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000030 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
@@ -673,7 +673,8 @@
 00002850 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00002860 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00002870 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00002880 | H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- --
+00002880 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002890 | H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- --
 ----------------------------------------------------------
 00200000 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 ----------------------------------------------------------

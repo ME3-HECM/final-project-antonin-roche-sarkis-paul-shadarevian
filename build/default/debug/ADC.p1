@@ -2108,10 +2108,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ADC.c: 31:     tmpval = ADRESH;
 [e = _tmpval -> _ADRESH `ui ]
 "33
-[; ;ADC.c: 33:     return tmpval;
+[; ;ADC.c: 33:     tmpval = 255 - tmpval;
+[e = _tmpval - -> -> 255 `i `ui _tmpval ]
+"36
+[; ;ADC.c: 36:     return tmpval;
 [e ) _tmpval ]
 [e $UE 2016  ]
-"34
-[; ;ADC.c: 34: }
+"37
+[; ;ADC.c: 37: }
 [e :UE 2016 ]
 }
