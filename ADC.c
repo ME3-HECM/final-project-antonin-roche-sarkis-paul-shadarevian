@@ -8,13 +8,13 @@
 ************************************/
 void ADC_init(void)
 {
-    TRISEbits.TRISE0=1; // Select pin RE3 as input
-    ANSELEbits.ANSELE0=1; //Ensure analogue circuitry is active 
+    TRISFbits.TRISF6=1; // Select pin RF7 as input
+    ANSELFbits.ANSELF6=1; //Ensure analogue circuitry is active (it is by default - watch out for this later in the course!)
 
     // Set up the ADC module - check section 33 of the datasheet for more details
     ADREFbits.ADNREF = 0; // Use Vss (0V) as negative reference
     ADREFbits.ADPREF = 0b00; // Use Vdd (3.3V) as positive reference
-    ADPCH=0b11; // Select channel RA3/ANA3 for ADC
+    ADPCH=0b101110; // Select channel RF6 for ADC
     ADCON0bits.ADFM = 0; // Left-justified result (i.e. no leading 0s)
     ADCON0bits.ADCS = 1; // Use internal Fast RC (FRC) oscillator as clock source for conversion
     ADCON0bits.ADON = 1; // Enable ADC

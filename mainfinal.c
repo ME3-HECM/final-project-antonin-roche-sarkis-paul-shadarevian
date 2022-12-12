@@ -67,7 +67,7 @@ void main(void){
     //ADC_getval() is a number from 0 to 255. 255 is full charge reading (so 3.7/3)
     // 70% of this is around 170
     ADC_init();
-    if (ADC_getval()<250){LATDbits.LATD2 = 1;}    
+    while (ADC_getval()<170){LATDbits.LATD2 = 1;}    
     
     //FRONT AND BACK BUGGY LEDs
     //Pin RH1 is HLamps - turns front white LEDs and back red LEDs at reduced brightness  
