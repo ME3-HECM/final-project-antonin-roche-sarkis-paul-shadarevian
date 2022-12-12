@@ -3,4 +3,5 @@ mainfinal.c  \
 dc_motor.h  \
 color.h  \
 i2c.h  \
-timer0.h 
+timer0.h  \
+ADC.h 

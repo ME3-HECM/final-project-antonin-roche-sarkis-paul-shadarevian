@@ -1,4 +1,4 @@
-# 1 "mainfinal.c"
+# 1 "ADC.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,16 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mainfinal.c" 2
-
-#pragma config FEXTOSC = HS
-#pragma config RSTOSC = EXTOSC_4PLL
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-
-
+# 1 "ADC.c" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -24238,144 +24229,7 @@ __attribute__((__unsupported__("The READTIMER" "0" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\\pic\\include\\xc.h" 2 3
-# 9 "mainfinal.c" 2
-
-# 1 "./dc_motor.h" 1
-# 11 "./dc_motor.h"
-struct colors;
-
-typedef struct DC_motor {
-    char power;
-    char direction;
-    char brakemode;
-    unsigned int PWMperiod;
-    unsigned char *posDutyHighByte;
-    unsigned char *negDutyHighByte;
-} DC_motor;
-
-
-void initDCmotorsPWM(unsigned int PWMperiod);
-void setMotorPWM(DC_motor *m);
-void stop(DC_motor *mL, DC_motor *mR);
-void turnLeft90(DC_motor *mL, DC_motor *mR);
-void turnRight90(DC_motor *mL, DC_motor *mR);
-void turnLeft135(DC_motor *mL, DC_motor *mR);
-void turnRight135(DC_motor *mL, DC_motor *mR);
-void turn180(DC_motor *mL, DC_motor *mR);
-void fullSpeedAhead(DC_motor *mL, DC_motor *mR, char dir);
-void square(DC_motor *mL, DC_motor *mR, char dir);
-void smallmovement(DC_motor *mL, DC_motor *mR, char dir);
-void savepath(char instruction);
-void savetime(int timercount);
-void returnhome(DC_motor motorL, DC_motor motorR);
-void returnstep(char instruction, DC_motor motorL, DC_motor motorR);
-void carryoutstep(DC_motor motorL, DC_motor motorR, struct colors *read, struct colors *mx, struct colors *amb, char step);
-
-
-char path[100];
-int timearray[100];
-char step;
-
-
-signed char timeposition=0;
-
-signed char pathposition=0;
-
-extern int timercount;
-extern char interruptenable = 0;
-# 10 "mainfinal.c" 2
-
-# 1 "./color.h" 1
-
-
-
-
-
-
-
-typedef struct colors {
-    unsigned int red;
-    unsigned int blue;
-    unsigned int green;
-    unsigned int clear;
-} colors;
-
-
-
-
-void color_click_init(void);
-
-
-
-
-
-
-void color_writetoaddr(char address, char value);
-
-
-
-
-
-unsigned int color_read_Red(void);
-unsigned int color_read_Green(void);
-unsigned int color_read_Blue(void);
-unsigned int color_read_Clear(void);
-
-char decide_color(colors *mx);
-# 11 "mainfinal.c" 2
-
-# 1 "./i2c.h" 1
-# 13 "./i2c.h"
-void I2C_2_Master_Init(void);
-
-
-
-
-void I2C_2_Master_Idle(void);
-
-
-
-
-void I2C_2_Master_Start(void);
-
-
-
-
-void I2C_2_Master_RepStart(void);
-
-
-
-
-void I2C_2_Master_Stop(void);
-
-
-
-
-void I2C_2_Master_Write(unsigned char data_byte);
-
-
-
-
-unsigned char I2C_2_Master_Read(unsigned char ack);
-# 12 "mainfinal.c" 2
-
-# 1 "./timer0.h" 1
-
-
-
-
-
-
-
-
-unsigned int on_period,off_period;
-
-void Interrupts_init(void);
-void __attribute__((picinterrupt(("high_priority")))) HighISR();
-
-void Timer0_init(void);
-void starttimer0(void);
-# 13 "mainfinal.c" 2
+# 1 "ADC.c" 2
 
 # 1 "./ADC.h" 1
 
@@ -24387,198 +24241,37 @@ void starttimer0(void);
 
 void ADC_init(void);
 unsigned int ADC_getval(void);
-# 14 "mainfinal.c" 2
+# 2 "ADC.c" 2
 
 
 
 
-timercount=0;
-void __attribute__((picinterrupt(("high_priority")))) HighISR();
 
-void main(void){
 
-    Timer0_init();
-    Interrupts_init();
-    initDCmotorsPWM(199);
-    unsigned int PWMcycle = 199;
 
-
-
-    color_click_init();
-    I2C_2_Master_Init();
-
-
-
-    struct colors reading, max, ambient;
-
-
-    reading.red = 0;
-    reading.blue = 0;
-    reading.green = 0;
-    reading.clear = 0;
-    max.red = 0;
-    max.blue = 0;
-    max.green = 0;
-    max.clear = 0;
-    ambient.red = 0;
-    ambient.blue = 0;
-    ambient.green = 0;
-    ambient.clear = 0;
-
-    LATFbits.LATF7 = 1;
-    LATGbits.LATG1 = 1;
-    LATAbits.LATA4 = 1;
-
-    TRISDbits.TRISD3 = 0;
-    LATDbits.LATD3 = 0;
-
-    TRISFbits.TRISF2 = 1;
-    ANSELFbits.ANSELF2=0;
-    LATDbits.LATD7 = 0;
-    TRISDbits.TRISD7 = 0;
-
-
-
-
-
-
-
-    ADC_init();
-    if (ADC_getval()<250){LATDbits.LATD2 = 1;}
-
-
-
-    LATHbits.LATH1=0;
-    TRISHbits.TRISH1 = 0;
-
-    LATDbits.LATD3=0;
-    TRISDbits.TRISD3 = 0;
-
-    LATDbits.LATD4=0;
-    TRISDbits.TRISD4 = 0;
-
-
-
-    struct DC_motor motorL, motorR;
-
-    motorR.power = 0;
-    motorL.direction = 1;
-    motorL.posDutyHighByte=(unsigned char *)(&CCPR1H);
-    motorL.negDutyHighByte=(unsigned char *)(&CCPR2H);
-    motorL.PWMperiod=PWMcycle;
-
-    motorL.power = 0;
-    motorR.direction = 1;
-    motorR.PWMperiod=PWMcycle;
-    motorR.posDutyHighByte=(unsigned char *)(&CCPR3H);
-    motorR.negDutyHighByte=(unsigned char *)(&CCPR4H);
-
-
-
-
-
-
-    TRISFbits.TRISF2 = 1;
-    ANSELFbits.ANSELF2=0;
-    LATDbits.LATD7 = 0;
-    TRISDbits.TRISD7 = 0;
-
-
-    TRISFbits.TRISF3 = 1;
-    ANSELFbits.ANSELF3 = 0;
-    LATHbits.LATH3 = 0;
-    TRISHbits.TRISH3 = 0;
-
-
-    while (PORTFbits.RF2);
-
-    LATDbits.LATD7 = 1;
-    max.red = color_read_Red();
-    max.blue = color_read_Blue();
-    max.green = color_read_Green();
-    max.clear = color_read_Clear();
-    _delay((unsigned long)((500)*(64000000/4000.0)));
-    LATDbits.LATD7 = 0;
-
-
-
-    while(PORTFbits.RF3);
-
-    LATHbits.LATH3 = 1;
-    ambient.red = color_read_Red();
-    ambient.blue = color_read_Blue();
-    ambient.green = color_read_Green();
-    ambient.clear = color_read_Clear();
-    _delay((unsigned long)((500)*(64000000/4000.0)));
-    LATHbits.LATH3 = 0;
-
-    while(1){
-
-    fullSpeedAhead(&motorL,&motorR, 1);
-
-    reading.clear = (color_read_Clear()-ambient.clear)/(max.clear/1000+1);
-
-    if (reading.clear < 1200 && reading.clear > 30) {
-
-
-    savetime(timercount);
-    savepath(1);
-
-
-    smallmovement(&motorL,&motorR, 1);
-    _delay((unsigned long)((200)*(64000000/4000.0)));
-    smallmovement(&motorL,&motorR, 1);
-
-    _delay((unsigned long)((200)*(64000000/4000.0)));
-
-
-    reading.red = (color_read_Red()-ambient.red)/(max.red/1000+1);
-    reading.blue = (color_read_Blue()-ambient.blue)/(max.blue/1000+1);
-    reading.green = (color_read_Green()-ambient.green)/(max.green/1000+1);
-    reading.clear = (color_read_Clear()-ambient.clear)/(max.clear/1000+1);
-
-    step = decide_color(&reading);
-
-    smallmovement(&motorL,&motorR, 0);
-
-    if (step<=9)carryoutstep(motorL, motorR, &reading, &max, &ambient, step);
-
-    else {
-
-
-        square(&motorL,&motorR, 1);
-        char a = 0;
-        while (a<20) {
-            _delay((unsigned long)((20)*(64000000/4000.0)));
-        reading.red = (color_read_Red()-ambient.red)/(max.red/1000+1);
-        reading.blue = (color_read_Blue()-ambient.blue)/(max.blue/1000+1);
-        reading.green = (color_read_Green()-ambient.green)/(max.green/1000+1);
-        reading.clear = (color_read_Clear()-ambient.clear)/(max.clear/1000+1);
-            if (step == 10) {step = decide_color(&reading);}
-            a++;
-        }
-        if (step !=10) {carryoutstep(motorL, motorR, &reading, &max, &ambient, step);}
-        else {returnhome(motorL, motorR);
-
-        }
-        }
-
-}
-}
-
-
-}
-
-
-
-void __attribute__((picinterrupt(("high_priority")))) HighISR()
+void ADC_init(void)
 {
-    if (PIR0bits.TMR0IF == 1 & interruptenable == 1)
-    {
-        timercount++;
-        TMR0H=1535>>8;
-        TMR0L=1535;
-    }
-    PIR0bits.TMR0IF=0;
+    TRISEbits.TRISE0=1;
+    ANSELEbits.ANSELE0=1;
 
+
+    ADREFbits.ADNREF = 0;
+    ADREFbits.ADPREF = 0b00;
+    ADPCH=0b11;
+    ADCON0bits.ADFM = 0;
+    ADCON0bits.ADCS = 1;
+    ADCON0bits.ADON = 1;
+}
+
+unsigned int ADC_getval(void)
+{
+    unsigned int tmpval;
+
+    ADCON0bits.GO = 1;
+
+    while (ADCON0bits.GO);
+
+    tmpval = ADRESH;
+
+    return tmpval;
 }

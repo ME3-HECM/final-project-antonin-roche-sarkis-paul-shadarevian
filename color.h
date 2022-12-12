@@ -5,15 +5,12 @@
 
 #define _XTAL_FREQ 64000000 //note intrinsic _delay function is 62.5ns at 64,000,000Hz  
 
-
-
 typedef struct colors { //definition of DC_motor structure
     unsigned int red;   //red colour
     unsigned int blue;   //blue colour
     unsigned int green;   //green colour
     unsigned int clear;   //green colour
 } colors;
-
 
 /********************************************//**
  *  Function to initialise the colour click module using I2C

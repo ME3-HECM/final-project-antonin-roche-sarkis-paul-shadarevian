@@ -34,30 +34,14 @@ Aim: To calculate a suitable prescaler such that the timer overflows in approx. 
     T0CON1bits.T0ASYNC=1; //
     T0CON1bits.T0CKPS=0b0000; // 1:1 prescaler
     T0CON0bits.T016BIT=1;	//16bit mode to allow a better accuracy (see reason stated in comments above)
-}
 
-/************************************
- * Function to write a full 16bit timer value
- * Note TMR0L and TMR0H must be written in the correct order, or TMR0H will not contain the correct value
-************************************/
+    TMR0H=1535>>8;      //initial value will allow for overflow to occur at exactly 4ms      
+    TMR0L=1535;
+    T0CON0bits.T0EN=1;	//start the timer
+}
 
 void starttimer0(void){
-    TMR0H=1535>>8;      //initial value will allow for overflow to occur at exactly 131ms      
+    TMR0H=1535>>8;      //initial value will allow for overflow to occur at exactly 4ms      
     TMR0L=1535; 
-    T0CON0bits.T0EN=1; //turn timer on (function called out only on every time the robot goes fullspeedahead to save battery)
 
-}
-
-
-
-unsigned int get16bitTMR0val(void)
-{
-	//add your code to get the full 16 bit timer value here
-   unsigned int a;
-   
-    // it's a good idea to initialise the timer registers so we know we are at 0
-    a = TMR0L;       
-    a = a|(TMR0H<<8);
-    
-    return a;
 }
