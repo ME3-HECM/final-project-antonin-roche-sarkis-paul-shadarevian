@@ -24251,8 +24251,8 @@ unsigned int ADC_getval(void);
 
 void ADC_init(void)
 {
-    TRISAbits.TRISA4=1;
-    ANSELAbits.ANSELA4=1;
+    TRISEbits.TRISE0=1;
+    ANSELEbits.ANSELE0=1;
 
 
     ADREFbits.ADNREF = 0;

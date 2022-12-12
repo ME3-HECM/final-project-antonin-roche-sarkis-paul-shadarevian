@@ -6,7 +6,9 @@
 #define _XTAL_FREQ 64000000
 
 #define mazesteps 100 //this is the upper limit number of steps to reach the end of the maze
-#define setpower 30 // this is the max power that the motors should be increased up to
+#define setpower 20 // this is the max power that the motors should be increased up to
+
+struct colors;
 
 typedef struct DC_motor { //definition of DC_motor structure
     char power;         //motor power, out of 100
@@ -29,14 +31,22 @@ void turn180(DC_motor *mL, DC_motor *mR);
 void fullSpeedAhead(DC_motor *mL, DC_motor *mR, char dir);
 void square(DC_motor *mL, DC_motor *mR, char dir);
 void smallmovement(DC_motor *mL, DC_motor *mR, char dir);
-void savepath(char path[mazesteps], char instruction);
-int savetime(char timearray[mazesteps], int timercount);
-void returnhome(char path[mazesteps], DC_motor motorL, DC_motor motorR, char timearray[mazesteps]);
+void savepath(char instruction);
+void savetime(int timercount);
+void returnhome(DC_motor motorL, DC_motor motorR);
 void returnstep(char instruction, DC_motor motorL, DC_motor motorR);
+void carryoutstep(DC_motor motorL, DC_motor motorR, struct colors *read, struct colors *mx, struct colors *amb, char step);
+
+//Return - Path memorisation
+char path[mazesteps]; // array to store path being followed
+int timearray[mazesteps]; //array to store for how long device keeps going full speed ahead
+char step; 
+
 
 signed char timeposition=0; //defines the index of the timearray 
 //A pointer is not used in this case as the pointer will always return to its initial position 0 every time the function is called out}
 signed char pathposition=0; //defines the index of patharray
 
 extern int timercount;
+extern char interruptenable = 0;
 #endif

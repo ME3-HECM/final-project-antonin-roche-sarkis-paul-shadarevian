@@ -1,26 +1,26 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"29341 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 29341:     struct {
-[s S1368 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1368 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
-"29340
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 29340: typedef union {
-[u S1367 `S1368 1 ]
-[n S1367 . . ]
-"29352
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 29352: extern volatile TRISAbits_t TRISAbits __attribute__((address(0xF81)));
-[v _TRISAbits `VS1367 ~T0 @X0 0 e@3969 ]
-"10263
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 10263:     struct {
-[s S502 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S502 . ANSELA0 ANSELA1 ANSELA2 ANSELA3 ANSELA4 ANSELA5 ANSELA6 ANSELA7 ]
-"10262
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 10262: typedef union {
-[u S501 `S502 1 ]
-[n S501 . . ]
-"10274
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 10274: extern volatile ANSELAbits_t ANSELAbits __attribute__((address(0xE92)));
-[v _ANSELAbits `VS501 ~T0 @X0 0 e@3730 ]
+"29829 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 29829:     struct {
+[s S1384 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1384 . TRISE0 TRISE1 TRISE2 TRISE3 TRISE4 TRISE5 TRISE6 TRISE7 ]
+"29828
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 29828: typedef union {
+[u S1383 `S1384 1 ]
+[n S1383 . . ]
+"29840
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 29840: extern volatile TRISEbits_t TRISEbits __attribute__((address(0xF85)));
+[v _TRISEbits `VS1383 ~T0 @X0 0 e@3973 ]
+"11999
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 11999:     struct {
+[s S558 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S558 . ANSELE0 ANSELE1 ANSELE2 ANSELE3 ANSELE4 ANSELE5 ANSELE6 ANSELE7 ]
+"11998
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 11998: typedef union {
+[u S557 `S558 1 ]
+[n S557 . . ]
+"12010
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 12010: extern volatile ANSELEbits_t ANSELEbits __attribute__((address(0xEAF)));
+[v _ANSELEbits `VS557 ~T0 @X0 0 e@3759 ]
 "26182
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 26182:     struct {
 [s S1236 :2 `uc 1 :2 `uc 1 :1 `uc 1 ]
@@ -2056,11 +2056,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _ADC_init ]
 [f ]
 "11
-[; ;ADC.c: 11:     TRISAbits.TRISA4=1;
-[e = . . _TRISAbits 0 4 -> -> 1 `i `uc ]
+[; ;ADC.c: 11:     TRISEbits.TRISE0=1;
+[e = . . _TRISEbits 0 0 -> -> 1 `i `uc ]
 "12
-[; ;ADC.c: 12:     ANSELAbits.ANSELA4=1;
-[e = . . _ANSELAbits 0 4 -> -> 1 `i `uc ]
+[; ;ADC.c: 12:     ANSELEbits.ANSELE0=1;
+[e = . . _ANSELEbits 0 0 -> -> 1 `i `uc ]
 "15
 [; ;ADC.c: 15:     ADREFbits.ADNREF = 0;
 [e = . . _ADREFbits 0 2 -> -> 0 `i `uc ]

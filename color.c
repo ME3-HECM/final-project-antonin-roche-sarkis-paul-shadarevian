@@ -19,13 +19,15 @@ void color_click_init(void)
 	color_writetoaddr(0x01, 0xD5);
     
     // Initialise the registers for lighting the LEDs
+    LATFbits.LATF7 = 0; // blue LED
+    LATGbits.LATG1 = 0; // red LED
+    LATAbits.LATA4 = 0; // green LED
+    
     TRISFbits.TRISF7 = 0; // blue LED Tris register as output
     TRISGbits.TRISG1 = 0; // red LED Tris register as output
     TRISAbits.TRISA4 = 0; // green LED Tris register as output
     
-    LATFbits.LATF7 = 0; // blue LED
-    LATGbits.LATG1 = 0; // red LED
-    LATAbits.LATA4 = 0; // green LED
+
 }
 
 void color_writetoaddr(char address, char value){
@@ -103,36 +105,32 @@ unsigned int color_read_Clear(void)
 char decide_color(colors *mx)
 {
     
-    unsigned int rr = mx->red/(mx->clear/100); //ratio of red
-    unsigned int br = mx->blue/(mx->clear/100); //ratio of blue
-    unsigned int gr = mx->green/(mx->clear/100); //ratio of green
+    float rrf = (float) mx->red/(mx->clear); //ratio of red
+    float brf = (float) mx->blue/(mx->clear); //ratio of blue
+    float grf = (float) mx->green/(mx->clear); //ratio of green
     
-    if ((150<rr) & (40<br && br<80) & (0<gr && gr<40) & (200<mx->clear && mx->clear<400)) {return 2;} //red
+    unsigned int rr = (int) (100*rrf); 
+    unsigned int br = (int) (100*brf);    
+    unsigned int gr = (int) (100*grf); 
+      
+    //ADC2String(rr, br, gr, mx->clear);
+    
+    if ((150<rr) & (br<80) & (gr<40) & (200<mx->clear && mx->clear<400)) {return 2;} //red
     
     if ((60<rr && rr<100) & (60<br && br<100) & (110<gr) & (mx->clear<550)) {return 3;} //green
     
-    if ((45<rr && rr<55) & (160<br && br<180) & (90<gr && gr<110) & (100<mx->clear && mx->clear<200)) {return 4;} //blue
+    if ((rr<70) & (100<br) & (gr<130) & (mx->clear<180)) {return 4;} //blue
     
-    if ((105<rr) & (br<80) & (95<gr) & (600<mx->clear && mx->clear<800)) {return 5;} //yellow
+    if ((100<rr) & (br<85) & (85<gr) & (mx->clear>650) & (br<gr)) {return 5;} //yellow
     
-    if ((100<rr && rr<120) & (br>80) & (gr<100) & (550<mx->clear && mx->clear<750)) {return 6;} //pink
+    if ((100<rr && rr<120) & (br>80) & (gr<95) & (mx->clear<675)) {return 6;} //pink
     
-    if ((140<rr) & (br<85) & (gr<85) & (mx->clear<600)) {return 7;} //orange
+    if ((125<rr) & (br<85) & (gr<85) & (mx->clear > 400)) {return 7;} //orange
     
-    if ((rr<90) & (110<br) & (120<gr) & (400<mx->clear && mx->clear<700)) {return 8;} //light blue
+    if ((rr<90) & (100<br) & (110<gr) & (400<mx->clear && mx->clear<700)) {return 8;} //light blue
     
-    if ((85<rr && rr<110) & (85<br && br<110) & (85<gr && gr<110) & (700<mx->clear && mx->clear<1000)) {return 9;} //white light
+    if ((82<rr && rr<107) & (82<br && br<107) & (82<gr && gr<107) & (700<mx->clear && mx->clear<1200)) {return 9;} //white light
     
-    else{return 9;} //if no colour is detected, return 10
+    else {return 10;} //if no colour is detected, return 10
     
-    
-    //if ( < mx->red < && < mx->blue < && < mx->green < && < mx->clear <) {return 2;} //red
-    //if ( < mx->red < && < mx->blue < && < mx->green < && < mx->clear <) {return 3;} //green
-    //if ( < mx->red < && < mx->blue < && < mx->green < && < mx->clear <) {return 4;} //blue
-    //if ( < mx->red < && < mx->blue < && < mx->green < && < mx->clear <) {return 5;} //yellow
-    //if ( < mx->red < && < mx->blue < && < mx->green < && < mx->clear <) {return 6;} //pink
-    //if ( < mx->red < && < mx->blue < && < mx->green < && < mx->clear <) {return 7;} //orange
-    //if ( < mx->red < && < mx->blue < && < mx->green < && < mx->clear <) {return 8;} //light blue
-    //if ( < mx->red < && < mx->blue < && < mx->green < && < mx->clear <) {return 9;} //white light
-    //else {return 9;} //if no colour is detected, return
 }

@@ -24273,16 +24273,14 @@ void Timer0_init(void)
     T0CON1bits.T0ASYNC=1;
     T0CON1bits.T0CKPS=0b0000;
     T0CON0bits.T016BIT=1;
+
+    TMR0H=1535>>8;
+    TMR0L=1535;
+    T0CON0bits.T0EN=1;
 }
-
-
-
-
-
 
 void starttimer0(void){
     TMR0H=1535>>8;
     TMR0L=1535;
-    T0CON0bits.T0EN=1;
 
 }

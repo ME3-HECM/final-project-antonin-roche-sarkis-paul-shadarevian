@@ -1,6 +1,7 @@
 #include <xc.h>
 #include "dc_motor.h"
 #include "timer0.h"
+#include "color.h"
 
 // function initialise T2 and CCP for DC motor control
 void initDCmotorsPWM(unsigned int PWMperiod){
@@ -124,7 +125,7 @@ void turnLeft90(DC_motor *mL, DC_motor *mR)
         setMotorPWM(mR);  
     }
     
-    __delay_ms(160);
+    __delay_ms(250);
     
     stop(mL, mR);
 }
@@ -147,7 +148,7 @@ void turnRight90(DC_motor *mL, DC_motor *mR)
         setMotorPWM(mR);  
     }    
     
-    __delay_ms(160);
+    __delay_ms(210);
     
     stop(mL, mR);
 }
@@ -172,7 +173,7 @@ void turnLeft135(DC_motor *mL, DC_motor *mR)
         setMotorPWM(mR);  
     }
     
-    __delay_ms(500);
+    __delay_ms(290);
     stop(mL, mR);
 
 }
@@ -196,7 +197,7 @@ void turnRight135(DC_motor *mL, DC_motor *mR)
         setMotorPWM(mR);  
     }
 
-    __delay_ms(500);
+    __delay_ms(250);
     stop(mL, mR);
 }
 
@@ -216,7 +217,7 @@ void turn180(DC_motor *mL, DC_motor *mR)
         setMotorPWM(mL);    
         setMotorPWM(mR);  
     }   
-    __delay_ms(300);
+    __delay_ms(420);
     stop(mL, mR);
 }
 
@@ -224,8 +225,8 @@ void turn180(DC_motor *mL, DC_motor *mR)
 //function to make the robot go straight
 void fullSpeedAhead(DC_motor *mL, DC_motor *mR, char dir) // dir = 1 is for forward, 0 is for backward
 {
-    mL->brakemode=1; //slow decay
-    mR->brakemode=1; //slow decay
+    mL->brakemode= 1; //slow decay
+    mR->brakemode= 1; //slow decay
     mL->direction = dir;
     mR->direction = dir;
     
@@ -239,8 +240,12 @@ void fullSpeedAhead(DC_motor *mL, DC_motor *mR, char dir) // dir = 1 is for forw
         setMotorPWM(mR);    
     }
     
-    if (dir == 1 && T0CON0bits.T0EN == 0) {starttimer0;} //if robot is not on return, start timer0 to count the time the robot is going straight (after it has reached a targeted setpower above)
+    //if robot is not on return, start incrementing timercount to record the time the robot is going straight (after it has reached a targeted setpower above)
     
+    if (interruptenable == 0) {
+        timercount = 0;
+        interruptenable = 1;
+    } 
 }
 
 //function to make the robot go forward or in reverse by approx. a square
@@ -249,44 +254,94 @@ void square(DC_motor *mL, DC_motor *mR, char dir)
     mL->direction = dir;
     mR->direction = dir;
     
-    while (mL->power <= 50 || mR->power <= 50 ) {
+    while (mL->power <= 60 || mR->power <= 60 ) {
         __delay_ms(10);
         mL->power++;
         mR->power++;    
         setMotorPWM(mL);    
         setMotorPWM(mR);  
-
-    setMotorPWM(mL);    
-    setMotorPWM(mR);    
     }
     
-    __delay_ms(200);
+    __delay_ms(455);
     stop(mL, mR);
 }
 
 void smallmovement(DC_motor *mL, DC_motor *mR, char dir)
 {
+    stop(mL, mR);
     mL->direction = dir;
     mR->direction = dir;
     
-    while (mL->power <= 50 || mR->power <= 50 ) {
+    while (mL->power <= 55 || mR->power <= 55 ) {
         __delay_ms(10);
         mL->power++;
         mR->power++;    
         setMotorPWM(mL);    
-        setMotorPWM(mR);  
-
-    setMotorPWM(mL);    
-    setMotorPWM(mR);    
+        setMotorPWM(mR);   
     }
+    
+    __delay_ms(10);
     
     stop(mL, mR);
 }
 
+
+//Function to carry out instruction based on colour detected
+void carryoutstep(DC_motor motorL, DC_motor motorR, struct colors *read, struct colors *mx, struct colors *amb, char step)
+{
+    if (step == 2){ //red
+    turnRight90(&motorL,&motorR);
+    LATHbits.LATH1=1; //turns on front white and back red LEDs
+    savepath(2);} 
+    
+    if (step  == 3){  //green
+    turnLeft90(&motorL,&motorR);
+    savepath(3);}    
+    
+    if (step  == 4){ //blue
+    turn180(&motorL,&motorR);
+    savepath(4);}
+    
+    if (step  == 5){ //yellow
+    square(&motorL,&motorR, 0); // reverse 1 square
+    turnRight90(&motorL,&motorR);
+    savepath(7);
+    savepath(2); //return is carried out in the reverse order
+    }
+  
+    if (step  == 6){ //pink   
+    square(&motorL,&motorR, 0);
+    turnLeft90(&motorL,&motorR);    
+    savepath(7);
+    savepath(3);
+
+        } 
+    
+    if (step  == 7){  //orange
+    turnRight135(&motorL,&motorR);
+    savepath(5); 
+        }
+    
+    if (step  == 8){  //light blue
+    turnLeft135(&motorL,&motorR);
+    savepath(6); 
+        }
+    
+    if (step  == 9) { //White Light or Colour unrecognised - return home 
+        
+        //Signal that we are returning home    
+        LATDbits.LATD3=1; //high brightness of front white LEDs
+        LATDbits.LATD4=1; //high brightness of back red LEDs
+        smallmovement(&motorL, &motorR, 1);
+        returnhome(motorL, motorR);
+        }    
+}
+
+
 //RETURN
 /************************************
- * In order to store the path and allow us to return, we have assigned a value from 1-6 for each of the instructions the list path
-1 - FullSpeedAhead            -->the direction will be reversed for the return journey)
+ * In order to store the path and allow us to return, we have assigned a value from 1-7 for each of the instructions the list path
+1 - FullSpeedAhead            -->the direction will be reversed for the return journey
 2 - TurnRight90 (Red, part of orange)      --> TurnLeft90 is called in the return journey
 3 - TurnLeft90 (Green, part of pink)     --> TurnRight90 is called in the return journey
 4 - Turn180 (Blue)         --> Turn180 called in return journey
@@ -297,48 +352,57 @@ void smallmovement(DC_motor *mL, DC_motor *mR, char dir)
 *We have optimised the return path by removing the reverse square (which is not necessary in the return journey) 
 **************************************/
 
-void savepath(char path[mazesteps], char instruction) //a pointer cannot be used within the function as this would cause the pointer position to be reset to 0 every time the function is called (not wanted)
+void savepath(char instruction) //a pointer cannot be used within the function as this would cause the pointer position to be reset to 0 every time the function is called (not wanted)
 {
     path[pathposition] = instruction;
     pathposition++;
 }
 
-int savetime(char timearray[mazesteps], int timercount)
+void savetime(int timercount)
 {   
-    T0CON0bits.T0EN=0; //turn timer off preventing counter from incrementing further 
+    interruptenable = 0;  //prevent the timercount from incrmeneting further 
     timearray[timeposition]=timercount; //store time robot was going straight in the time array
     timeposition++;
-    timercount = 0; //reset the timer count
-    return timercount;
+    timercount = 0;
 }
 
-void returnhome(char path[mazesteps], DC_motor motorL, DC_motor motorR, char timearray[mazesteps])
-{
+
+void returnhome(DC_motor motorL, DC_motor motorR)
+{   
+    //Turn LEDs off as they are not needed for the return journey
+    LATFbits.LATF7 = 0; // blue LED 
+    LATGbits.LATG1 = 0; // red LED
+    LATAbits.LATA4 = 0; // green LED
+    
+    pathposition--;
+    timeposition--;
     while (pathposition >= 0) {
     
     //case if instruction is fullspeedahead()
-    if (path[pathposition--] == 1) {
-    
+    if (path[pathposition] == 1) {
+    stop(&motorL, &motorR);
+    interruptenable = 0; //turn incrementing in the interrupt off
     fullSpeedAhead(&motorL, &motorR, 0);
-
-//method with delay    
-//    int y;
-//    for(y=0; y<timearray[timeposition--]; y++) {__delay_ms(4);} //continue straight the time that had been saved in timearray 
+    pathposition=pathposition-1;
 
 // This is method with timer    
-    starttimer0; //timer instead of delay is a more efficient option
-    while(timercount < timearray[timeposition--]); //continue straight until timer reaches the timercount 
+    //ADC2String(timercount, timearray[0], timearray[1], 0);
+    while(timercount < timearray[timeposition]); //continue straight until timer reaches the timercount 
     
-    T0CON0bits.T0EN=0; //turn timer off
+    timeposition--;    
     stop(&motorL, &motorR);//stop once the device has gone straight for the required amount of time
-    
     }       
     
     //case if instruction is anything else
     else if (path[pathposition] != 1) {
     returnstep(path[pathposition], motorL, motorR);
-    square(&motorL, &motorR, 1);} //this will allow it to go back, collide with the wall and reallign itself with the wall     
+    square(&motorL, &motorR, 1); //this will allow it to go back, collide with the wall and reallign itself with the wall     
+    pathposition--;  
     }
+    }
+    LATDbits.LATD7 = 1;  
+    __delay_ms(500);
+    Sleep();
 }
 
 void returnstep(char instruction, DC_motor motorL, DC_motor motorR) {
@@ -347,5 +411,5 @@ void returnstep(char instruction, DC_motor motorL, DC_motor motorR) {
     if (instruction == 4) {turn180(&motorL,&motorR);}
     if (instruction == 5) {turnLeft135(&motorL,&motorR);}
     if (instruction == 6) {turnRight135(&motorL,&motorR);}           
-    if (instruction == 7) {square(&motorL,&motorR, 0);}
+    if (instruction == 7) {} //no need to return a square
 }

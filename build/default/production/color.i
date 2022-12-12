@@ -24232,14 +24232,19 @@ unsigned char __t3rd16on(void);
 # 1 "color.c" 2
 
 # 1 "./color.h" 1
-# 10 "./color.h"
+
+
+
+
+
+
+
 typedef struct colors {
     unsigned int red;
     unsigned int blue;
     unsigned int green;
     unsigned int clear;
 } colors;
-
 
 
 
@@ -24302,6 +24307,8 @@ unsigned char I2C_2_Master_Read(unsigned char ack);
 
 # 1 "./dc_motor.h" 1
 # 11 "./dc_motor.h"
+struct colors;
+
 typedef struct DC_motor {
     char power;
     char direction;
@@ -24323,16 +24330,24 @@ void turn180(DC_motor *mL, DC_motor *mR);
 void fullSpeedAhead(DC_motor *mL, DC_motor *mR, char dir);
 void square(DC_motor *mL, DC_motor *mR, char dir);
 void smallmovement(DC_motor *mL, DC_motor *mR, char dir);
-void savepath(char path[100], char instruction);
-int savetime(char timearray[100], int timercount);
-void returnhome(char path[100], DC_motor motorL, DC_motor motorR, char timearray[100]);
+void savepath(char instruction);
+void savetime(int timercount);
+void returnhome(DC_motor motorL, DC_motor motorR);
 void returnstep(char instruction, DC_motor motorL, DC_motor motorR);
+void carryoutstep(DC_motor motorL, DC_motor motorR, struct colors *read, struct colors *mx, struct colors *amb, char step);
+
+
+char path[100];
+int timearray[100];
+char step;
+
 
 signed char timeposition=0;
 
 signed char pathposition=0;
 
 extern int timercount;
+extern char interruptenable = 0;
 # 4 "color.c" 2
 
 
@@ -24352,13 +24367,15 @@ void color_click_init(void)
  color_writetoaddr(0x01, 0xD5);
 
 
+    LATFbits.LATF7 = 0;
+    LATGbits.LATG1 = 0;
+    LATAbits.LATA4 = 0;
+
     TRISFbits.TRISF7 = 0;
     TRISGbits.TRISG1 = 0;
     TRISAbits.TRISA4 = 0;
 
-    LATFbits.LATF7 = 0;
-    LATGbits.LATG1 = 0;
-    LATAbits.LATA4 = 1;
+
 }
 
 void color_writetoaddr(char address, char value){
@@ -24368,7 +24385,7 @@ void color_writetoaddr(char address, char value){
     I2C_2_Master_Write(value);
     I2C_2_Master_Stop();
 }
-# 46 "color.c"
+# 48 "color.c"
 unsigned int color_read_Red(void)
 {
  unsigned int tmp;
@@ -24429,26 +24446,32 @@ unsigned int color_read_Clear(void)
 char decide_color(colors *mx)
 {
 
-    unsigned int rr = mx->red/(mx->clear/100);
-    unsigned int br = mx->blue/(mx->clear/100);
-    unsigned int gr = mx->green/(mx->clear/100);
+    float rrf = (float) mx->red/(mx->clear);
+    float brf = (float) mx->blue/(mx->clear);
+    float grf = (float) mx->green/(mx->clear);
 
-    if ((150<rr) & (40<br && br<80) & (0<gr && gr<40) & (200<mx->clear && mx->clear<400)) {return 2;}
+    unsigned int rr = (int) (100*rrf);
+    unsigned int br = (int) (100*brf);
+    unsigned int gr = (int) (100*grf);
+
+
+
+    if ((150<rr) & (br<80) & (gr<40) & (200<mx->clear && mx->clear<400)) {return 2;}
 
     if ((60<rr && rr<100) & (60<br && br<100) & (110<gr) & (mx->clear<550)) {return 3;}
 
-    if ((45<rr && rr<55) & (160<br && br<180) & (90<gr && gr<110) & (100<mx->clear && mx->clear<200)) {return 4;}
+    if ((rr<70) & (100<br) & (gr<130) & (mx->clear<180)) {return 4;}
 
-    if ((105<rr) & (br<80) & (95<gr) & (600<mx->clear && mx->clear<800)) {return 5;}
+    if ((100<rr) & (br<85) & (85<gr) & (mx->clear>650) & (br<gr)) {return 5;}
 
-    if ((100<rr && rr<120) & (br>80) & (gr<100) & (550<mx->clear && mx->clear<750)) {return 6;}
+    if ((100<rr && rr<120) & (br>80) & (gr<95) & (mx->clear<675)) {return 6;}
 
-    if ((140<rr) & (br<85) & (gr<85) & (mx->clear<600)) {return 7;}
+    if ((125<rr) & (br<85) & (gr<85) & (mx->clear > 400)) {return 7;}
 
-    if ((rr<90) & (110<br) & (120<gr) & (400<mx->clear && mx->clear<700)) {return 8;}
+    if ((rr<90) & (100<br) & (110<gr) & (400<mx->clear && mx->clear<700)) {return 8;}
 
-    if ((85<rr && rr<110) & (85<br && br<110) & (85<gr && gr<110) & (700<mx->clear && mx->clear<1000)) {return 9;}
+    if ((82<rr && rr<107) & (82<br && br<107) & (82<gr && gr<107) & (700<mx->clear && mx->clear<1200)) {return 9;}
 
-    else{return 9;}
-# 138 "color.c"
+    else {return 10;}
+
 }

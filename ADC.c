@@ -8,8 +8,8 @@
 ************************************/
 void ADC_init(void)
 {
-    TRISAbits.TRISA4=1; // Select pin RA3 as input
-    ANSELAbits.ANSELA4=1; //Ensure analogue circuitry is active (it is by default - watch out for this later in the course!)
+    TRISEbits.TRISE0=1; // Select pin RE3 as input
+    ANSELEbits.ANSELE0=1; //Ensure analogue circuitry is active 
 
     // Set up the ADC module - check section 33 of the datasheet for more details
     ADREFbits.ADNREF = 0; // Use Vss (0V) as negative reference
