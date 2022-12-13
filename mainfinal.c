@@ -140,7 +140,7 @@ void main(void){
         
         reading.clear = (color_read_Clear()-ambient.clear)/(max.clear/1000+1); //division by 1000 ensures result division is not converted to 0        
         
-        if (reading.clear < 1200  && reading.clear > 30) { //threshold at which 
+        if (reading.clear < 1200  && reading.clear > 30) { //threshold values of clear at which a colour is detected 
                 
             savetime(timercount); //store the value of timer indicating for how long robot went fullSpeedAhead & reset timer value        
             savepath(1); //store in path so that it went fullspeedahead so that it can be recalled in the return

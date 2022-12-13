@@ -104,7 +104,14 @@ unsigned int color_read_Clear(void)
 
 char decide_color(colors *mx)
 {
+    /************************************
+    Based on experimentation with data, it was found that taking the ratio of the colour with clear after normalisation
+    was shown to stay perfectly constant with incredibly small variations in the value, as opposed to just normalisation
+    which showed large variations. This has allowed more flexibility to the buggy to detect the colours even if they have
+    a slightly different tint or are under different lighting conditions
+    **************************************/
     
+    //All colours divided by clear to find their ratio, as explained above
     float rrf = (float) mx->red/(mx->clear); //ratio of red
     float brf = (float) mx->blue/(mx->clear); //ratio of blue
     float grf = (float) mx->green/(mx->clear); //ratio of green
