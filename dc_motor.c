@@ -120,7 +120,7 @@ void turnLeft90(DC_motor *mL, DC_motor *mR)
         setMotorPWM(mL);    
         setMotorPWM(mR);  
         }    
-    __delay_ms(250);    
+    __delay_ms(245);    
     stop(mL, mR);
     }
 
@@ -199,7 +199,7 @@ void turn180(DC_motor *mL, DC_motor *mR)
         setMotorPWM(mL);    
         setMotorPWM(mR);  
         }   
-    __delay_ms(420);
+    __delay_ms(400);
     stop(mL, mR);
     }
 

@@ -60,11 +60,12 @@ void main(void){
     //CHECKING IF BATTERY LEVEL is ADEQUATE
     //Pin RF6 on microcontroller is BAT-VSEBSE
     //Warn the user if the battery is lower than 70% and do not move on as it will affect the performance of the buggy
-    //RF6 pin will have a voltage reading of 1/3 of the battery voltage, i.e. max of 3.7/3
-    //ADC_getval() is a number from 0 to 65535. 0 is full charge reading
-    // 70% of this is around 170
+    //(F6 pin will have a voltage reading of 1/3 of the battery voltage)
+    //ADC_getval() is a number from 0 to 255. 0 is full charge reading
+    // 40% of this is around 100
     ADC_init();
-    while (ADC_getval()>20000){LATDbits.LATD7 = 1;}       
+    while (ADC_getval()<100) {LATDbits.LATD7 = 1;}
+    //If battery is less than 40%, The battery gets stuck in an infinite loop and warns
     
     //SETUP OF FRONT AND BACK BUGGY LEDs
     //Pin RH1 is HLamps - turns front white LEDs and back red LEDs at reduced brightness  
@@ -158,7 +159,7 @@ void main(void){
             step = decide_color(&reading); 
             smallmovement(&motorL,&motorR, 0); //go back a little to allow device to turn or do any of the required steps
     
-            //If colour is recognised, step will be from 1 to 9
+            //If colour is reccognised, step will be from 1 to 9
             if (step<=9){carryoutstep(motorL, motorR, &reading, &max, &ambient, step);}
             //Otherwise, colour has not been recognised; try to read again
             else {            

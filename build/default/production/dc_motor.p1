@@ -2690,8 +2690,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ || != -> . *U _mL 0 `i -> 50 `i != -> . *U _mR 0 `i -> 50 `i 2031  ]
 [e :U 2032 ]
 "123
-[; ;dc_motor.c: 123:     _delay((unsigned long)((250)*(64000000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;dc_motor.c: 123:     _delay((unsigned long)((245)*(64000000/4000.0)));
+[e ( __delay (1 -> * -> -> 245 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
 "124
 [; ;dc_motor.c: 124:     stop(mL, mR);
 [e ( _stop (2 , _mL _mR ]
@@ -2956,8 +2956,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ || <= -> . *U _mL 0 `i -> 50 `i <= -> . *U _mR 0 `i -> 50 `i 2047  ]
 [e :U 2048 ]
 "202
-[; ;dc_motor.c: 202:     _delay((unsigned long)((420)*(64000000/4000.0)));
-[e ( __delay (1 -> * -> -> 420 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[; ;dc_motor.c: 202:     _delay((unsigned long)((400)*(64000000/4000.0)));
+[e ( __delay (1 -> * -> -> 400 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
 "203
 [; ;dc_motor.c: 203:     stop(mL, mR);
 [e ( _stop (2 , _mL _mR ]

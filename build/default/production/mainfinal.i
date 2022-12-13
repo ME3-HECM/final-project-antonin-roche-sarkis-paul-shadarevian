@@ -24441,7 +24441,8 @@ void main(void){
 
 
     ADC_init();
-    while (ADC_getval()>40000){LATDbits.LATD7 = 1;}
+    while (ADC_getval()<100) {LATDbits.LATD7 = 1;}
+
 
 
 

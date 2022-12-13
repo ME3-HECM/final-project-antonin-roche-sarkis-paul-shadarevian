@@ -24444,7 +24444,7 @@ void turnLeft90(DC_motor *mL, DC_motor *mR)
         setMotorPWM(mL);
         setMotorPWM(mR);
         }
-    _delay((unsigned long)((250)*(64000000/4000.0)));
+    _delay((unsigned long)((245)*(64000000/4000.0)));
     stop(mL, mR);
     }
 
@@ -24523,7 +24523,7 @@ void turn180(DC_motor *mL, DC_motor *mR)
         setMotorPWM(mL);
         setMotorPWM(mR);
         }
-    _delay((unsigned long)((420)*(64000000/4000.0)));
+    _delay((unsigned long)((400)*(64000000/4000.0)));
     stop(mL, mR);
     }
 
