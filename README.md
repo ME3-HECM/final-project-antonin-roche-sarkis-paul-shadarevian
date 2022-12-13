@@ -18,12 +18,14 @@ Note: For color detection, a black cover around the color sensor was used so as 
 <img src="https://user-images.githubusercontent.com/111131762/207319352-69f9c67b-fe12-4777-8931-8bb905875e90.png" width="100">
 
 # Callibration and Main operation
-
+<br>
+<br>
 For color sensing, there is a calibration step necessary. The inputs to the function classifying the color (decide_color() in color.c) are: <br>
 <br>
 (curr color val - room color val)/max color val  --> This normalization allows the comparison and detection of colours
 <br>
 Then, through testing, it has been observed that the ratio of those normalized colors to the normalised clear is constant for the same calibration: norm_color/norm_clear = constant (this step is done for red, blue and green)
+<br>
 Using this knowledge, finding colors becomes an easier step and can be done through if statements.
 <br>
 To find room and max val, follow the two steps below:
