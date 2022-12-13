@@ -29,6 +29,9 @@ color.c decides which commands to send to the color sensor as well as reading an
 
 For color sensing, there is a calibration step necessary. The inputs to the function calssifying the color are: (curr color val - room color val)/max color val
 
+Then, through testing, it has been observed that the ratio of those normalized colors to the normalised clear is constant for the same calibration: norm_color/norm_clear = constant (this step is done for red, blue and green)
+Using this knowledge, finding colors becomes an easier step and can be done through if statements.
+
 To find room and max val, follow the two steps below:
 1. First put the front of the buggy (the side with the color click) against a wall with a white paper and click on the button RF2 of the clicker 2
 1. Then put the buggy at its starting point and aim the front of the buggy towards the first color card and click on the button RF3 on the clicker 2 (when calibrating for room, the buggy must be pointed in to a place "empty" => no color card in front) 
