@@ -26,7 +26,8 @@ For color sensing, there is a calibration step necessary. The inputs to the func
 <br>
 (curr color val - room color val)/max color val  --> This normalization allows the comparison and detection of colours
 <br>
-Also, it has been observed through testing that: norm_color/norm_clear = constant; for the same calibration. This means that using the normalization then scaling with clear allows for easy color recognition using if statements.
+Also, it has been observed through testing that: norm_color/norm_clear = constant; for the same calibration. 
+This means that using the normalization then scaling with clear allows for easy color recognition using if statements.
 <br>
 To find room and max val, follow the two steps below:
 1. First put the front of the buggy (the side with the color click) against a wall with a white paper and click on the button RF2 of the clicker 2
