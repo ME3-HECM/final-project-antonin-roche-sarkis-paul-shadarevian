@@ -14,8 +14,8 @@ Hardware/Software used for this project:
 - For all serial communication, [RealTerm][5] was used 
 - [Color click][6] from Mikroelectronica
 
-Note: For color detection, a black cover around the color sensor was used so as to minimise any interference from changes in the area around it
-
+Note: For color detection, a black cover around the color sensor was used so as to minimise any interference from changes in the area around it, as seen below. <br>
+<img src="https://user-images.githubusercontent.com/111131762/207319352-69f9c67b-fe12-4777-8931-8bb905875e90.png" width="100">
 
 # Callibration and Main operation
 
@@ -28,17 +28,18 @@ To find room and max val, follow the two steps below:
 1. First put the front of the buggy (the side with the color click) against a wall with a white paper and click on the button RF2 of the clicker 2
 2. Then put the buggy at its starting point and click on the button RF3 on the clicker 2 (when calibrating for room, the buggy must be pointed in to a place "empty" => no color card in front) 
 <br>
-
-See this video to see this above demonstrated, along with colour detection and some of the special features below: https://youtu.be/Gx8sHAmDlEA 
-
 The buggy will start immediately after the room calibration.
+<br>
+See this video to see this above demonstrated, along with colour detection and some of the special features below: https://youtu.be/Gx8sHAmDlEA 
 
 # Unique features of our buggy mining operation
 - **Colour not detected:** While our method of colour calibration allows the colour to be detected reliably, if in any case a colour is not detected (return value of 10 from ‘decide_color()’ function), the buggy will go back and recollide with the wall, make a readings over a small time interval and simultaneously check if any of those readings correspond to a colour in the records (while(a<20) loop in mainfinal.c code).  If yes, the buggy will carry out the corresponding step (carryoutstep() function in dc_motor.c); if not, the buggy will return home and enter sleep mode (to conserve energy).
 - **Stabilisation:** Once the buggy detects a colour, it attacks the wall once, pauses to stabilize and then attacks the wall again. Similarly, during return, it will also collide and stabilize with the wall.
 - Buggy surrounded LED lights are off during the ongoing journey to minimize the effect of those lights in the colour readings. They however turn on once return has been initiated to signal that the buggy is attempting to return, whilst the colorclick LEDs are turned off as they have been seen to consume the most battery. 
 - **Return in Reverse:** The return is done in reverse so that the collision to stabilise the buggy is done with the front part. Doing collisions with the back of the buggy could damage the charging port located at the back.
-- **Battery Check:** As performance degrades highly at medium/low battery levels, the buggy will warn the user and will not operate when it is turned on with less than about 40% battery (it will only turn on an LED and keep it on until it’s more than 40%), as shown below.
+- **Battery Check:** As performance degrades highly at medium/low battery levels, the buggy will warn the user and will not operate when it is turned on with less than about 40% battery (it will only turn on an LED and keep it on until it’s more than 40%), as shown below.<br>
+
+![low battery warning buggy](https://user-images.githubusercontent.com/111131762/207319460-22a9d1ea-7d34-4d9c-be61-b5fbd6f40faa.png)
 
 # Code Structure
 
