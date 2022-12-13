@@ -27,7 +27,7 @@ Then, through testing, it has been observed that the ratio of those normalized c
 <br>
 Using this knowledge, finding colors becomes an easier step and can be done through if statements.<br>
 <br>
-To find room and max val, follow the two steps below:
+To find room and max val, follow the two steps below:<br>
 1. First put the front of the buggy (the side with the color click) against a wall with a white paper and click on the button RF2 of the clicker 2
 2. Then put the buggy at its starting point and click on the button RF3 on the clicker 2 (when calibrating for room, the buggy must be pointed in to a place "empty" => no color card in front) 
 <br>
