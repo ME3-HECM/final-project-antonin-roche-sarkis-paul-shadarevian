@@ -2376,16 +2376,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;color.c: 110:     float grf = (float) mx->green/(mx->clear);
 [v _grf `f ~T0 @X0 1 a ]
 [e = _grf / -> . *U _mx 2 `f -> . *U _mx 3 `f ]
-"112
-[; ;color.c: 112:     unsigned int rr = (int) (100*rrf);
+"113
+[; ;color.c: 113:     unsigned int rr = (int) (100*rrf);
 [v _rr `ui ~T0 @X0 1 a ]
 [e = _rr -> -> * -> -> 100 `i `f _rrf `i `ui ]
-"113
-[; ;color.c: 113:     unsigned int br = (int) (100*brf);
+"114
+[; ;color.c: 114:     unsigned int br = (int) (100*brf);
 [v _br `ui ~T0 @X0 1 a ]
 [e = _br -> -> * -> -> 100 `i `f _brf `i `ui ]
-"114
-[; ;color.c: 114:     unsigned int gr = (int) (100*grf);
+"115
+[; ;color.c: 115:     unsigned int gr = (int) (100*grf);
 [v _gr `ui ~T0 @X0 1 a ]
 [e = _gr -> -> * -> -> 100 `i `f _grf `i `ui ]
 "118

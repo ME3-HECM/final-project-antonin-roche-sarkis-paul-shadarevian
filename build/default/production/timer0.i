@@ -24265,10 +24265,9 @@ void Interrupts_init(void)
 
 
 
-
 void Timer0_init(void)
 {
-# 33 "timer0.c"
+# 32 "timer0.c"
     T0CON1bits.T0CS=0b010;
     T0CON1bits.T0ASYNC=1;
     T0CON1bits.T0CKPS=0b0000;

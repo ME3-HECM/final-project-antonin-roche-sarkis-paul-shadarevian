@@ -4,12 +4,12 @@
 /************************************
 / ADC_init_init
 / Function used to initialise ADC module and set it up
-/ to sample on pin RA3
+/ to sample on pin RF6
 ************************************/
 void ADC_init(void)
 {
-    TRISFbits.TRISF6=1; // Select pin RF7 as input
-    ANSELFbits.ANSELF6=1; //Ensure analogue circuitry is active (it is by default - watch out for this later in the course!)
+    TRISFbits.TRISF6=1; // Select pin RF6 as input
+    ANSELFbits.ANSELF6=1; //Ensure analogue circuitry is active 
 
     // Set up the ADC module - check section 33 of the datasheet for more details
     ADREFbits.ADNREF = 0; // Use Vss (0V) as negative reference

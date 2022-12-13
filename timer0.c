@@ -13,7 +13,6 @@ void Interrupts_init(void)
     INTCONbits.GIE=1;   //global interrupt enabled
 }
 
-
 /************************************
  * Function to set up timer 0
 ************************************/

@@ -2075,52 +2075,52 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;timer0.c: 14: }
 [e :UE 2015 ]
 }
-"20
-[; ;timer0.c: 20: void Timer0_init(void)
+"19
+[; ;timer0.c: 19: void Timer0_init(void)
 [v _Timer0_init `(v ~T0 @X0 1 ef ]
-"21
-[; ;timer0.c: 21: {
+"20
+[; ;timer0.c: 20: {
 {
 [e :U _Timer0_init ]
 [f ]
-"33
-[; ;timer0.c: 33:     T0CON1bits.T0CS=0b010;
+"32
+[; ;timer0.c: 32:     T0CON1bits.T0CS=0b010;
 [e = . . _T0CON1bits 0 2 -> -> 2 `i `uc ]
-"34
-[; ;timer0.c: 34:     T0CON1bits.T0ASYNC=1;
+"33
+[; ;timer0.c: 33:     T0CON1bits.T0ASYNC=1;
 [e = . . _T0CON1bits 0 1 -> -> 1 `i `uc ]
-"35
-[; ;timer0.c: 35:     T0CON1bits.T0CKPS=0b0000;
+"34
+[; ;timer0.c: 34:     T0CON1bits.T0CKPS=0b0000;
 [e = . . _T0CON1bits 0 0 -> -> 0 `i `uc ]
-"36
-[; ;timer0.c: 36:     T0CON0bits.T016BIT=1;
+"35
+[; ;timer0.c: 35:     T0CON0bits.T016BIT=1;
 [e = . . _T0CON0bits 0 1 -> -> 1 `i `uc ]
-"38
-[; ;timer0.c: 38:     TMR0H=1535>>8;
+"37
+[; ;timer0.c: 37:     TMR0H=1535>>8;
 [e = _TMR0H -> >> -> 1535 `i -> 8 `i `uc ]
-"39
-[; ;timer0.c: 39:     TMR0L=1535;
+"38
+[; ;timer0.c: 38:     TMR0L=1535;
 [e = _TMR0L -> -> 1535 `i `uc ]
-"40
-[; ;timer0.c: 40:     T0CON0bits.T0EN=1;
+"39
+[; ;timer0.c: 39:     T0CON0bits.T0EN=1;
 [e = . . _T0CON0bits 0 4 -> -> 1 `i `uc ]
-"41
-[; ;timer0.c: 41: }
+"40
+[; ;timer0.c: 40: }
 [e :UE 2016 ]
 }
-"43
-[; ;timer0.c: 43: void starttimer0(void){
+"42
+[; ;timer0.c: 42: void starttimer0(void){
 [v _starttimer0 `(v ~T0 @X0 1 ef ]
 {
 [e :U _starttimer0 ]
 [f ]
-"44
-[; ;timer0.c: 44:     TMR0H=1535>>8;
+"43
+[; ;timer0.c: 43:     TMR0H=1535>>8;
 [e = _TMR0H -> >> -> 1535 `i -> 8 `i `uc ]
-"45
-[; ;timer0.c: 45:     TMR0L=1535;
+"44
+[; ;timer0.c: 44:     TMR0L=1535;
 [e = _TMR0L -> -> 1535 `i `uc ]
-"47
-[; ;timer0.c: 47: }
+"46
+[; ;timer0.c: 46: }
 [e :UE 2017 ]
 }

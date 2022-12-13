@@ -24450,10 +24450,10 @@ char decide_color(colors *mx)
     float brf = (float) mx->blue/(mx->clear);
     float grf = (float) mx->green/(mx->clear);
 
+
     unsigned int rr = (int) (100*rrf);
     unsigned int br = (int) (100*brf);
     unsigned int gr = (int) (100*grf);
-
 
 
     if ((150<rr) & (br<80) & (gr<40) & (200<mx->clear && mx->clear<400)) {return 2;}

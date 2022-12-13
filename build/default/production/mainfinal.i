@@ -24392,17 +24392,18 @@ unsigned int ADC_getval(void);
 
 
 
+
 timercount=0;
 void __attribute__((picinterrupt(("high_priority")))) HighISR();
 
 void main(void){
 
+
+
     Timer0_init();
     Interrupts_init();
     initDCmotorsPWM(199);
     unsigned int PWMcycle = 199;
-
-
 
     color_click_init();
     I2C_2_Master_Init();
@@ -24410,7 +24411,6 @@ void main(void){
 
 
     struct colors reading, max, ambient;
-
 
     reading.red = 0;
     reading.blue = 0;
@@ -24425,13 +24425,10 @@ void main(void){
     ambient.green = 0;
     ambient.clear = 0;
 
-    LATFbits.LATF7 = 1;
-    LATGbits.LATG1 = 1;
-    LATAbits.LATA4 = 1;
+
 
     TRISDbits.TRISD3 = 0;
     LATDbits.LATD3 = 0;
-
     TRISFbits.TRISF2 = 1;
     ANSELFbits.ANSELF2=0;
     LATDbits.LATD7 = 0;
@@ -24444,7 +24441,8 @@ void main(void){
 
 
     ADC_init();
-    if (ADC_getval()<250){LATDbits.LATD2 = 1;}
+    while (ADC_getval()<100) {LATDbits.LATD7 = 1;}
+
 
 
 
@@ -24458,22 +24456,25 @@ void main(void){
     TRISDbits.TRISD4 = 0;
 
 
-
     struct DC_motor motorL, motorR;
 
-    motorR.power = 0;
+    motorL.power = 0;
     motorL.direction = 1;
     motorL.posDutyHighByte=(unsigned char *)(&CCPR1H);
     motorL.negDutyHighByte=(unsigned char *)(&CCPR2H);
     motorL.PWMperiod=PWMcycle;
 
-    motorL.power = 0;
+    motorR.power = 0;
     motorR.direction = 1;
     motorR.PWMperiod=PWMcycle;
     motorR.posDutyHighByte=(unsigned char *)(&CCPR3H);
     motorR.negDutyHighByte=(unsigned char *)(&CCPR4H);
 
 
+
+    LATFbits.LATF7 = 1;
+    LATGbits.LATG1 = 1;
+    LATAbits.LATA4 = 1;
 
 
 
@@ -24483,7 +24484,6 @@ void main(void){
     LATDbits.LATD7 = 0;
     TRISDbits.TRISD7 = 0;
 
-
     TRISFbits.TRISF3 = 1;
     ANSELFbits.ANSELF3 = 0;
     LATHbits.LATH3 = 0;
@@ -24491,7 +24491,6 @@ void main(void){
 
 
     while (PORTFbits.RF2);
-
     LATDbits.LATD7 = 1;
     max.red = color_read_Red();
     max.blue = color_read_Blue();
@@ -24501,9 +24500,7 @@ void main(void){
     LATDbits.LATD7 = 0;
 
 
-
     while(PORTFbits.RF3);
-
     LATHbits.LATH3 = 1;
     ambient.red = color_read_Red();
     ambient.blue = color_read_Blue();
@@ -24512,62 +24509,62 @@ void main(void){
     _delay((unsigned long)((500)*(64000000/4000.0)));
     LATHbits.LATH3 = 0;
 
+
     while(1){
 
-    fullSpeedAhead(&motorL,&motorR, 1);
 
-    reading.clear = (color_read_Clear()-ambient.clear)/(max.clear/1000+1);
+        fullSpeedAhead(&motorL,&motorR, 1);
 
-    if (reading.clear < 1200 && reading.clear > 30) {
-
-
-    savetime(timercount);
-    savepath(1);
-
-
-    smallmovement(&motorL,&motorR, 1);
-    _delay((unsigned long)((200)*(64000000/4000.0)));
-    smallmovement(&motorL,&motorR, 1);
-
-    _delay((unsigned long)((200)*(64000000/4000.0)));
-
-
-    reading.red = (color_read_Red()-ambient.red)/(max.red/1000+1);
-    reading.blue = (color_read_Blue()-ambient.blue)/(max.blue/1000+1);
-    reading.green = (color_read_Green()-ambient.green)/(max.green/1000+1);
-    reading.clear = (color_read_Clear()-ambient.clear)/(max.clear/1000+1);
-
-    step = decide_color(&reading);
-
-    smallmovement(&motorL,&motorR, 0);
-
-    if (step<=9)carryoutstep(motorL, motorR, &reading, &max, &ambient, step);
-
-    else {
-
-
-        square(&motorL,&motorR, 1);
-        char a = 0;
-        while (a<20) {
-            _delay((unsigned long)((20)*(64000000/4000.0)));
-        reading.red = (color_read_Red()-ambient.red)/(max.red/1000+1);
-        reading.blue = (color_read_Blue()-ambient.blue)/(max.blue/1000+1);
-        reading.green = (color_read_Green()-ambient.green)/(max.green/1000+1);
         reading.clear = (color_read_Clear()-ambient.clear)/(max.clear/1000+1);
-            if (step == 10) {step = decide_color(&reading);}
-            a++;
-        }
-        if (step !=10) {carryoutstep(motorL, motorR, &reading, &max, &ambient, step);}
-        else {returnhome(motorL, motorR);
+
+        if (reading.clear < 1200 && reading.clear > 30) {
+
+            savetime(timercount);
+            savepath(1);
+
+            smallmovement(&motorL,&motorR, 1);
+            _delay((unsigned long)((200)*(64000000/4000.0)));
+            smallmovement(&motorL,&motorR, 1);
+            _delay((unsigned long)((200)*(64000000/4000.0)));
+
+            reading.red = (color_read_Red()-ambient.red)/(max.red/1000+1);
+            reading.blue = (color_read_Blue()-ambient.blue)/(max.blue/1000+1);
+            reading.green = (color_read_Green()-ambient.green)/(max.green/1000+1);
+            reading.clear = (color_read_Clear()-ambient.clear)/(max.clear/1000+1);
+
+
+            step = decide_color(&reading);
+            smallmovement(&motorL,&motorR, 0);
+
+
+            if (step<=9){carryoutstep(motorL, motorR, &reading, &max, &ambient, step);}
+
+            else {
+
+                square(&motorL,&motorR, 1);
+
+                char a = 0;
+                while (a<20) {
+                    _delay((unsigned long)((30)*(64000000/4000.0)));
+                    reading.red = (color_read_Red()-ambient.red)/(max.red/1000+1);
+                    reading.blue = (color_read_Blue()-ambient.blue)/(max.blue/1000+1);
+                    reading.green = (color_read_Green()-ambient.green)/(max.green/1000+1);
+                    reading.clear = (color_read_Clear()-ambient.clear)/(max.clear/1000+1);
+                    if (step == 10) {step = decide_color(&reading);}
+                    a++;
+                    }
+
+                if (step !=10) {carryoutstep(motorL, motorR, &reading, &max, &ambient, step);}
+
+                else {returnhome(motorL, motorR);}
+
+                }
+
+            }
 
         }
-        }
 
-}
-}
-
-
-}
+    }
 
 
 
@@ -24576,9 +24573,7 @@ void __attribute__((picinterrupt(("high_priority")))) HighISR()
     if (PIR0bits.TMR0IF == 1 & interruptenable == 1)
     {
         timercount++;
-        TMR0H=1535>>8;
-        TMR0L=1535;
+        starttimer0();
     }
     PIR0bits.TMR0IF=0;
-
 }

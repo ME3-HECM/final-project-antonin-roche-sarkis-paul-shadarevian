@@ -59,31 +59,31 @@
 [v _setMotorPWM setMotorPWM `(v  1 e 1 0 ]
 "97
 [v _stop stop `(v  1 e 1 0 ]
-"111
+"109
 [v _turnLeft90 turnLeft90 `(v  1 e 1 0 ]
-"134
+"128
 [v _turnRight90 turnRight90 `(v  1 e 1 0 ]
-"157
+"147
 [v _turnLeft135 turnLeft135 `(v  1 e 1 0 ]
-"182
+"168
 [v _turnRight135 turnRight135 `(v  1 e 1 0 ]
-"204
+"187
 [v _turn180 turn180 `(v  1 e 1 0 ]
-"226
+"208
 [v _fullSpeedAhead fullSpeedAhead `(v  1 e 1 0 ]
-"252
+"230
 [v _square square `(v  1 e 1 0 ]
-"269
+"245
 [v _smallmovement smallmovement `(v  1 e 1 0 ]
-"290
+"263
 [v _carryoutstep carryoutstep `(v  1 e 1 0 ]
-"355
+"326
 [v _savepath savepath `(v  1 e 1 0 ]
-"361
+"332
 [v _savetime savetime `(v  1 e 1 0 ]
-"370
+"340
 [v _returnhome returnhome `(v  1 e 1 0 ]
-"408
+"381
 [v _returnstep returnstep `(v  1 e 1 0 ]
 "4 C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\i2c.c
 [v _I2C_2_Master_Init I2C_2_Master_Init `(v  1 e 1 0 ]
@@ -99,14 +99,16 @@
 [v _I2C_2_Master_Write I2C_2_Master_Write `(v  1 e 1 0 ]
 "51
 [v _I2C_2_Master_Read I2C_2_Master_Read `(uc  1 e 1 0 ]
-"21 C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\mainfinal.c
+"22 C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\mainfinal.c
 [v _main main `(v  1 e 1 0 ]
-"197
+"194
 [v _HighISR HighISR `IIH(v  1 e 1 0 ]
 "8 C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
 [v _Interrupts_init Interrupts_init `(v  1 e 1 0 ]
-"20
+"19
 [v _Timer0_init Timer0_init `(v  1 e 1 0 ]
+"42
+[v _starttimer0 starttimer0 `(v  1 e 1 0 ]
 "41 C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X/dc_motor.h
 [v _path path `[100]uc  1 e 100 0 ]
 "42
@@ -123,7 +125,7 @@
 [v _SSP2CLKPPS SSP2CLKPPS `VEuc  1 e 1 @3612 ]
 "3863
 [v _SSP2DATPPS SSP2DATPPS `VEuc  1 e 1 @3613 ]
-[s S1747 . 1 `uc 1 INT0IE 1 0 :1:0 
+[s S1749 . 1 `uc 1 INT0IE 1 0 :1:0 
 `uc 1 INT1IE 1 0 :1:1 
 `uc 1 INT2IE 1 0 :1:2 
 `uc 1 INT3IE 1 0 :1:3 
@@ -131,8 +133,8 @@
 `uc 1 TMR0IE 1 0 :1:5 
 ]
 "4558
-[u S1754 . 1 `S1747 1 . 1 0 ]
-[v _PIE0bits PIE0bits `VES1754  1 e 1 @3625 ]
+[u S1756 . 1 `S1749 1 . 1 0 ]
+[v _PIE0bits PIE0bits `VES1756  1 e 1 @3625 ]
 [s S1640 . 1 `uc 1 INT0IF 1 0 :1:0 
 `uc 1 INT1IF 1 0 :1:1 
 `uc 1 INT2IF 1 0 :1:2 
@@ -167,19 +169,7 @@
 "11514
 [u S100 . 1 `S91 1 . 1 0 ]
 [v _ANSELDbits ANSELDbits `VES100  1 e 1 @3751 ]
-[s S2089 . 1 `uc 1 ANSELE0 1 0 :1:0 
-`uc 1 ANSELE1 1 0 :1:1 
-`uc 1 ANSELE2 1 0 :1:2 
-`uc 1 ANSELE3 1 0 :1:3 
-`uc 1 ANSELE4 1 0 :1:4 
-`uc 1 ANSELE5 1 0 :1:5 
-`uc 1 ANSELE6 1 0 :1:6 
-`uc 1 ANSELE7 1 0 :1:7 
-]
-"12010
-[u S2098 . 1 `S2089 1 . 1 0 ]
-[v _ANSELEbits ANSELEbits `VES2098  1 e 1 @3759 ]
-[s S1497 . 1 `uc 1 ANSELF0 1 0 :1:0 
+[s S1434 . 1 `uc 1 ANSELF0 1 0 :1:0 
 `uc 1 ANSELF1 1 0 :1:1 
 `uc 1 ANSELF2 1 0 :1:2 
 `uc 1 ANSELF3 1 0 :1:3 
@@ -189,8 +179,8 @@
 `uc 1 ANSELF7 1 0 :1:7 
 ]
 "12320
-[u S1506 . 1 `S1497 1 . 1 0 ]
-[v _ANSELFbits ANSELFbits `VES1506  1 e 1 @3764 ]
+[u S1443 . 1 `S1434 1 . 1 0 ]
+[v _ANSELFbits ANSELFbits `VES1443  1 e 1 @3764 ]
 "14197
 [v _SSP2BUF SSP2BUF `VEuc  1 e 1 @3797 ]
 "14217
@@ -303,19 +293,19 @@
 ]
 [u S723 . 1 `S701 1 . 1 0 `S600 1 . 1 0 `S712 1 . 1 0 `S718 1 . 1 0 ]
 [v _CCP3CONbits CCP3CONbits `VES723  1 e 1 @3878 ]
-[s S2110 . 1 `uc 1 ADPREF 1 0 :2:0 
+[s S2103 . 1 `uc 1 ADPREF 1 0 :2:0 
 `uc 1 . 1 0 :2:2 
 `uc 1 ADNREF 1 0 :1:4 
 ]
 "26192
-[s S2114 . 1 `uc 1 ADPREF0 1 0 :1:0 
+[s S2107 . 1 `uc 1 ADPREF0 1 0 :1:0 
 `uc 1 ADPREF1 1 0 :1:1 
 ]
-[u S2117 . 1 `S2110 1 . 1 0 `S2114 1 . 1 0 ]
-[v _ADREFbits ADREFbits `VES2117  1 e 1 @3928 ]
+[u S2110 . 1 `S2103 1 . 1 0 `S2107 1 . 1 0 ]
+[v _ADREFbits ADREFbits `VES2110  1 e 1 @3928 ]
 "26596
 [v _ADPCH ADPCH `VEuc  1 e 1 @3935 ]
-[s S2129 . 1 `uc 1 ADGO 1 0 :1:0 
+[s S2122 . 1 `uc 1 ADGO 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ADFM 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -325,21 +315,21 @@
 `uc 1 ADON 1 0 :1:7 
 ]
 "26689
-[s S2138 . 1 `uc 1 GO 1 0 :1:0 
+[s S2131 . 1 `uc 1 GO 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ADFM0 1 0 :1:2 
 ]
-[s S2142 . 1 `uc 1 DONE 1 0 :1:0 
+[s S2135 . 1 `uc 1 DONE 1 0 :1:0 
 ]
-[s S2144 . 1 `uc 1 GO_NOT_DONE 1 0 :1:0 
+[s S2137 . 1 `uc 1 GO_NOT_DONE 1 0 :1:0 
 ]
-[s S2146 . 1 `uc 1 GO_nDONE 1 0 :1:0 
+[s S2139 . 1 `uc 1 GO_nDONE 1 0 :1:0 
 ]
-[s S2148 . 1 `uc 1 . 1 0 :7:0 
+[s S2141 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 ADCAL 1 0 :1:7 
 ]
-[u S2151 . 1 `S2129 1 . 1 0 `S2138 1 . 1 0 `S2142 1 . 1 0 `S2144 1 . 1 0 `S2146 1 . 1 0 `S2148 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES2151  1 e 1 @3936 ]
+[u S2144 . 1 `S2122 1 . 1 0 `S2131 1 . 1 0 `S2135 1 . 1 0 `S2137 1 . 1 0 `S2139 1 . 1 0 `S2141 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES2144  1 e 1 @3936 ]
 "26973
 [v _ADRESH ADRESH `VEuc  1 e 1 @3940 ]
 [s S963 . 1 `uc 1 LATA0 1 0 :1:0 
@@ -490,7 +480,7 @@
 ]
 [u S842 . 1 `S820 1 . 1 0 `S825 1 . 1 0 `S830 1 . 1 0 `S833 1 . 1 0 `S836 1 . 1 0 `S839 1 . 1 0 ]
 [v _LATHbits LATHbits `VES842  1 e 1 @3968 ]
-[s S2003 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S2005 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -500,8 +490,8 @@
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "29352
-[u S2012 . 1 `S2003 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES2012  1 e 1 @3969 ]
+[u S2014 . 1 `S2005 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES2014  1 e 1 @3969 ]
 [s S371 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
@@ -538,7 +528,7 @@
 "29840
 [u S359 . 1 `S350 1 . 1 0 ]
 [v _TRISEbits TRISEbits `VES359  1 e 1 @3973 ]
-[s S1476 . 1 `uc 1 TRISF0 1 0 :1:0 
+[s S1413 . 1 `uc 1 TRISF0 1 0 :1:0 
 `uc 1 TRISF1 1 0 :1:1 
 `uc 1 TRISF2 1 0 :1:2 
 `uc 1 TRISF3 1 0 :1:3 
@@ -548,8 +538,8 @@
 `uc 1 TRISF7 1 0 :1:7 
 ]
 "29957
-[u S1485 . 1 `S1476 1 . 1 0 ]
-[v _TRISFbits TRISFbits `VES1485  1 e 1 @3974 ]
+[u S1422 . 1 `S1413 1 . 1 0 ]
+[v _TRISFbits TRISFbits `VES1422  1 e 1 @3974 ]
 [s S392 . 1 `uc 1 TRISG0 1 0 :1:0 
 `uc 1 TRISG1 1 0 :1:1 
 `uc 1 TRISG2 1 0 :1:2 
@@ -562,14 +552,14 @@
 "30019
 [u S401 . 1 `S392 1 . 1 0 ]
 [v _TRISGbits TRISGbits `VES401  1 e 1 @3975 ]
-[s S1556 . 1 `uc 1 TRISH0 1 0 :1:0 
+[s S1493 . 1 `uc 1 TRISH0 1 0 :1:0 
 `uc 1 TRISH1 1 0 :1:1 
 `uc 1 TRISH2 1 0 :1:2 
 `uc 1 TRISH3 1 0 :1:3 
 ]
 "30072
-[u S1561 . 1 `S1556 1 . 1 0 ]
-[v _TRISHbits TRISHbits `VES1561  1 e 1 @3976 ]
+[u S1498 . 1 `S1493 1 . 1 0 ]
+[v _TRISHbits TRISHbits `VES1498  1 e 1 @3976 ]
 [s S1580 . 1 `uc 1 RF0 1 0 :1:0 
 `uc 1 RF1 1 0 :1:1 
 `uc 1 RF2 1 0 :1:2 
@@ -749,29 +739,29 @@
 [v _TMR0L TMR0L `VEuc  1 e 1 @4051 ]
 "39327
 [v _TMR0H TMR0H `VEuc  1 e 1 @4052 ]
-[s S1849 . 1 `uc 1 T0OUTPS 1 0 :4:0 
+[s S1851 . 1 `uc 1 T0OUTPS 1 0 :4:0 
 `uc 1 T016BIT 1 0 :1:4 
 `uc 1 T0OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 T0EN 1 0 :1:7 
 ]
 "39601
-[s S1855 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
+[s S1857 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
 `uc 1 T0OUTPS1 1 0 :1:1 
 `uc 1 T0OUTPS2 1 0 :1:2 
 `uc 1 T0OUTPS3 1 0 :1:3 
 ]
 "39601
-[u S1860 . 1 `S1849 1 . 1 0 `S1855 1 . 1 0 ]
+[u S1862 . 1 `S1851 1 . 1 0 `S1857 1 . 1 0 ]
 "39601
 "39601
-[v _T0CON0bits T0CON0bits `VES1860  1 e 1 @4053 ]
-[s S1803 . 1 `uc 1 T0CKPS 1 0 :4:0 
+[v _T0CON0bits T0CON0bits `VES1862  1 e 1 @4053 ]
+[s S1805 . 1 `uc 1 T0CKPS 1 0 :4:0 
 `uc 1 T0ASYNC 1 0 :1:4 
 `uc 1 T0CS 1 0 :3:5 
 ]
 "39677
-[s S1807 . 1 `uc 1 T0CKPS0 1 0 :1:0 
+[s S1809 . 1 `uc 1 T0CKPS0 1 0 :1:0 
 `uc 1 T0CKPS1 1 0 :1:1 
 `uc 1 T0CKPS2 1 0 :1:2 
 `uc 1 T0CKPS3 1 0 :1:3 
@@ -781,20 +771,20 @@
 `uc 1 T0CS2 1 0 :1:7 
 ]
 "39677
-[s S1816 . 1 `uc 1 T0PS0 1 0 :1:0 
+[s S1818 . 1 `uc 1 T0PS0 1 0 :1:0 
 `uc 1 T0PS1 1 0 :1:1 
 `uc 1 T0PS2 1 0 :1:2 
 `uc 1 T0PS3 1 0 :1:3 
 ]
 "39677
-[s S1821 . 1 `uc 1 T0PS 1 0 :4:0 
+[s S1823 . 1 `uc 1 T0PS 1 0 :4:0 
 ]
 "39677
-[u S1823 . 1 `S1803 1 . 1 0 `S1807 1 . 1 0 `S1816 1 . 1 0 `S1821 1 . 1 0 ]
+[u S1825 . 1 `S1805 1 . 1 0 `S1809 1 . 1 0 `S1818 1 . 1 0 `S1823 1 . 1 0 ]
 "39677
 "39677
-[v _T0CON1bits T0CON1bits `VES1823  1 e 1 @4054 ]
-[s S1764 . 1 `uc 1 INT0EDG 1 0 :1:0 
+[v _T0CON1bits T0CON1bits `VES1825  1 e 1 @4054 ]
+[s S1766 . 1 `uc 1 INT0EDG 1 0 :1:0 
 `uc 1 INT1EDG 1 0 :1:1 
 `uc 1 INT2EDG 1 0 :1:2 
 `uc 1 INT3EDG 1 0 :1:3 
@@ -804,43 +794,45 @@
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "40500
-[s S1773 . 1 `uc 1 . 1 0 :6:0 
+[s S1775 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
 "40500
-[s S1777 . 1 `uc 1 . 1 0 :6:0 
+[s S1779 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
 "40500
-[u S1781 . 1 `S1764 1 . 1 0 `S1773 1 . 1 0 `S1777 1 . 1 0 ]
+[u S1783 . 1 `S1766 1 . 1 0 `S1775 1 . 1 0 `S1779 1 . 1 0 ]
 "40500
 "40500
-[v _INTCONbits INTCONbits `VES1781  1 e 1 @4082 ]
-"18 C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\mainfinal.c
+[v _INTCONbits INTCONbits `VES1783  1 e 1 @4082 ]
+"19 C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\mainfinal.c
 [v _timercount timercount `i  1 e 2 0 ]
-"21
+"22
 [v _main main `(v  1 e 1 0 ]
 {
-"173
+"169
 [v main@a a `uc  1 a 1 25 ]
 [s S801 DC_motor 9 `uc 1 power 1 0 `uc 1 direction 1 1 `uc 1 brakemode 1 2 `ui 1 PWMperiod 2 3 `*.39uc 1 posDutyHighByte 2 5 `*.39uc 1 negDutyHighByte 2 7 ]
-"85
-[v main@motorR motorR `S801  1 a 9 37 ]
-[v main@motorL motorL `S801  1 a 9 28 ]
+"82
+[v main@motorR motorR `S801  1 a 9 39 ]
+[v main@motorL motorL `S801  1 a 9 30 ]
 [s S815 colors 8 `ui 1 red 2 0 `ui 1 blue 2 2 `ui 1 green 2 4 `ui 1 clear 2 6 ]
-"35
-[v main@reading reading `S815  1 a 8 62 ]
-[v main@ambient ambient `S815  1 a 8 54 ]
-[v main@max max `S815  1 a 8 46 ]
-"193
+"36
+[v main@reading reading `S815  1 a 8 64 ]
+[v main@ambient ambient `S815  1 a 8 56 ]
+[v main@max max `S815  1 a 8 48 ]
+"29
+[v main@PWMcycle PWMcycle `ui  1 a 2 26 ]
+"190
 } 0
-"361 C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
+"332 C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
 [v _savetime savetime `(v  1 e 1 0 ]
 {
 [v savetime@timercount timercount `i  1 p 2 0 ]
-"367
+"338
 } 0
 "7
 [v _initDCmotorsPWM initDCmotorsPWM `(v  1 e 1 0 ]
@@ -857,11 +849,11 @@
 [v decide_color@brf brf `f  1 a 4 49 ]
 "108
 [v decide_color@rrf rrf `f  1 a 4 45 ]
-"113
-[v decide_color@br br `ui  1 a 2 61 ]
-"112
-[v decide_color@rr rr `ui  1 a 2 59 ]
 "114
+[v decide_color@br br `ui  1 a 2 61 ]
+"113
+[v decide_color@rr rr `ui  1 a 2 59 ]
+"115
 [v decide_color@gr gr `ui  1 a 2 57 ]
 [s S815 colors 8 `ui 1 red 2 0 `ui 1 blue 2 2 `ui 1 green 2 4 `ui 1 clear 2 6 ]
 "105
@@ -896,17 +888,17 @@
 "8 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S2509 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S2494 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S2514 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S2517 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2509 1 fAsBytes 4 0 `S2514 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S2517  1 a 4 19 ]
+[s S2499 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S2502 . 4 `l 1 i 4 0 `d 1 f 4 0 `S2494 1 fAsBytes 4 0 `S2499 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S2502  1 a 4 19 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 13 ]
-[s S2585 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S2570 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S2588 . 2 `s 1 i 2 0 `us 1 n 2 0 `S2585 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S2588  1 a 2 23 ]
+[u S2573 . 2 `s 1 i 2 0 `us 1 n 2 0 `S2570 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S2573  1 a 2 23 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 18 ]
 "11
@@ -1026,7 +1018,7 @@
 {
 "20
 } 0
-"290 C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
+"263 C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\dc_motor.c
 [v _carryoutstep carryoutstep `(v  1 e 1 0 ]
 {
 [s S801 DC_motor 9 `uc 1 power 1 0 `uc 1 direction 1 1 `uc 1 brakemode 1 2 `ui 1 PWMperiod 2 3 `*.39uc 1 posDutyHighByte 2 5 `*.39uc 1 negDutyHighByte 2 7 ]
@@ -1037,44 +1029,44 @@
 [v carryoutstep@mx mx `*.39S815  1 p 2 20 ]
 [v carryoutstep@amb amb `*.39S815  1 p 2 22 ]
 [v carryoutstep@step step `uc  1 p 1 24 ]
-"338
+"310
 } 0
-"269
+"245
 [v _smallmovement smallmovement `(v  1 e 1 0 ]
 {
 [s S801 DC_motor 9 `uc 1 power 1 0 `uc 1 direction 1 1 `uc 1 brakemode 1 2 `ui 1 PWMperiod 2 3 `*.39uc 1 posDutyHighByte 2 5 `*.39uc 1 negDutyHighByte 2 7 ]
 [v smallmovement@mL mL `*.39S801  1 p 2 29 ]
 [v smallmovement@mR mR `*.39S801  1 p 2 31 ]
 [v smallmovement@dir dir `uc  1 p 1 33 ]
-"286
+"260
 } 0
-"355
+"326
 [v _savepath savepath `(v  1 e 1 0 ]
 {
 [v savepath@instruction instruction `uc  1 a 1 wreg ]
 [v savepath@instruction instruction `uc  1 a 1 wreg ]
-"357
+"328
 [v savepath@instruction instruction `uc  1 a 1 0 ]
-"359
+"330
 } 0
-"370
+"340
 [v _returnhome returnhome `(v  1 e 1 0 ]
 {
 [s S801 DC_motor 9 `uc 1 power 1 0 `uc 1 direction 1 1 `uc 1 brakemode 1 2 `ui 1 PWMperiod 2 3 `*.39uc 1 posDutyHighByte 2 5 `*.39uc 1 negDutyHighByte 2 7 ]
 [v returnhome@motorL motorL `S801  1 p 9 54 ]
 [v returnhome@motorR motorR `S801  1 p 9 63 ]
-"406
+"379
 } 0
-"252
+"230
 [v _square square `(v  1 e 1 0 ]
 {
 [s S801 DC_motor 9 `uc 1 power 1 0 `uc 1 direction 1 1 `uc 1 brakemode 1 2 `ui 1 PWMperiod 2 3 `*.39uc 1 posDutyHighByte 2 5 `*.39uc 1 negDutyHighByte 2 7 ]
 [v square@mL mL `*.39S801  1 p 2 29 ]
 [v square@mR mR `*.39S801  1 p 2 31 ]
 [v square@dir dir `uc  1 p 1 33 ]
-"267
+"243
 } 0
-"408
+"381
 [v _returnstep returnstep `(v  1 e 1 0 ]
 {
 [v returnstep@instruction instruction `uc  1 a 1 wreg ]
@@ -1083,47 +1075,47 @@
 [v returnstep@motorL motorL `S801  1 p 9 35 ]
 [v returnstep@motorR motorR `S801  1 p 9 44 ]
 [v returnstep@instruction instruction `uc  1 a 1 53 ]
-"415
+"388
 } 0
-"134
+"128
 [v _turnRight90 turnRight90 `(v  1 e 1 0 ]
 {
 [s S801 DC_motor 9 `uc 1 power 1 0 `uc 1 direction 1 1 `uc 1 brakemode 1 2 `ui 1 PWMperiod 2 3 `*.39uc 1 posDutyHighByte 2 5 `*.39uc 1 negDutyHighByte 2 7 ]
 [v turnRight90@mL mL `*.39S801  1 p 2 29 ]
 [v turnRight90@mR mR `*.39S801  1 p 2 31 ]
-"154
+"144
 } 0
-"182
+"168
 [v _turnRight135 turnRight135 `(v  1 e 1 0 ]
 {
 [s S801 DC_motor 9 `uc 1 power 1 0 `uc 1 direction 1 1 `uc 1 brakemode 1 2 `ui 1 PWMperiod 2 3 `*.39uc 1 posDutyHighByte 2 5 `*.39uc 1 negDutyHighByte 2 7 ]
 [v turnRight135@mL mL `*.39S801  1 p 2 29 ]
 [v turnRight135@mR mR `*.39S801  1 p 2 31 ]
-"202
+"185
 } 0
-"111
+"109
 [v _turnLeft90 turnLeft90 `(v  1 e 1 0 ]
 {
 [s S801 DC_motor 9 `uc 1 power 1 0 `uc 1 direction 1 1 `uc 1 brakemode 1 2 `ui 1 PWMperiod 2 3 `*.39uc 1 posDutyHighByte 2 5 `*.39uc 1 negDutyHighByte 2 7 ]
 [v turnLeft90@mL mL `*.39S801  1 p 2 29 ]
 [v turnLeft90@mR mR `*.39S801  1 p 2 31 ]
-"131
+"125
 } 0
-"157
+"147
 [v _turnLeft135 turnLeft135 `(v  1 e 1 0 ]
 {
 [s S801 DC_motor 9 `uc 1 power 1 0 `uc 1 direction 1 1 `uc 1 brakemode 1 2 `ui 1 PWMperiod 2 3 `*.39uc 1 posDutyHighByte 2 5 `*.39uc 1 negDutyHighByte 2 7 ]
 [v turnLeft135@mL mL `*.39S801  1 p 2 29 ]
 [v turnLeft135@mR mR `*.39S801  1 p 2 31 ]
-"179
+"165
 } 0
-"204
+"187
 [v _turn180 turn180 `(v  1 e 1 0 ]
 {
 [s S801 DC_motor 9 `uc 1 power 1 0 `uc 1 direction 1 1 `uc 1 brakemode 1 2 `ui 1 PWMperiod 2 3 `*.39uc 1 posDutyHighByte 2 5 `*.39uc 1 negDutyHighByte 2 7 ]
 [v turn180@mL mL `*.39S801  1 p 2 29 ]
 [v turn180@mR mR `*.39S801  1 p 2 31 ]
-"222
+"204
 } 0
 "97
 [v _stop stop `(v  1 e 1 0 ]
@@ -1131,16 +1123,16 @@
 [s S801 DC_motor 9 `uc 1 power 1 0 `uc 1 direction 1 1 `uc 1 brakemode 1 2 `ui 1 PWMperiod 2 3 `*.39uc 1 posDutyHighByte 2 5 `*.39uc 1 negDutyHighByte 2 7 ]
 [v stop@mL mL `*.39S801  1 p 2 24 ]
 [v stop@mR mR `*.39S801  1 p 2 26 ]
-"108
+"106
 } 0
-"226
+"208
 [v _fullSpeedAhead fullSpeedAhead `(v  1 e 1 0 ]
 {
 [s S801 DC_motor 9 `uc 1 power 1 0 `uc 1 direction 1 1 `uc 1 brakemode 1 2 `ui 1 PWMperiod 2 3 `*.39uc 1 posDutyHighByte 2 5 `*.39uc 1 negDutyHighByte 2 7 ]
 [v fullSpeedAhead@mL mL `*.39S801  1 p 2 24 ]
 [v fullSpeedAhead@mR mR `*.39S801  1 p 2 26 ]
 [v fullSpeedAhead@dir dir `uc  1 p 1 28 ]
-"249
+"227
 } 0
 "74
 [v _setMotorPWM setMotorPWM `(v  1 e 1 0 ]
@@ -1175,10 +1167,10 @@
 [v ___lwdiv@divisor divisor `ui  1 p 2 13 ]
 "30
 } 0
-"20 C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
+"19 C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
 [v _Timer0_init Timer0_init `(v  1 e 1 0 ]
 {
-"41
+"40
 } 0
 "8
 [v _Interrupts_init Interrupts_init `(v  1 e 1 0 ]
@@ -1197,8 +1189,13 @@
 [v ADC_getval@tmpval tmpval `ui  1 a 2 2 ]
 "34
 } 0
-"197 C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\mainfinal.c
+"194 C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\mainfinal.c
 [v _HighISR HighISR `IIH(v  1 e 1 0 ]
 {
-"207
+"202
+} 0
+"42 C:\Users\sps220\OneDrive - Imperial College London\ME3\ECM\github\final-project-antonin-roche-sarkis-paul-shadarevian.X\timer0.c
+[v _starttimer0 starttimer0 `(v  1 e 1 0 ]
+{
+"46
 } 0

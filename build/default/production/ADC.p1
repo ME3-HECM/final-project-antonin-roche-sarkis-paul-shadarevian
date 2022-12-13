@@ -1,26 +1,26 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"29829 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 29829:     struct {
-[s S1384 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1384 . TRISE0 TRISE1 TRISE2 TRISE3 TRISE4 TRISE5 TRISE6 TRISE7 ]
-"29828
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 29828: typedef union {
-[u S1383 `S1384 1 ]
-[n S1383 . . ]
-"29840
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 29840: extern volatile TRISEbits_t TRISEbits __attribute__((address(0xF85)));
-[v _TRISEbits `VS1383 ~T0 @X0 0 e@3973 ]
-"11999
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 11999:     struct {
-[s S558 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S558 . ANSELE0 ANSELE1 ANSELE2 ANSELE3 ANSELE4 ANSELE5 ANSELE6 ANSELE7 ]
-"11998
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 11998: typedef union {
-[u S557 `S558 1 ]
-[n S557 . . ]
-"12010
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 12010: extern volatile ANSELEbits_t ANSELEbits __attribute__((address(0xEAF)));
-[v _ANSELEbits `VS557 ~T0 @X0 0 e@3759 ]
+"29946 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 29946:     struct {
+[s S1388 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1388 . TRISF0 TRISF1 TRISF2 TRISF3 TRISF4 TRISF5 TRISF6 TRISF7 ]
+"29945
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 29945: typedef union {
+[u S1387 `S1388 1 ]
+[n S1387 . . ]
+"29957
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 29957: extern volatile TRISFbits_t TRISFbits __attribute__((address(0xF86)));
+[v _TRISFbits `VS1387 ~T0 @X0 0 e@3974 ]
+"12309
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 12309:     struct {
+[s S568 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S568 . ANSELF0 ANSELF1 ANSELF2 ANSELF3 ANSELF4 ANSELF5 ANSELF6 ANSELF7 ]
+"12308
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 12308: typedef union {
+[u S567 `S568 1 ]
+[n S567 . . ]
+"12320
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 12320: extern volatile ANSELFbits_t ANSELFbits __attribute__((address(0xEB4)));
+[v _ANSELFbits `VS567 ~T0 @X0 0 e@3764 ]
 "26182
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f67k40.h: 26182:     struct {
 [s S1236 :2 `uc 1 :2 `uc 1 :1 `uc 1 ]
@@ -2056,11 +2056,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _ADC_init ]
 [f ]
 "11
-[; ;ADC.c: 11:     TRISEbits.TRISE0=1;
-[e = . . _TRISEbits 0 0 -> -> 1 `i `uc ]
+[; ;ADC.c: 11:     TRISFbits.TRISF6=1;
+[e = . . _TRISFbits 0 6 -> -> 1 `i `uc ]
 "12
-[; ;ADC.c: 12:     ANSELEbits.ANSELE0=1;
-[e = . . _ANSELEbits 0 0 -> -> 1 `i `uc ]
+[; ;ADC.c: 12:     ANSELFbits.ANSELF6=1;
+[e = . . _ANSELFbits 0 6 -> -> 1 `i `uc ]
 "15
 [; ;ADC.c: 15:     ADREFbits.ADNREF = 0;
 [e = . . _ADREFbits 0 2 -> -> 0 `i `uc ]
@@ -2068,8 +2068,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ADC.c: 16:     ADREFbits.ADPREF = 0b00;
 [e = . . _ADREFbits 0 0 -> -> 0 `i `uc ]
 "17
-[; ;ADC.c: 17:     ADPCH=0b11;
-[e = _ADPCH -> -> 3 `i `uc ]
+[; ;ADC.c: 17:     ADPCH=0b101110;
+[e = _ADPCH -> -> 46 `i `uc ]
 "18
 [; ;ADC.c: 18:     ADCON0bits.ADFM = 0;
 [e = . . _ADCON0bits 0 2 -> -> 0 `i `uc ]
