@@ -19,15 +19,12 @@ Note: For color detection, a black cover around the color sensor was used so as 
 
 # Callibration and Main operation
 
-Then, through testing, it has been observed that the ratio of those normalized colors to the normalised clear is constant for the same calibration: norm_color/norm_clear = constant (this step is done for red, blue and green)
-Using this knowledge, finding colors becomes an easier step and can be done through if statements.
-
 For color sensing, there is a calibration step necessary. The inputs to the function classifying the color (decide_color() in color.c) are: <br>
 <br>
 (curr color val - room color val)/max color val  --> This normalization allows the comparison and detection of colours
 <br>
-Also, it has been observed through testing that: norm_color/norm_clear = constant; for the same calibration. 
-This means that using the normalization then scaling with clear allows for easy color recognition using if statements.
+Then, through testing, it has been observed that the ratio of those normalized colors to the normalised clear is constant for the same calibration: norm_color/norm_clear = constant (this step is done for red, blue and green)
+Using this knowledge, finding colors becomes an easier step and can be done through if statements.
 <br>
 To find room and max val, follow the two steps below:
 1. First put the front of the buggy (the side with the color click) against a wall with a white paper and click on the button RF2 of the clicker 2
